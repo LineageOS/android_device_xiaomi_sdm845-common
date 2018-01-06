@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
 #define LOG_TAG "android.hardware.power@1.2-service.xiaomi_sdm845-libperfmgr"
 
 #include <android-base/file.h>
@@ -21,9 +22,9 @@
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 #include <utils/Log.h>
+#include <utils/Trace.h>
 
 #include "Power.h"
-
 #include "power-helper.h"
 
 /* RPM runs at 19.2Mhz. Divide by 19200 for msec */
@@ -74,20 +75,24 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
             }
             break;
         case PowerHint_1_0::VIDEO_ENCODE:
+            ATRACE_BEGIN("video_encode");
             if (mVRModeOn || mSustainedPerfModeOn) {
                 ALOGV("%s: ignoring due to other active perf hints", __func__);
             } else {
                 if (data) {
                     // Hint until canceled
+                    ATRACE_INT("video_encode_lock", 1);
                     mHintManager->DoHint("VIDEO_ENCODE");
                     ALOGD("VIDEO_ENCODE ON");
                     mEncoderModeOn = true;
                 } else {
+                    ATRACE_INT("video_encode_lock", 0);
                     mHintManager->EndHint("VIDEO_ENCODE");
                     ALOGD("VIDEO_ENCODE OFF");
                     mEncoderModeOn = false;
                 }
             }
+            ATRACE_END();
             break;
         case PowerHint_1_0::SUSTAINED_PERFORMANCE:
             if (data && !mSustainedPerfModeOn) {
@@ -130,18 +135,28 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
             }
             break;
         case PowerHint_1_0::LAUNCH:
+            ATRACE_BEGIN("launch");
             if (mVRModeOn || mSustainedPerfModeOn) {
                 ALOGV("%s: ignoring due to other active perf hints", __func__);
             } else {
                 if (data) {
                     // Hint until canceled
+                    ATRACE_INT("launch_lock", 1);
+                    if (mEncoderModeOn) {
+                        mHintManager->EndHint("VIDEO_ENCODE");
+                    }
                     mHintManager->DoHint("LAUNCH");
                     ALOGD("LAUNCH ON");
                 } else {
+                    ATRACE_INT("launch_lock", 0);
                     mHintManager->EndHint("LAUNCH");
+                    if (mEncoderModeOn) {
+                        mHintManager->DoHint("VIDEO_ENCODE");
+                    }
                     ALOGD("LAUNCH OFF");
                 }
             }
+            ATRACE_END();
             break;
         default:
             break;
@@ -283,59 +298,99 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
 
     switch(hint) {
         case PowerHint_1_2::AUDIO_LOW_LATENCY:
+            ATRACE_BEGIN("audio_low_latency");
             if (data) {
                 // Hint until canceled
+                ATRACE_INT("audio_low_latency_lock", 1);
                 mHintManager->DoHint("AUDIO_LOW_LATENCY");
                 ALOGD("AUDIO LOW LATENCY ON");
             } else {
+                ATRACE_INT("audio_low_latency_lock", 0);
                 mHintManager->EndHint("AUDIO_LOW_LATENCY");
                 ALOGD("AUDIO LOW LATENCY OFF");
             }
+            ATRACE_END();
             break;
         case PowerHint_1_2::AUDIO_STREAMING:
+            ATRACE_BEGIN("audio_streaming");
             if (data) {
                 // Hint until canceled
+                ATRACE_INT("audio_streaming_lock", 1);
                 mHintManager->DoHint("AUDIO_STREAMING");
                 ALOGD("AUDIO LOW LATENCY ON");
             } else {
+                ATRACE_INT("audio_streaming_lock", 0);
                 mHintManager->EndHint("AUDIO_STREAMING");
                 ALOGD("AUDIO LOW LATENCY OFF");
             }
+            ATRACE_END();
             break;
         case PowerHint_1_2::CAMERA_LAUNCH:
+            ATRACE_BEGIN("camera_launch");
             if (data > 0) {
+                ATRACE_INT("camera_launch_lock", 1);
+                // If Encoder hint is on, cancel it first and do camera hint
+                if (mEncoderModeOn) {
+                    mHintManager->EndHint("VIDEO_ENCODE");
+                }
                 mHintManager->DoHint("CAMERA_LAUNCH", std::chrono::milliseconds(data));
                 ALOGD("CAMERA LAUNCH ON: %d MS", data);
                 // boosts 2.5s for launching
                 mHintManager->DoHint("LAUNCH", std::chrono::milliseconds(2500));
             } else if (data == 0) {
+                ATRACE_INT("camera_launch_lock", 0);
                 mHintManager->EndHint("CAMERA_LAUNCH");
+                // If Encoder hint is on, recover it
+                if (mEncoderModeOn) {
+                    mHintManager->DoHint("VIDEO_ENCODE");
+                }
                 ALOGD("CAMERA LAUNCH OFF");
             } else {
                 ALOGE("CAMERA LAUNCH INVALID DATA: %d", data);
             }
+            ATRACE_END();
             break;
         case PowerHint_1_2::CAMERA_STREAMING:
+            ATRACE_BEGIN("camera_streaming");
             if (data > 0) {
+                ATRACE_INT("camera_streaming_lock", 1);
+                if (mEncoderModeOn) {
+                    mHintManager->EndHint("VIDEO_ENCODE");
+                }
                 mHintManager->DoHint("CAMERA_STREAMING", std::chrono::milliseconds(data));
                 ALOGD("CAMERA STREAMING ON: %d MS", data);
             } else if (data == 0) {
+                ATRACE_INT("camera_streaming_lock", 0);
                 mHintManager->EndHint("CAMERA_STREAMING");
+                if (mEncoderModeOn) {
+                    mHintManager->DoHint("VIDEO_ENCODE");
+                }
                 ALOGD("CAMERA STREAMING OFF");
             } else {
                 ALOGE("CAMERA STREAMING INVALID DATA: %d", data);
             }
+            ATRACE_END();
             break;
         case PowerHint_1_2::CAMERA_SHOT:
+            ATRACE_BEGIN("camera_shot");
             if (data > 0) {
+                ATRACE_INT("camera_shot_lock", 1);
+                if (mEncoderModeOn) {
+                    mHintManager->EndHint("VIDEO_ENCODE");
+                }
                 mHintManager->DoHint("CAMERA_SHOT", std::chrono::milliseconds(data));
                 ALOGD("CAMERA SHOT ON: %d MS", data);
             } else if (data == 0) {
+                ATRACE_INT("camera_shot_lock", 0);
                 mHintManager->EndHint("CAMERA_SHOT");
+                if (mEncoderModeOn) {
+                    mHintManager->DoHint("VIDEO_ENCODE");
+                }
                 ALOGD("CAMERA SHOT OFF");
             } else {
                 ALOGE("CAMERA SHOT INVALID DATA: %d", data);
             }
+            ATRACE_END();
             break;
         default:
             return powerHint(static_cast<PowerHint_1_0>(hint), data);
