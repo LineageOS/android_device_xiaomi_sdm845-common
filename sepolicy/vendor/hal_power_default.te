@@ -6,3 +6,6 @@ allow hal_power_default sysfs_msm_subsys:dir search;
 allow hal_power_default sysfs_msm_subsys:file w_file_perms;
 allow hal_power_default sysfs_devices_system_cpu:file w_file_perms;
 allow hal_power_default latency_device:chr_file w_file_perms;
+
+# To get/set powerhal state property
+set_prop(hal_power_default, power_prop)
