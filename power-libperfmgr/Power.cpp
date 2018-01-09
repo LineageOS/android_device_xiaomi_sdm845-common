@@ -54,6 +54,29 @@ Power::Power() :
         mSustainedPerfModeOn(false),
         mEncoderModeOn(false) {
     mInteractionHandler.Init();
+
+    std::string state = android::base::GetProperty(kPowerHalStateProp, "");
+    if (state == "VIDEO_ENCODE") {
+        ALOGI("Initialize with VIDEO_ENCODE on");
+        mHintManager->DoHint("VIDEO_ENCODE");
+        mEncoderModeOn = true;
+    } else if (state ==  "SUSTAINED_PERFORMANCE") {
+        ALOGI("Initialize with SUSTAINED_PERFORMANCE on");
+        mHintManager->DoHint("SUSTAINED_PERFORMANCE");
+        mSustainedPerfModeOn = true;
+    } else if (state == "VR_MODE") {
+        ALOGI("Initialize with VR_MODE on");
+        mHintManager->DoHint("VR_MODE");
+        mVRModeOn = true;
+    } else if (state == "VR_SUSTAINED_PERFORMANCE") {
+        ALOGI("Initialize with SUSTAINED_PERFORMANCE and VR_MODE on");
+        mHintManager->DoHint("VR_SUSTAINED_PERFORMANCE");
+        mSustainedPerfModeOn = true;
+        mVRModeOn = true;
+    } else {
+        ALOGI("Initialize with default setting");
+    }
+
 }
 
 // Methods from ::android::hardware::power::V1_0::IPower follow.
@@ -84,11 +107,17 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
                     ATRACE_INT("video_encode_lock", 1);
                     mHintManager->DoHint("VIDEO_ENCODE");
                     ALOGD("VIDEO_ENCODE ON");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "VIDEO_ENCODE")) {
+                        ALOGE("%s: could not set powerHAL state property to VIDEO_ENCODE", __func__);
+                    }
                     mEncoderModeOn = true;
                 } else {
                     ATRACE_INT("video_encode_lock", 0);
                     mHintManager->EndHint("VIDEO_ENCODE");
                     ALOGD("VIDEO_ENCODE OFF");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "")) {
+                        ALOGE("%s: could not clear powerHAL state property", __func__);
+                    }
                     mEncoderModeOn = false;
                 }
             }
@@ -99,9 +128,15 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
                 ALOGD("SUSTAINED_PERFORMANCE ON");
                 if (!mVRModeOn) { // Sustained mode only.
                     mHintManager->DoHint("SUSTAINED_PERFORMANCE");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "SUSTAINED_PERFORMANCE")) {
+                        ALOGE("%s: could not set powerHAL state property to SUSTAINED_PERFORMANCE", __func__);
+                    }
                 } else { // Sustained + VR mode.
                     mHintManager->EndHint("VR_MODE");
                     mHintManager->DoHint("VR_SUSTAINED_PERFORMANCE");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "VR_SUSTAINED_PERFORMANCE")) {
+                        ALOGE("%s: could not set powerHAL state property to VR_SUSTAINED_PERFORMANCE", __func__);
+                    }
                 }
                 mSustainedPerfModeOn = true;
             } else if (!data && mSustainedPerfModeOn) {
@@ -110,6 +145,13 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
                 mHintManager->EndHint("SUSTAINED_PERFORMANCE");
                 if (mVRModeOn) { // Switch back to VR Mode.
                     mHintManager->DoHint("VR_MODE");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "VR_MODE")) {
+                        ALOGE("%s: could not set powerHAL state property to VR_MODE", __func__);
+                    }
+                } else {
+                    if (!android::base::SetProperty(kPowerHalStateProp, "")) {
+                        ALOGE("%s: could not clear powerHAL state property", __func__);
+                    }
                 }
                 mSustainedPerfModeOn = false;
             }
@@ -119,9 +161,15 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
                 ALOGD("VR_MODE ON");
                 if (!mSustainedPerfModeOn) { // VR mode only.
                     mHintManager->DoHint("VR_MODE");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "VR_MODE")) {
+                        ALOGE("%s: could not set powerHAL state property to VR_MODE", __func__);
+                    }
                 } else { // Sustained + VR mode.
                     mHintManager->EndHint("SUSTAINED_PERFORMANCE");
                     mHintManager->DoHint("VR_SUSTAINED_PERFORMANCE");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "VR_SUSTAINED_PERFORMANCE")) {
+                        ALOGE("%s: could not set powerHAL state property to VR_SUSTAINED_PERFORMANCE", __func__);
+                    }
                 }
                 mVRModeOn = true;
             } else if (!data && mVRModeOn) {
@@ -130,6 +178,13 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
                 mHintManager->EndHint("VR_MODE");
                 if (mSustainedPerfModeOn) { // Switch back to sustained Mode.
                     mHintManager->DoHint("SUSTAINED_PERFORMANCE");
+                    if (!android::base::SetProperty(kPowerHalStateProp, "SUSTAINED_PERFORMANCE")) {
+                        ALOGE("%s: could not set powerHAL state property to SUSTAINED_PERFORMANCE", __func__);
+                    }
+                } else {
+                    if (!android::base::SetProperty(kPowerHalStateProp, "")) {
+                        ALOGE("%s: could not clear powerHAL state property", __func__);
+                    }
                 }
                 mVRModeOn = false;
             }
