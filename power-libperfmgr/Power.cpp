@@ -197,17 +197,11 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
                 if (data) {
                     // Hint until canceled
                     ATRACE_INT("launch_lock", 1);
-                    if (mEncoderModeOn) {
-                        mHintManager->EndHint("VIDEO_ENCODE");
-                    }
                     mHintManager->DoHint("LAUNCH");
                     ALOGD("LAUNCH ON");
                 } else {
                     ATRACE_INT("launch_lock", 0);
                     mHintManager->EndHint("LAUNCH");
-                    if (mEncoderModeOn) {
-                        mHintManager->DoHint("VIDEO_ENCODE");
-                    }
                     ALOGD("LAUNCH OFF");
                 }
             }
@@ -384,10 +378,6 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
             ATRACE_BEGIN("camera_launch");
             if (data > 0) {
                 ATRACE_INT("camera_launch_lock", 1);
-                // If Encoder hint is on, cancel it first and do camera hint
-                if (mEncoderModeOn) {
-                    mHintManager->EndHint("VIDEO_ENCODE");
-                }
                 mHintManager->DoHint("CAMERA_LAUNCH", std::chrono::milliseconds(data));
                 ALOGD("CAMERA LAUNCH ON: %d MS", data);
                 // boosts 2.5s for launching
@@ -395,10 +385,6 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
             } else if (data == 0) {
                 ATRACE_INT("camera_launch_lock", 0);
                 mHintManager->EndHint("CAMERA_LAUNCH");
-                // If Encoder hint is on, recover it
-                if (mEncoderModeOn) {
-                    mHintManager->DoHint("VIDEO_ENCODE");
-                }
                 ALOGD("CAMERA LAUNCH OFF");
             } else {
                 ALOGE("CAMERA LAUNCH INVALID DATA: %d", data);
@@ -409,17 +395,11 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
             ATRACE_BEGIN("camera_streaming");
             if (data > 0) {
                 ATRACE_INT("camera_streaming_lock", 1);
-                if (mEncoderModeOn) {
-                    mHintManager->EndHint("VIDEO_ENCODE");
-                }
                 mHintManager->DoHint("CAMERA_STREAMING", std::chrono::milliseconds(data));
                 ALOGD("CAMERA STREAMING ON: %d MS", data);
             } else if (data == 0) {
                 ATRACE_INT("camera_streaming_lock", 0);
                 mHintManager->EndHint("CAMERA_STREAMING");
-                if (mEncoderModeOn) {
-                    mHintManager->DoHint("VIDEO_ENCODE");
-                }
                 ALOGD("CAMERA STREAMING OFF");
             } else {
                 ALOGE("CAMERA STREAMING INVALID DATA: %d", data);
@@ -430,17 +410,11 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
             ATRACE_BEGIN("camera_shot");
             if (data > 0) {
                 ATRACE_INT("camera_shot_lock", 1);
-                if (mEncoderModeOn) {
-                    mHintManager->EndHint("VIDEO_ENCODE");
-                }
                 mHintManager->DoHint("CAMERA_SHOT", std::chrono::milliseconds(data));
                 ALOGD("CAMERA SHOT ON: %d MS", data);
             } else if (data == 0) {
                 ATRACE_INT("camera_shot_lock", 0);
                 mHintManager->EndHint("CAMERA_SHOT");
-                if (mEncoderModeOn) {
-                    mHintManager->DoHint("VIDEO_ENCODE");
-                }
                 ALOGD("CAMERA SHOT OFF");
             } else {
                 ALOGE("CAMERA SHOT INVALID DATA: %d", data);
