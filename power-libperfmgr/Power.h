@@ -42,6 +42,7 @@ using PowerHint_1_2 = ::android::hardware::power::V1_2::PowerHint;
 using ::android::perfmgr::HintManager;
 
 constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
+constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
 
 struct Power : public IPower {
     // Methods from ::android::hardware::power::V1_0::IPower follow.

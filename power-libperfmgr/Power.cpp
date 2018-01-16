@@ -74,9 +74,14 @@ Power::Power() :
         mSustainedPerfModeOn = true;
         mVRModeOn = true;
     } else {
-        ALOGI("Initialize with default setting");
+        ALOGI("Initialize PowerHAL");
     }
 
+    state = android::base::GetProperty(kPowerHalAudioProp, "");
+    if (state == "LOW_LATENCY") {
+        ALOGI("Initialize with AUDIO_LOW_LATENCY on");
+        mHintManager->DoHint("AUDIO_LOW_LATENCY");
+    }
 }
 
 // Methods from ::android::hardware::power::V1_0::IPower follow.
@@ -98,6 +103,10 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
             }
             break;
         case PowerHint_1_0::VIDEO_ENCODE:
+            if (mVRModeOn || mSustainedPerfModeOn) {
+                ALOGV("%s: ignoring due to other active perf hints", __func__);
+                break;
+            }
             ATRACE_BEGIN("video_encode");
             if (mVRModeOn || mSustainedPerfModeOn) {
                 ALOGV("%s: ignoring due to other active perf hints", __func__);
@@ -353,10 +362,16 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
                 ATRACE_INT("audio_low_latency_lock", 1);
                 mHintManager->DoHint("AUDIO_LOW_LATENCY");
                 ALOGD("AUDIO LOW LATENCY ON");
+                if (!android::base::SetProperty(kPowerHalAudioProp, "LOW_LATENCY")) {
+                    ALOGE("%s: could not set powerHAL audio state property to LOW_LATENCY", __func__);
+                }
             } else {
                 ATRACE_INT("audio_low_latency_lock", 0);
                 mHintManager->EndHint("AUDIO_LOW_LATENCY");
                 ALOGD("AUDIO LOW LATENCY OFF");
+                if (!android::base::SetProperty(kPowerHalAudioProp, "")) {
+                    ALOGE("%s: could not clear powerHAL audio state property", __func__);
+                }
             }
             ATRACE_END();
             break;
@@ -366,11 +381,11 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
                 // Hint until canceled
                 ATRACE_INT("audio_streaming_lock", 1);
                 mHintManager->DoHint("AUDIO_STREAMING");
-                ALOGD("AUDIO LOW LATENCY ON");
+                ALOGD("AUDIO STREAMING ON");
             } else {
                 ATRACE_INT("audio_streaming_lock", 0);
                 mHintManager->EndHint("AUDIO_STREAMING");
-                ALOGD("AUDIO LOW LATENCY OFF");
+                ALOGD("AUDIO STREAMING OFF");
             }
             ATRACE_END();
             break;
@@ -379,7 +394,7 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
             if (data > 0) {
                 ATRACE_INT("camera_launch_lock", 1);
                 mHintManager->DoHint("CAMERA_LAUNCH", std::chrono::milliseconds(data));
-                ALOGD("CAMERA LAUNCH ON: %d MS", data);
+                ALOGD("CAMERA LAUNCH ON: %d MS, LAUNCH ON: 2500 MS", data);
                 // boosts 2.5s for launching
                 mHintManager->DoHint("LAUNCH", std::chrono::milliseconds(2500));
             } else if (data == 0) {
