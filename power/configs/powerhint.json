@@ -93,7 +93,7 @@
     },
     {
       "Name": "CPUBWHystTriggerCount",
-      "Path": "/sys/class/devfreq/soc:qcom,cpubw/min_freq/bw_hwmon/hyst_trigger_count",
+      "Path": "/sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count",
       "Values": [
         "0",
         "3"
@@ -101,7 +101,7 @@
     },
     {
       "Name": "CPUBWHistMemory",
-      "Path": "/sys/class/devfreq/soc:qcom,cpubw/min_freq/bw_hwmon/hist_memory",
+      "Path": "/sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory",
       "Values": [
         "0",
         "20"
@@ -109,7 +109,7 @@
     },
     {
       "Name": "CPUBWHystLength",
-      "Path": "/sys/class/devfreq/soc:qcom,cpubw/min_freq/bw_hwmon/hyst_length",
+      "Path": "/sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length",
       "Values": [
         "0",
         "10"
@@ -117,7 +117,7 @@
     },
     {
       "Name": "CPUBWMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,cpubw/min_freq/min_freq",
+      "Path": "/sys/class/devfreq/soc:qcom,cpubw/min_freq",
       "Values": [
         "14236",
         "6500",
