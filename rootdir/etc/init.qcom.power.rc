@@ -69,6 +69,9 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
+    # Disable console_suspend to get better logging for kernel crashes
+    write /sys/module/printk/parameters/console_suspend N
+
 on zygote-start
     # Setup permission for powerHAL
     chown system system /dev/stune/top-app/schedtune.boost
@@ -76,7 +79,7 @@ on zygote-start
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
     chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/min_freq
 
 on property:init.svc.vendor.charger=running
     setprop persist.sys.usb.config mass_storage
@@ -240,20 +243,20 @@ on enable-low-power
     write /proc/sys/vm/swappiness 100
     write /proc/sys/vm/watermark_scale_factor 1
 
-    # Post-setup services
-    setprop vendor.post_boot.parsed 1
+    # Setup permission for powerHAL
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
 
 on property:sys.boot_completed=1
     trigger enable-low-power
 
+# If UART is on, enable console_suspend on boot_complete to save power
+on property:sys.boot_completed=1 && property:init.svc.console=running
+    write /sys/module/printk/parameters/console_suspend Y
+
 on property:init.svc.recovery=running
     trigger enable-low-power
-
-on property:vendor.post_boot.parsed=1
-    # Setup permission for powerHAL
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
-    chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
 
 service vendor.charger /system/bin/chargeonlymode
     class charger
