@@ -62,6 +62,7 @@ struct Power : public IPower {
     Return<void> powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) override;
 
     // Methods from ::android::hidl::base::V1_0::IBase follow.
+    Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args) override;
 
  private:
     static bool isSupportedGovernor();
