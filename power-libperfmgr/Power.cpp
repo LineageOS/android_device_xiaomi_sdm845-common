@@ -21,6 +21,8 @@
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android-base/strings.h>
+#include <android-base/stringprintf.h>
+
 #include <utils/Log.h>
 #include <utils/Trace.h>
 
@@ -438,6 +440,32 @@ Return<void> Power::powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) {
             break;
         default:
             return powerHint(static_cast<PowerHint_1_0>(hint), data);
+    }
+    return Void();
+}
+
+constexpr const char* boolToString(bool b) {
+    return b ? "true" : "false";
+}
+
+Return<void> Power::debug(const hidl_handle& handle, const hidl_vec<hidl_string>&) {
+    if (handle != nullptr && handle->numFds >= 1) {
+        int fd = handle->data[0];
+
+        std::string buf(android::base::StringPrintf("HintManager Running: %s\n"
+                                                    "VRMode: %s\n"
+                                                    "SustainedPerformanceMode: %s\n"
+                                                    "VideoEncodeMode: %s\n",
+                                                    boolToString(mHintManager->IsRunning()),
+                                                    boolToString(mVRModeOn),
+                                                    boolToString(mSustainedPerfModeOn),
+                                                    boolToString(mEncoderModeOn)));
+        // Dump nodes through libperfmgr
+        mHintManager->DumpToFd(fd);
+        if (!android::base::WriteStringToFd(buf, fd)) {
+            PLOG(ERROR) << "Failed to dump state to fd";
+        }
+        fsync(fd);
     }
     return Void();
 }
