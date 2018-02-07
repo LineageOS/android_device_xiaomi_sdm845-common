@@ -1,2 +1,7 @@
 on init
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
+
+service charger /sbin/chargeonlymode
+    class charger
+    group system graphics
+    seclabel u:r:healthd:s0
