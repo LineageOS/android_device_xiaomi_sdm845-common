@@ -34,28 +34,48 @@
 extern "C" {
 #endif
 
-enum stats_type {
-    //Platform Stats
-    RPM_MODE_XO = 0,
-    RPM_MODE_VMIN,
-    RPM_MODE_MAX,
-    XO_VOTERS_START = RPM_MODE_MAX,
-    VOTER_APSS = XO_VOTERS_START,
-    VOTER_MPSS,
-    VOTER_ADSP,
-    VOTER_SLPI,
-    MAX_PLATFORM_STATS,
+// These values are used as indices in getSubsystemLowPowerStats(), as source IDs
+// in stats_section instances, and (in the case of the _COUNT values) to dimension
+// containers.  The values used as indices need to be contiguous, but others do
+// not (which is why SYSTEM_STATES is all the way at the end; it is not used as
+// an index, but only as a source ID).
+enum stats_source {
+    // Master stats
+    MASTER_APSS = 0,
+    MASTER_MPSS,
+    MASTER_ADSP,
+    MASTER_SLPI,
+    MASTER_CDSP,
+    MASTER_GPU,
+    MASTER_DISPLAY,
+    MASTER_COUNT, // Total master sources
 
-    //WLAN Stats
-    WLAN_POWER_DEBUG_STATS = 0,
-    MAX_WLAN_STATS,
+    // Subsystem stats.  (Numbering starts at MASTER_COUNT to preserve
+    // contiguous source numbering.)
+    SUBSYSTEM_WLAN = MASTER_COUNT,
+    SUBSYSTEM_CITADEL,
+
+    // Don't add any lines after this line
+    STATS_SOURCE_COUNT, // Total sources of any kind excluding system states
+    SUBSYSTEM_COUNT = STATS_SOURCE_COUNT - MASTER_COUNT,
+
+    SYSTEM_STATES
 };
 
-enum subsystem_type {
-    SUBSYSTEM_WLAN = 0,
+enum master_sleep_states {
+    MASTER_SLEEP = 0,
 
     //Don't add any lines after this line
-    SUBSYSTEM_COUNT
+    MASTER_SLEEP_STATE_COUNT
+};
+
+enum master_stats {
+    SLEEP_CUMULATIVE_DURATION_MS = 0,
+    SLEEP_ENTER_COUNT,
+    SLEEP_LAST_ENTER_TSTAMP_MS,
+
+    //Don't add any lines after this line
+    MASTER_STATS_COUNT
 };
 
 enum wlan_sleep_states {
@@ -63,35 +83,51 @@ enum wlan_sleep_states {
     WLAN_STATE_DEEP_SLEEP,
 
     //Don't add any lines after this line
-    WLAN_STATES_COUNT
+    WLAN_SLEEP_STATE_COUNT
 };
 
-enum wlan_power_params {
+// Note that stats for both WLAN sleep states are in a single section of the
+// source file, so there's only 1 stats section despite having 2 states
+enum wlan_stats {
     CUMULATIVE_SLEEP_TIME_MS = 0,
     CUMULATIVE_TOTAL_ON_TIME_MS,
     DEEP_SLEEP_ENTER_COUNTER,
     LAST_DEEP_SLEEP_ENTER_TSTAMP_MS,
 
     //Don't add any lines after this line
-    WLAN_POWER_PARAMS_COUNT
+    WLAN_STATS_COUNT
 };
 
+enum system_sleep_states {
+    SYSTEM_STATE_AOSD = 0,
+    SYSTEM_STATE_CXSD,
 
-#define PLATFORM_SLEEP_MODES_COUNT RPM_MODE_MAX
+    //Don't add any lines after this line
+    SYSTEM_SLEEP_STATE_COUNT
+};
 
-#define MAX_RPM_PARAMS 2
-#define XO_VOTERS (MAX_PLATFORM_STATS - XO_VOTERS_START)
-#define VMIN_VOTERS 0
+enum system_state_stats {
+    TOTAL_COUNT = 0,
+    ACCUMULATED_TIME_MS,
 
-struct stat_pair {
-    enum stats_type stat;
+    //Don't add any lines after this line
+    SYSTEM_STATE_STATS_COUNT
+};
+
+#ifndef ARRAY_SIZE
+#define ARRAY_SIZE(x) (sizeof((x))/sizeof((x)[0]))
+#endif
+
+struct stats_section {
+    enum stats_source source;
     const char *label;
-    const char **parameters;
-    size_t num_parameters;
+    const char **stats_labels;
+    size_t num_stats;
 };
 
-int extract_platform_stats(uint64_t *list);
-int extract_wlan_stats(uint64_t *list);
+int extract_master_stats(uint64_t *list, size_t list_length);
+int extract_wlan_stats(uint64_t *list, size_t list_length);
+int extract_system_stats(uint64_t *list, size_t list_length);
 
 #ifdef __cplusplus
 }
