@@ -147,12 +147,6 @@
   ],
   "Actions": [
     {
-      "PowerHint": "VIDEO_ENCODE",
-      "Node": "CPUBigClusterMaxFreq",
-      "ValueIndex": 1,
-      "Duration": 0
-    },
-    {
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigClusterMaxFreq",
       "ValueIndex": 4,
@@ -401,54 +395,6 @@
     {
       "PowerHint": "CAMERA_STREAMING",
       "Node": "PMQoSCpuDmaLatency",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBigClusterMaxFreq",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBigClusterMinFreq",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPULittleClusterMinFreq",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "PMQoSCpuDmaLatency",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBWHystTriggerCount",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBWHystLength",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBWHistMemory",
-      "ValueIndex": 0,
-      "Duration": 1000
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBWMinFreq",
       "ValueIndex": 0,
       "Duration": 1000
     },
