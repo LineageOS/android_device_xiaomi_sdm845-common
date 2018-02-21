@@ -53,16 +53,11 @@ Power::Power() :
         mHintManager(HintManager::GetFromJSON("/vendor/etc/powerhint.json")),
         mInteractionHandler(mHintManager),
         mVRModeOn(false),
-        mSustainedPerfModeOn(false),
-        mEncoderModeOn(false) {
+        mSustainedPerfModeOn(false) {
     mInteractionHandler.Init();
 
     std::string state = android::base::GetProperty(kPowerHalStateProp, "");
-    if (state == "VIDEO_ENCODE") {
-        ALOGI("Initialize with VIDEO_ENCODE on");
-        mHintManager->DoHint("VIDEO_ENCODE");
-        mEncoderModeOn = true;
-    } else if (state ==  "SUSTAINED_PERFORMANCE") {
+    if (state ==  "SUSTAINED_PERFORMANCE") {
         ALOGI("Initialize with SUSTAINED_PERFORMANCE on");
         mHintManager->DoHint("SUSTAINED_PERFORMANCE");
         mSustainedPerfModeOn = true;
@@ -103,36 +98,6 @@ Return<void> Power::powerHint(PowerHint_1_0 hint, int32_t data) {
             } else {
                 mInteractionHandler.Acquire(data);
             }
-            break;
-        case PowerHint_1_0::VIDEO_ENCODE:
-            if (mVRModeOn || mSustainedPerfModeOn) {
-                ALOGV("%s: ignoring due to other active perf hints", __func__);
-                break;
-            }
-            ATRACE_BEGIN("video_encode");
-            if (mVRModeOn || mSustainedPerfModeOn) {
-                ALOGV("%s: ignoring due to other active perf hints", __func__);
-            } else {
-                if (data) {
-                    // Hint until canceled
-                    ATRACE_INT("video_encode_lock", 1);
-                    mHintManager->DoHint("VIDEO_ENCODE");
-                    ALOGD("VIDEO_ENCODE ON");
-                    if (!android::base::SetProperty(kPowerHalStateProp, "VIDEO_ENCODE")) {
-                        ALOGE("%s: could not set powerHAL state property to VIDEO_ENCODE", __func__);
-                    }
-                    mEncoderModeOn = true;
-                } else {
-                    ATRACE_INT("video_encode_lock", 0);
-                    mHintManager->EndHint("VIDEO_ENCODE");
-                    ALOGD("VIDEO_ENCODE OFF");
-                    if (!android::base::SetProperty(kPowerHalStateProp, "")) {
-                        ALOGE("%s: could not clear powerHAL state property", __func__);
-                    }
-                    mEncoderModeOn = false;
-                }
-            }
-            ATRACE_END();
             break;
         case PowerHint_1_0::SUSTAINED_PERFORMANCE:
             if (data && !mSustainedPerfModeOn) {
@@ -476,12 +441,10 @@ Return<void> Power::debug(const hidl_handle& handle, const hidl_vec<hidl_string>
 
         std::string buf(android::base::StringPrintf("HintManager Running: %s\n"
                                                     "VRMode: %s\n"
-                                                    "SustainedPerformanceMode: %s\n"
-                                                    "VideoEncodeMode: %s\n",
+                                                    "SustainedPerformanceMode: %s\n",
                                                     boolToString(mHintManager->IsRunning()),
                                                     boolToString(mVRModeOn),
-                                                    boolToString(mSustainedPerfModeOn),
-                                                    boolToString(mEncoderModeOn)));
+                                                    boolToString(mSustainedPerfModeOn)));
         // Dump nodes through libperfmgr
         mHintManager->DumpToFd(fd);
         if (!android::base::WriteStringToFd(buf, fd)) {
