@@ -134,6 +134,15 @@
         "100"
       ],
       "HoldFd": true
+    },
+    {
+      "Name": "VRKernelCpuSet",
+      "Path": "/dev/cpuset/kernel/cpus",
+      "Values": [
+        "0,1",
+        "0-7"
+      ],
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -204,6 +213,12 @@
       "Duration": 0
     },
     {
+      "PowerHint": "VR_MODE",
+      "Node": "VRKernelCpuSet",
+      "ValueIndex": 0,
+      "Duration": 0
+    },
+    {
       "PowerHint": "VR_SUSTAINED_PERFORMANCE",
       "Node": "CPUBigClusterMaxFreq",
       "ValueIndex": 3,
@@ -243,6 +258,12 @@
       "PowerHint": "VR_SUSTAINED_PERFORMANCE",
       "Node": "GPUBusMinFreq",
       "ValueIndex": 1,
+      "Duration": 0
+    },
+    {
+      "PowerHint": "VR_SUSTAINED_PERFORMANCE",
+      "Node": "VRKernelCpuSet",
+      "ValueIndex": 0,
       "Duration": 0
     },
     {
