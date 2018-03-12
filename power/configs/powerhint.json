@@ -139,7 +139,7 @@
       "Name": "VRKernelCpuSet",
       "Path": "/dev/cpuset/kernel/cpus",
       "Values": [
-        "0,1",
+        "2,3",
         "0-7"
       ],
       "ResetOnInit": true
