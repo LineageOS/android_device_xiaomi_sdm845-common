@@ -45,15 +45,18 @@ enum stats_source {
     MASTER_MPSS,
     MASTER_ADSP,
     MASTER_SLPI,
-    MASTER_CDSP,
-    MASTER_GPU,
-    MASTER_DISPLAY,
+    // The following 3 masters are supported by the RPMh stats driver, but not
+    // in use on our devices.
+    // MASTER_CDSP,
+    // MASTER_GPU,
+    // MASTER_DISPLAY,
     MASTER_COUNT, // Total master sources
 
     // Subsystem stats.  (Numbering starts at MASTER_COUNT to preserve
     // contiguous source numbering.)
     SUBSYSTEM_WLAN = MASTER_COUNT,
-    SUBSYSTEM_CITADEL,
+    // Uncomment when Citadel returns
+    //SUBSYSTEM_CITADEL,
 
     // Don't add any lines after this line
     STATS_SOURCE_COUNT, // Total sources of any kind excluding system states
