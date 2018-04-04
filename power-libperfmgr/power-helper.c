@@ -68,9 +68,10 @@ struct stats_section master_sections[MASTER_COUNT] = {
     { MASTER_MPSS,       "MPSS", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
     { MASTER_ADSP,       "ADSP", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
     { MASTER_SLPI,       "SLPI", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_CDSP,       "CDSP", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_GPU,         "GPU", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
-    { MASTER_DISPLAY, "DISPLAY", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    // The following masters are currently unused
+    //{ MASTER_CDSP,       "CDSP", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    //{ MASTER_GPU,         "GPU", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
+    //{ MASTER_DISPLAY, "DISPLAY", master_stats_labels, ARRAY_SIZE(master_stats_labels) },
 };
 
 const char *wlan_stats_labels[WLAN_STATS_COUNT] = {
