@@ -155,6 +155,10 @@ on boot
     # Disable console_suspend to get better logging for kernel crashes
     write /sys/module/printk/parameters/console_suspend N
 
+on post-fs
+    # Disable sched autogroup
+    write /proc/sys/kernel/sched_autogroup_enabled 0
+
 on zygote-start
     # Setup permission for powerHAL
     chown system system /dev/stune/top-app/schedtune.boost
