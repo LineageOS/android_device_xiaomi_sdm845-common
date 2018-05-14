@@ -71,6 +71,7 @@ struct Power : public IPower {
     InteractionHandler mInteractionHandler;
     std::atomic<bool> mVRModeOn;
     std::atomic<bool> mSustainedPerfModeOn;
+    std::atomic<bool> mCameraStreamingModeOn;
 };
 
 }  // namespace implementation
