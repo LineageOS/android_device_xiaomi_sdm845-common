@@ -11,6 +11,7 @@ allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_power_default device_latency:chr_file rw_file_perms;
 allow hal_power_default cgroup:dir search;
 allow hal_power_default cgroup:file rw_file_perms;
+allow hal_power_default debugfs_sched_features:file rw_file_perms;
 
 # To get/set powerhal state property
 set_prop(hal_power_default, power_prop)

@@ -323,6 +323,7 @@ on enable-low-power
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
+    chown system system /sys/kernel/debug/sched_features
 
 on property:sys.boot_completed=1
     trigger enable-low-power
