@@ -165,8 +165,15 @@ on zygote-start
     chown system system /dev/cpu_dma_latency
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
     chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/force_rail_on
+    chown system system /sys/class/kgsl/kgsl-3d0/force_clk_on
+    chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
+    chown system system /sys/kernel/debug/sched_features
     chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
     chown system system /sys/class/devfreq/soc:qcom,cpubw/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,llccbw/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,l3-cpu0/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,l3-cpu4/min_freq
 
 on property:init.svc.vendor.charger=running
     setprop persist.sys.usb.config mass_storage
@@ -323,7 +330,6 @@ on enable-low-power
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
-    chown system system /sys/kernel/debug/sched_features
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
