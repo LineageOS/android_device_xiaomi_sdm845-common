@@ -4,7 +4,7 @@
       "Name": "CPULittleClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
-        "1766400",
+        "9999999",
         "1612800",
         "1516800",
         "1228800"
@@ -16,7 +16,7 @@
       "Name": "CPULittleClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
       "Values": [
-        "1766400",
+        "9999999",
         "1612800",
         "1516800",
         "1420800",
@@ -29,7 +29,7 @@
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
-        "2649600",
+        "9999999",
         "2246400",
         "1612800",
         "1459200",
@@ -42,7 +42,7 @@
       "Name": "CPUBigClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq",
       "Values": [
-        "2649600",
+        "9999999",
         "1612800",
         "1459200",
         "1363200",
@@ -55,11 +55,12 @@
       "Name": "GPUMaxFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
       "Values": [
-        "342000000",
-        "414000000",
+        "710000000",
         "520000000",
-        "710000000"
+        "414000000",
+        "342000000"
       ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -376,19 +377,19 @@
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
-      "Value": "2649600"
+      "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 5000,
-      "Value": "2649600"
+      "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 5000,
-      "Value": "1766400"
+      "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
@@ -460,19 +461,19 @@
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 1000,
-      "Value": "2649600"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 1000,
-      "Value": "2649600"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 1000,
-      "Value": "1766400"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
