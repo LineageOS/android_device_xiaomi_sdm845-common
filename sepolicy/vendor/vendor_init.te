@@ -2,3 +2,4 @@
 allow vendor_init sysfs_ssr_toggle:file w_file_perms;
 
 allow vendor_init proc_sysctl_autogroup:file w_file_perms;
+allow vendor_init proc_sysctl_schedboost:file w_file_perms;
