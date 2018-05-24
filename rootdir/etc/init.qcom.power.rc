@@ -26,6 +26,7 @@
 #
 
 on early-init
+    # Enable sched_boost
     write /proc/sys/kernel/sched_boost 1
 
 on init
@@ -79,6 +80,7 @@ on init
     chown system system /dev/cpuset/kernel/tasks
     chown system system /dev/cpuset/kernel/cpus
     chmod 0660 /dev/cpuset/kernel/tasks
+    chmod 0660 /dev/cpuset/kernel/cpus
 
     mkdir /dev/cpuset/system 0750 root system
     write /dev/cpuset/system/cpus 0
@@ -159,22 +161,6 @@ on post-fs
     # Disable sched autogroup
     write /proc/sys/kernel/sched_autogroup_enabled 0
 
-on zygote-start
-    # Setup permission for powerHAL
-    chown system system /dev/stune/top-app/schedtune.boost
-    chown system system /dev/cpu_dma_latency
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-    chown system system /sys/class/kgsl/kgsl-3d0/force_rail_on
-    chown system system /sys/class/kgsl/kgsl-3d0/force_clk_on
-    chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
-    chown system system /sys/kernel/debug/sched_features
-    chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
-    chown system system /sys/class/devfreq/soc:qcom,cpubw/min_freq
-    chown system system /sys/class/devfreq/soc:qcom,llccbw/min_freq
-    chown system system /sys/class/devfreq/soc:qcom,l3-cpu0/min_freq
-    chown system system /sys/class/devfreq/soc:qcom,l3-cpu4/min_freq
-
 on property:init.svc.vendor.charger=running
     setprop persist.sys.usb.config mass_storage
 
@@ -193,6 +179,9 @@ on property:init.svc.vendor.charger=running
 
     # Turn on sleep modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
+
+    # Disable sched_boost
+    write /proc/sys/kernel/sched_boost 0
 
     write /sys/module/msm_thermal/parameters/enabled "N"
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
@@ -325,11 +314,6 @@ on enable-low-power
 
     write /proc/sys/vm/swappiness 100
     write /proc/sys/vm/watermark_scale_factor 1
-
-    # Setup permission for powerHAL
-    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
-    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
-    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
