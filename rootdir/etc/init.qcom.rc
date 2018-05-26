@@ -667,9 +667,6 @@ service vendor.per_proxy /vendor/bin/pm-proxy
     group system
     disabled
 
-on property:init.svc.vendor.per_mgr=running
-    start vendor.per_proxy
-
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
