@@ -325,6 +325,11 @@ on enable-low-power
     chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
     chown system system /sys/kernel/debug/sched_features
 
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
+    start vendor.per_proxy
+
 on property:sys.boot_completed=1
     trigger enable-low-power
 
