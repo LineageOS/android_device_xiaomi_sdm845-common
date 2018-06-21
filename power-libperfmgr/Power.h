@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ANDROID_HARDWARE_POWER_V1_2_POWER_H
-#define ANDROID_HARDWARE_POWER_V1_2_POWER_H
+#ifndef ANDROID_HARDWARE_POWER_V1_3_POWER_H
+#define ANDROID_HARDWARE_POWER_V1_3_POWER_H
 
 #include <atomic>
 #include <thread>
 
-#include <android/hardware/power/1.2/IPower.h>
+#include <android/hardware/power/1.3/IPower.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <perfmgr/HintManager.h>
@@ -30,21 +30,23 @@
 namespace android {
 namespace hardware {
 namespace power {
-namespace V1_2 {
+namespace V1_3 {
 namespace implementation {
 
 using ::android::hardware::power::V1_0::Feature;
-using ::android::hardware::power::V1_2::IPower;
+using ::android::hardware::power::V1_3::IPower;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::InteractionHandler;
 using PowerHint_1_0 = ::android::hardware::power::V1_0::PowerHint;
 using PowerHint_1_2 = ::android::hardware::power::V1_2::PowerHint;
+using PowerHint_1_3 = ::android::hardware::power::V1_3::PowerHint;
 using ::android::perfmgr::HintManager;
 
 constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
 constexpr char kPowerHalInitProp[] = "vendor.powerhal.init";
+constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
 
 struct Power : public IPower {
     // Methods from ::android::hardware::power::V1_0::IPower follow.
@@ -63,6 +65,9 @@ struct Power : public IPower {
     // Methods from ::android::hardware::power::V1_2::IPower follow.
     Return<void> powerHintAsync_1_2(PowerHint_1_2 hint, int32_t data) override;
 
+    // Methods from ::android::hardware::power::V1_3::IPower follow.
+    Return<void> powerHintAsync_1_3(PowerHint_1_3 hint, int32_t data) override;
+
     // Methods from ::android::hidl::base::V1_0::IBase follow.
     Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args) override;
 
@@ -79,9 +84,9 @@ struct Power : public IPower {
 };
 
 }  // namespace implementation
-}  // namespace V1_2
+}  // namespace V1_3
 }  // namespace power
 }  // namespace hardware
 }  // namespace android
 
-#endif  // ANDROID_HARDWARE_POWER_V1_2_POWER_H
+#endif  // ANDROID_HARDWARE_POWER_V1_3_POWER_H
