@@ -47,6 +47,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ims-ext-common
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.xiaomi_sdm845
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
