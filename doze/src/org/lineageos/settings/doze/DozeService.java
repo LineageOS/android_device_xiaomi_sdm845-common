@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- *               2017 The LineageOS Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,13 @@ public class DozeService extends Service {
     private static final boolean DEBUG = false;
 
     private ProximitySensor mProximitySensor;
-    private TiltSensor mTiltSensor;
+    private PickupSensor mPickupSensor;
 
     @Override
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
         mProximitySensor = new ProximitySensor(this);
-        mTiltSensor = new TiltSensor(this);
+        mPickupSensor = new PickupSensor(this);
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -56,7 +56,7 @@ public class DozeService extends Service {
         super.onDestroy();
         this.unregisterReceiver(mScreenStateReceiver);
         mProximitySensor.disable();
-        mTiltSensor.disable();
+        mPickupSensor.disable();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class DozeService extends Service {
     private void onDisplayOn() {
         if (DEBUG) Log.d(TAG, "Display on");
         if (Utils.isPickUpEnabled(this)) {
-            mTiltSensor.disable();
+            mPickupSensor.disable();
         }
         if (Utils.isHandwaveGestureEnabled(this) ||
                 Utils.isPocketGestureEnabled(this)) {
@@ -78,7 +78,7 @@ public class DozeService extends Service {
     private void onDisplayOff() {
         if (DEBUG) Log.d(TAG, "Display off");
         if (Utils.isPickUpEnabled(this)) {
-            mTiltSensor.enable();
+            mPickupSensor.enable();
         }
         if (Utils.isHandwaveGestureEnabled(this) ||
                 Utils.isPocketGestureEnabled(this)) {
