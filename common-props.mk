@@ -65,5 +65,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # SSR
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.ssr.enable_ramdumps=1 \
-    persist.sys.ssr.restart_level=ALL_ENABLE
+    persist.sys.ssr.enable_ramdumps=0 \
+    persist.sys.ssr.restart_level=related
