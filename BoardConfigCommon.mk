@@ -123,6 +123,13 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # RIL
 TARGET_RIL_VARIANT := caf
 
+# Root
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
+    /vendor/bt_firmware:/bt_firmware \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware
+
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
