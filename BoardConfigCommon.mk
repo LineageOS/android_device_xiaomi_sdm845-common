@@ -45,6 +45,9 @@ endif
 #TARGET_BOARD_PLATFORM := sdm845
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 
