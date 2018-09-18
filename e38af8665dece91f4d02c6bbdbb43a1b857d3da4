@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64acb1bc_d43595ff",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-09-18T12:32:41Z",
+      "side": 1,
+      "message": "Need to double check if this is still needed, since Xiaomi dropped it.",
+      "range": {
+        "startLine": 32,
+        "startChar": 307,
+        "endLine": 32,
+        "endChar": 345
+      },
+      "revId": "e38af8665dece91f4d02c6bbdbb43a1b857d3da4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
