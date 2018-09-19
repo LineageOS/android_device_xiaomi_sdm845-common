@@ -6,3 +6,16 @@ on init
 on boot
     chown system system /proc/touchpanel/wake_gesture
     chmod 0660 /proc/touchpanel/wake_gesture
+
+service ss_ramdump_local /system/vendor/bin/subsystem_ramdump
+    class late_start
+    user system
+    group system
+    disabled
+
+on property:persist.sys.ssr.enable_ramdumps=1
+   start ss_ramdump_local
+
+on property:persist.sys.ssr.enable_ramdumps=0
+   stop ss_ramdump
+   stop ss_ramdump_local
