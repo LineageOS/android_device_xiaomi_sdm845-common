@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa18f6b9_fbab08a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-09-21T10:41:55Z",
+      "side": 1,
+      "message": "subsystem_ramdump: Usage:./system/bin/subsystem_ramdump [arg1] [arg2] [arg3]\nsubsystem_ramdump: [arg1]: (1/2) Ramdump location: 1: eMMC: /data/ramdump or 2: SD card: /sdcard/ramdump\nsubsystem_ramdump: [arg2]: (1/0) 1: Enable RPM log / 0: Disable RPM log\nsubsystem_ramdump: [arg3]: (1/0) 1: Enable qdss ramdump / 0: Disable qdss ramdump",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "7013f8ae31995068a5e71c49dae183dbad5808fe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
