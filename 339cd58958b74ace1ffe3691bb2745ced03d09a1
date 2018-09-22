@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9aeb15c_e042885f",
+        "filename": "common-props.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-09-22T22:07:51Z",
+      "side": 1,
+      "message": "Leaving all these out for now, since it depends on libbluetooth_qti.so. Let\u0027s make it a separate change, in case we are able to support it.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "339cd58958b74ace1ffe3691bb2745ced03d09a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
