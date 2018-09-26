@@ -37,6 +37,7 @@ static const device_t devices[] = {
     {"beryllium", "Pocophone F1"},
     {"dipper", "Xiaomi Mi 8"},
     {"polaris", "Xiaomi Mi MIX 2S"},
+    {"ursa", "Xiaomi Mi 8 Explorer Edition"},
 };
 
 static inline const char *BtmGetDefaultName()
