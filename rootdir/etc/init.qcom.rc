@@ -8,6 +8,9 @@ on boot
     chown system system /proc/touchpanel/wake_gesture
     chmod 0660 /proc/touchpanel/wake_gesture
 
+service vendor.cnss_diag /system/bin/true
+    disabled
+
 service vendor.ss_ramdump_local /vendor/bin/subsystem_ramdump
     class late_start
     user system
