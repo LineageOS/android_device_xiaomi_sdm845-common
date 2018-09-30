@@ -1,4 +1,6 @@
 on init
+    mount none /dev/null /vendor/bin/cnss_diag bind
+    mount none /dev/null /vendor/bin/ipacm-diag bind
     mount none /sbin/chargeonlymode /sbin/charger bind
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
     mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind
