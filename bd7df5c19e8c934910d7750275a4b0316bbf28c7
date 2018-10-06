@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a9c08ee_b32a9f8d",
+        "filename": "common-props.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-10-06T14:29:28Z",
+      "side": 1,
+      "message": "None of these are used.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 30
+      },
+      "revId": "bd7df5c19e8c934910d7750275a4b0316bbf28c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5db8b07_d31552ce",
+        "filename": "common-props.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-10-06T14:29:28Z",
+      "side": 1,
+      "message": "Neither this one.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 42
+      },
+      "revId": "bd7df5c19e8c934910d7750275a4b0316bbf28c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
