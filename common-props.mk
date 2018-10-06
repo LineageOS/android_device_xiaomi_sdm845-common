@@ -26,7 +26,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.video=true
+    audio.offload.video=true \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.gapless.enabled=true \
+    audio.deep_buffer.media=true \
+    av.offload.enable=true \
+    media.aac_51_output_enabled=true \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-aac=true \
+    media.stagefright.enable-qcp=true \
+    media.stagefright.enable-fma2dp=true \
+    media.stagefright.enable-scan=true \
+    media.stagefright.audio.deep=true \
+    mm.enable.smoothstreaming=true \
+    mmp.enable.3g2=true \
+    vendor.mm.enable.qcom_parser=16776191 \
+    persist.mm.enable.prefetch=true \
+    qcom.hw.aac.encoder=true \
+    ro.af.client_heap_size_kbyte=7168 
 
 # Netflix custom property
 PRODUCT_PROPERTY_OVERRIDES += \
