@@ -50,7 +50,6 @@ static T get(const std::string& path, const T& def) {
     return file.fail() ? def : result;
 }
 
-static constexpr int kDefaultMaxBrightness = 255;
 static constexpr int kRampSteps = 50;
 static constexpr int kRampMaxStepDurationMs = 5;
 
@@ -90,14 +89,7 @@ Light::Light() {
 }
 
 void Light::handleBacklight(const LightState& state) {
-    int maxBrightness = get("/sys/class/backlight/panel0-backlight/max_brightness", -1);
-    if (maxBrightness < 0) {
-        maxBrightness = kDefaultMaxBrightness;
-    }
-    uint32_t sentBrightness = rgbToBrightness(state);
-    uint32_t brightness = sentBrightness * maxBrightness / kDefaultMaxBrightness;
-    LOG(DEBUG) << "Writing backlight brightness " << brightness
-               << " (orig " << sentBrightness << ")";
+    uint32_t brightness = rgbToBrightness(state);
     set("/sys/class/backlight/panel0-backlight/brightness", brightness);
 }
 
