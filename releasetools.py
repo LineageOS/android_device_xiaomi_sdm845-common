@@ -20,19 +20,36 @@ import re
 
 def FullOTA_Assertions(info):
   AddModemAssertion(info, info.input_zip)
+  AddVendorAssertion(info, info.input_zip)
   return
 
 def IncrementalOTA_Assertions(info):
   AddModemAssertion(info, info.target_zip)
+  AddVendorAssertion(info, info.input_zip)
   return
 
 def AddModemAssertion(info, input_zip):
   android_info = info.input_zip.read("OTA/android-info.txt")
   m = re.search(r'require\s+version-modem\s*=\s*(.+)', android_info)
   if m:
-    timestamp, firmware_version = m.group(1).rstrip().split(',')
+    timestamp, firmware_version = m.group(1).rstrip().split(',')[:2]
     if ((len(timestamp) and '*' not in timestamp) and \
         (len(firmware_version) and '*' not in firmware_version)):
       cmd = 'assert(xiaomi.verify_modem("{}") == "1" || abort("ERROR: This package requires firmware from MIUI {} developer build or newer. Please upgrade firmware and retry!"););'
       info.script.AppendExtra(cmd.format(timestamp, firmware_version))
+  return
+
+def AddVendorAssertion(info, input_zip):
+  info.script.AppendExtra('ifelse(is_mounted("/vendor"), unmount("/vendor"));')
+  info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/vendor", "/vendor");');
+  android_info = info.input_zip.read("OTA/android-info.txt")
+  m = re.search(r'require\s+version-modem\s*=\s*(.+)', android_info)
+  if m:
+    firmware_version, build_date_utc, vndk_version = m.group(1).rstrip().split(',')[1:]
+    # less_than_int doesn't seem to check for equality - so bump the date by 1
+    build_date_utc += 1
+    check_vndk='file_getprop("/vendor/default.prop","ro.vndk.version") == "{}"'
+    check_builddate='less_than_int("{}", file_getprop("/vendor/build.prop", "ro.vendor.build.date.utc"))'
+    abort_error='abort("ERROR: This package requires vendor from MIUI {} developer build or newer. Please upgrade your vendor and retry!");'
+    info.script.AppendExtra('assert(' + check_vndk.format(vndk_version) + ' && ' + check_builddate.format(build_date_utc) + ' || ' + abort_error.format(firmware_version) + ');');
   return
