@@ -12,6 +12,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=true \
+    persist.vendor.camera.enableAdvanceFeatures=0x47 \
+    persist.vendor.camera.multicam.fpsmatch=TRUE \
+    persist.vendor.camera.multicam.hwsync=TRUE \
+    persist.vendor.camera.multicam.framesync=1 \
+    persist.vendor.camera.perfcapture=1 \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.miui.cit,com.qualcomm.qti.qmmi
 
 # CNE and DPM
@@ -27,6 +32,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.profile_update=true \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.cabl=0 \
+    ro.vendor.display.ad=1 \
+    ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
+    ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
+    ro.vendor.display.sensortype=2
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
