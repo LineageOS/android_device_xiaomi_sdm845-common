@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c670672_e8a0c842",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-03T11:25:58Z",
+      "side": 1,
+      "message": "Stock builds have different GPS configs per MCC/MNC. We should import those too.",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 283,
+        "endChar": 19
+      },
+      "revId": "ad67b92f4be2da12f30a6fb3a239e620826a88db",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
