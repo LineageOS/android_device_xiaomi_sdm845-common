@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6a8e3ac9_bb30287c",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-08T16:31:05Z",
+      "side": 0,
+      "message": "I explained why I want them commented. https://github.com/LineageOS/android_device_xiaomi_sdm845-common/blame/lineage-16.0/BoardConfigCommon.mk#L45",
+      "parentUuid": "a8640150_9ead68d4",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 32
+      },
+      "revId": "b166f3ad9296777f5d4089387119a46b8504a6c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "109a94d5_70688a65",
         "filename": "BoardConfigCommon.mk",
         "patchSetId": 3
