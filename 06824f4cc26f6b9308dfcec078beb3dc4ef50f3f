@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8fbcbf1_4a22572f",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc220/config.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-08T15:08:51Z",
+      "side": 1,
+      "message": "All of these are default fw/base values.",
+      "revId": "06824f4cc26f6b9308dfcec078beb3dc4ef50f3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
