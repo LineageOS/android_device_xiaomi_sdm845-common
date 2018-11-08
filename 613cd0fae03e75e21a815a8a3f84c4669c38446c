@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55bd3592_bbd486b5",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-08T12:26:53Z",
+      "side": 0,
+      "message": "Can you explain why are you removing this param?",
+      "range": {
+        "startLine": 30,
+        "startChar": 370,
+        "endLine": 30,
+        "endChar": 408
+      },
+      "revId": "613cd0fae03e75e21a815a8a3f84c4669c38446c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
