@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "a8640150_9ead68d4",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 17257
+      },
+      "writtenOn": "2018-11-08T16:29:40Z",
+      "side": 0,
+      "message": "Not having them is the same as having them commented.",
+      "parentUuid": "78749454_baa325bd",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 32
+      },
+      "revId": "b166f3ad9296777f5d4089387119a46b8504a6c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "109a94d5_70688a65",
         "filename": "BoardConfigCommon.mk",
         "patchSetId": 3
@@ -59,6 +83,30 @@
       "writtenOn": "2018-11-08T12:42:42Z",
       "side": 0,
       "message": "Neither this. Git blame tells why I did that.",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 33
+      },
+      "revId": "b166f3ad9296777f5d4089387119a46b8504a6c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0919f392_260afa20",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 17257
+      },
+      "writtenOn": "2018-11-08T16:29:40Z",
+      "side": 0,
+      "message": "Not having them is the same as having them commented.",
+      "parentUuid": "109a94d5_70688a65",
       "range": {
         "startLine": 107,
         "startChar": 0,
