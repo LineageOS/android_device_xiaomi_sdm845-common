@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a353be4a_0d8782bf",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc220/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2018-11-08T15:45:29Z",
+      "side": 1,
+      "message": "Almost the same except its SUPL_MODE\u003d0 in FwB",
+      "range": {
+        "startLine": 27,
+        "startChar": 14,
+        "endLine": 27,
+        "endChar": 25
+      },
+      "revId": "9de06f481a7ef17a8170fdf6215fc53ff0ee55bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a62827ff_99e939d5",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc221/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2018-11-08T15:45:29Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 27,
+        "startChar": 14,
+        "endLine": 27,
+        "endChar": 25
+      },
+      "revId": "9de06f481a7ef17a8170fdf6215fc53ff0ee55bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44538dfb_e3a4fc65",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc370/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2018-11-08T15:45:29Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 27,
+        "startChar": 14,
+        "endLine": 27,
+        "endChar": 25
+      },
+      "revId": "9de06f481a7ef17a8170fdf6215fc53ff0ee55bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04d170e6_ac0ac9b8",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc610/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2018-11-08T15:45:29Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 28,
+        "startChar": 14,
+        "endLine": 28,
+        "endChar": 23
+      },
+      "revId": "9de06f481a7ef17a8170fdf6215fc53ff0ee55bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0081fe11_0f716eaa",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc640/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2018-11-08T15:45:29Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 28,
+        "startChar": 14,
+        "endLine": 28,
+        "endChar": 23
+      },
+      "revId": "9de06f481a7ef17a8170fdf6215fc53ff0ee55bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20f47c2f_69209e41",
+        "filename": "overlay/frameworks/base/core/res/res/values-mcc302-mnc720/config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2018-11-08T15:45:29Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 27,
+        "startChar": 14,
+        "endLine": 27,
+        "endChar": 25
+      },
+      "revId": "9de06f481a7ef17a8170fdf6215fc53ff0ee55bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
