@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d667bc78_c693ef8a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-12T12:49:16Z",
+      "side": 1,
+      "message": "Don\u0027t forget to mention camera, not to be confused with DT2W",
+      "revId": "ea31b9f71e93e423c6c592e6c88a7808a8d3750e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
