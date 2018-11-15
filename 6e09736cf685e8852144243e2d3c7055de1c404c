@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07bb4280_b73ceafb",
+        "filename": "releasetools.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-15T13:15:50Z",
+      "side": 1,
+      "message": "target_zip or input_zip?",
+      "range": {
+        "startLine": 28,
+        "startChar": 32,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "6e09736cf685e8852144243e2d3c7055de1c404c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
