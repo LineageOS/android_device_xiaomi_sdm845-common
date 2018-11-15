@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b2c9248_9883d21d",
+        "filename": "releasetools.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-15T10:21:49Z",
+      "side": 1,
+      "message": "Remove \"your\" and replace with \"vendor image\". \n\nI think that I like this better:\n\n\"Please upgrade vendor image along with matching firmware and retry!\".",
+      "range": {
+        "startLine": 53,
+        "startChar": 114,
+        "endLine": 53,
+        "endChar": 125
+      },
+      "revId": "c73f323b4553315a64211cbdae1504228104af64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
