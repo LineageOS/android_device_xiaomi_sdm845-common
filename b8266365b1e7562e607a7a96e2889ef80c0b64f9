@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fe926e8b_ea8a80da",
+        "filename": "recovery/recovery_updater.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 12586
+      },
+      "writtenOn": "2018-11-18T07:49:33Z",
+      "side": 1,
+      "message": "Was something I was trying while figuring out what was wrong earlier, fixed now",
+      "parentUuid": "b8f3494d_e570811a",
+      "range": {
+        "startLine": 45,
+        "startChar": 24,
+        "endLine": 45,
+        "endChar": 25
+      },
+      "revId": "b8266365b1e7562e607a7a96e2889ef80c0b64f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0996694_4c55930f",
         "filename": "recovery/recovery_updater.cpp",
         "patchSetId": 12
@@ -127,6 +151,30 @@
       "writtenOn": "2018-11-17T22:04:20Z",
       "side": 1,
       "message": "I think that you don\u0027t need to umnount it.",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 40
+      },
+      "revId": "b8266365b1e7562e607a7a96e2889ef80c0b64f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f59e639_fa832812",
+        "filename": "releasetools.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 12586
+      },
+      "writtenOn": "2018-11-18T07:49:33Z",
+      "side": 1,
+      "message": "Had some issues with it not getting the updated props if I manually edited the props and didn\u0027t unmount, but seems fine upon flashing firmware zip, so can remove this.",
+      "parentUuid": "541ed6cc_1cd6ffe1",
       "range": {
         "startLine": 53,
         "startChar": 4,
