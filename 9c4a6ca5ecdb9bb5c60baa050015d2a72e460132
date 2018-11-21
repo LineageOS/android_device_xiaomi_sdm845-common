@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "982d4190_b52109aa",
+        "filename": "sepolicy/private/app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-21T21:32:22Z",
+      "side": 0,
+      "message": "Why?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 39
+      },
+      "revId": "9c4a6ca5ecdb9bb5c60baa050015d2a72e460132",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3838bc5_a1723db7",
+        "filename": "sepolicy/private/file.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-21T21:32:22Z",
+      "side": 0,
+      "message": "Why?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 61
+      },
+      "revId": "9c4a6ca5ecdb9bb5c60baa050015d2a72e460132",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "660eac18_62fc62ee",
+        "filename": "sepolicy/private/file.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-21T21:32:22Z",
+      "side": 0,
+      "message": "Why?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 64
+      },
+      "revId": "9c4a6ca5ecdb9bb5c60baa050015d2a72e460132",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33e7d53f_398a49c3",
+        "filename": "sepolicy/private/init.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-21T21:32:22Z",
+      "side": 0,
+      "message": "Why?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "9c4a6ca5ecdb9bb5c60baa050015d2a72e460132",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87571e78_68b89582",
+        "filename": "sepolicy/private/property.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-21T21:32:22Z",
+      "side": 0,
+      "message": "Why?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 39
+      },
+      "revId": "9c4a6ca5ecdb9bb5c60baa050015d2a72e460132",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

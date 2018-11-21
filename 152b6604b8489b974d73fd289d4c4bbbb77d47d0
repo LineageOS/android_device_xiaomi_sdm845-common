@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fbcd7c93_2c9cc829",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-21T21:32:22Z",
+      "side": 1,
+      "message": "Not needed when you have the line bellow.",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 46
+      },
+      "revId": "152b6604b8489b974d73fd289d4c4bbbb77d47d0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
