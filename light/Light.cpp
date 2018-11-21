@@ -50,30 +50,11 @@ static T get(const std::string& path, const T& def) {
     return file.fail() ? def : result;
 }
 
-static constexpr int kDefaultMaxBrightness = 255;
+static constexpr int kDefaultMaxBrightnessLcd = 1;
+static constexpr int kDefaultMaxBrightnessLed = 255;
 static constexpr int kRampSteps = 50;
 static constexpr int kRampMaxStepDurationMs = 5;
 
-static uint32_t getBrightness(const LightState& state) {
-    uint32_t alpha, red, green, blue;
-
-    // Extract brightness from AARRGGBB
-    alpha = (state.color >> 24) & 0xff;
-
-    // Retrieve each of the RGB colors
-    red = (state.color >> 16) & 0xff;
-    green = (state.color >> 8) & 0xff;
-    blue = state.color & 0xff;
-
-    // Scale RGB colors if a brightness has been applied by the user
-    if (alpha != 0xff) {
-        red = red * alpha / 0xff;
-        green = green * alpha / 0xff;
-        blue = blue * alpha / 0xff;
-    }
-
-    return (77 * red + 150 * green + 29 * blue) >> 8;
-}
 
 static uint32_t rgbToBrightness(const LightState& state) {
     uint32_t color = state.color & 0x00ffffff;
@@ -92,10 +73,10 @@ Light::Light() {
 void Light::handleBacklight(const LightState& state) {
     int maxBrightness = get("/sys/class/backlight/panel0-backlight/max_brightness", -1);
     if (maxBrightness < 0) {
-        maxBrightness = kDefaultMaxBrightness;
+        maxBrightness = kDefaultMaxBrightnessLcd;
     }
     uint32_t sentBrightness = rgbToBrightness(state);
-    uint32_t brightness = sentBrightness * maxBrightness / kDefaultMaxBrightness;
+    uint32_t brightness = sentBrightness * maxBrightness / kDefaultMaxBrightnessLcd;
     LOG(DEBUG) << "Writing backlight brightness " << brightness
                << " (orig " << sentBrightness << ")";
     set("/sys/class/backlight/panel0-backlight/brightness", brightness);
@@ -112,18 +93,26 @@ void Light::handleNotification(const LightState& state, size_t index) {
         }
     }
 
-    uint32_t whiteBrightness = getBrightness(stateToUse);
+uint32_t whiteBrightness = rgbToBrightness(stateToUse);
 
     uint32_t onMs = stateToUse.flashMode == Flash::TIMED ? stateToUse.flashOnMs : 0;
     uint32_t offMs = stateToUse.flashMode == Flash::TIMED ? stateToUse.flashOffMs : 0;
 
     auto getScaledDutyPercent = [](int brightness) -> std::string {
         std::string output;
+
+    int maxBrightnessLed = get("/sys/class/leds/white/max_brightness", -1);
+    if (maxBrightnessLed < 0) {
+        maxBrightnessLed = kDefaultMaxBrightnessLed;
+    }
+
+uint32_t brightnessled = whiteBrightness * maxBrightnessLed / kDefaultMaxBrightnessLed;
+
         for (int i = 0; i <= kRampSteps; i++) {
             if (i != 0) {
                 output += ",";
             }
-            output += std::to_string(i * 100 * brightness / (kDefaultMaxBrightness * kRampSteps));
+            output += std::to_string(i * 100 * brightness / (brightnessled * kRampSteps));
         }
         return output;
     };
