@@ -16,6 +16,24 @@
       "revId": "5e0296c34e9b38f5d6246bae3e692e090fe27d06",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8936efc7_67cbfe87",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-21T17:24:29Z",
+      "side": 1,
+      "message": "Because it\u0027s an expected dependency of the vendor-side blobs. Remove them and see for yourself, check logcat.",
+      "parentUuid": "7897a9d1_39bedfdb",
+      "revId": "5e0296c34e9b38f5d6246bae3e692e090fe27d06",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
