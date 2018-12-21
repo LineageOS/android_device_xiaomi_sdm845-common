@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7897a9d1_39bedfdb",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 18568
+      },
+      "writtenOn": "2018-12-21T17:08:18Z",
+      "side": 1,
+      "message": "Why add mlipay libraries,they have no use on third-party ROMs",
+      "revId": "5e0296c34e9b38f5d6246bae3e692e090fe27d06",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
