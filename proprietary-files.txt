@@ -150,3 +150,18 @@ framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
 lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
+# Wi-Fi Display
+bin/wfdservice
+etc/init/wfdservice.rc
+etc/wfdconfig.xml
+etc/wfdconfigsink.xml
+-framework/WfdCommon.jar
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib64/extractors/libmmparser.so
+lib64/libFileMux.so
+lib64/libmmparser_lite.so
+lib/extractors/libmmparser.so
+lib/libFileMux.so
+lib/libmmparser_lite.so
+-priv-app/WfdService/WfdService.apk
