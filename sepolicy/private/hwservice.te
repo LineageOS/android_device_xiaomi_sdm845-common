@@ -1,2 +1,4 @@
 type hal_display_color_hwservice, hwservice_manager_type;
 type shal_lineage_livedisplay_hwservice, hwservice_manager_type;
+
+type hal_mlipay_hwservice, hwservice_manager_type, untrusted_app_visible_hwservice;
