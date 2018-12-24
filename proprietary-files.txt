@@ -109,6 +109,12 @@ lib/vendor.qti.hardware.radio.ims@1.3.so
 # Misc dependencies
 lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
+lib/android.hardware.soundtrigger@2.0-core.so
+lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
+lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
+lib/vendor.xiaomi.hardware.vsimapp@1.0.so
+
+# Mlipay
 lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
 lib64/vendor.xiaomi.hardware.mlipay@1.0.so
 lib64/vendor.xiaomi.hardware.mlipay@1.1.so
@@ -117,9 +123,6 @@ lib64/vendor.xiaomi.hardware.mtdservice@1.1.so
 lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 lib64/vendor.xiaomi.hardware.tidaservice@1.0.so
 lib64/vendor.xiaomi.hardware.tidaservice@1.1.so
-lib/android.hardware.soundtrigger@2.0-core.so
-lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
-lib/vendor.xiaomi.hardware.citsensorservice@1.1.so
 lib/vendor.xiaomi.hardware.mfidoca@1.0.so
 lib/vendor.xiaomi.hardware.mlipay@1.0.so
 lib/vendor.xiaomi.hardware.mlipay@1.1.so
@@ -128,7 +131,6 @@ lib/vendor.xiaomi.hardware.mtdservice@1.1.so
 lib/vendor.xiaomi.hardware.mtdservice@1.2.so
 lib/vendor.xiaomi.hardware.tidaservice@1.0.so
 lib/vendor.xiaomi.hardware.tidaservice@1.1.so
-lib/vendor.xiaomi.hardware.vsimapp@1.0.so
 
 # Perf
 lib64/vendor.qti.hardware.iop@1.0.so
@@ -157,3 +159,9 @@ lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 
 # SDM
 lib64/libsdm-disp-apis.so
+
+# SOTER
+lib64/vendor.qti.hardware.soter@1.0.so
+lib/vendor.qti.hardware.soter@1.0.so
+framework/vendor.qti.hardware.soter-V1.0-java.jar
+-app/SoterService/SoterService.apk
