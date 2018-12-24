@@ -110,3 +110,11 @@ PRODUCT_PACKAGES += \
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
+
+# Wi-Fi Display
+PRODUCT_PACKAGES += \
+    libnl \
+    vendor.display.config@1.0
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
