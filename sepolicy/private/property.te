@@ -1,1 +1,4 @@
 type vendor_camera_prop, property_type;
+
+# Mlipay
+type ifaa_prop, property_type;
