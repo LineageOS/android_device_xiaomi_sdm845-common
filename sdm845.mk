@@ -102,3 +102,7 @@ PRODUCT_PACKAGES += \
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
+
+# Wi-Fi Display
+PRODUCT_BOOT_JARS += \
+    WfdCommon
