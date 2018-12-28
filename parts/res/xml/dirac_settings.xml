@@ -24,7 +24,7 @@
 
     <ListPreference
         android:key="dirac_preset_pref"
-        android:defaultValue="0"
+        android:defaultValue="0,0,0,0,0,0,0"
         android:title="@string/dirac_preset_title"
         android:summary="%s" />
 
