@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3bc1e1_9df8eecf",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-28T22:27:01Z",
+      "side": 1,
+      "message": "Yes, we need this here because we do not set BOARD_USES_QCOM_HARDWARE :\u003d true and therefore https://review.lineageos.org/c/LineageOS/android_vendor_lineage/+/237352 isn\u0027t applicable for us.",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 64
+      },
+      "revId": "29cf605d308d26df477d92b4f0b64ce2d34d57dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
