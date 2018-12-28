@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.lineageos.settings.doze"
+    package="org.lineageos.settings"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -34,19 +34,19 @@
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
-        <receiver android:name=".BootCompletedReceiver">
+        <receiver android:name=".doze.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".DozeService"
+        <service android:name=".doze.DozeService"
                  android:permission="XiaomiDozeService">
         </service>
 
         <activity
-            android:name=".DozeSettingsActivity"
+            android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
@@ -56,7 +56,7 @@
         </activity>
 
         <activity
-            android:name="org.lineageos.settings.diract.DiracActivity"
+            android:name=".dirac.DiracActivity"
             android:label="@string/dirac_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
@@ -64,7 +64,7 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
                        android:value="com.android.settings.category.ia.sound" />
-        </activty>
+        </activity>
 
     </application>
 </manifest>

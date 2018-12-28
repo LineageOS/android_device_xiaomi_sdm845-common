@@ -24,22 +24,27 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
-import android.support.v14.preference.ListPreference;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import org.lineageos.settings.R;
+
 public class DiracSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String PREF_HEADSET = "dirac_headset_pref";
     private static final String PREF_PRESET = "dirac_preset_pref";
+
+    private TextView mTextView;
 
     private ListPreference mHeadsetType;
     private ListPreference mPreset;
@@ -50,39 +55,74 @@ public class DiracSettingsFragment extends PreferenceFragment implements
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        boolean enhancerEnabled = Utils.isDiracEnabled(getActivity());
+        boolean enhancerEnabled = DiracUtils.isDiracEnabled(getActivity());
 
-        mHeadsetType = (SwitchPreference) findPreference(PREF_HEADSET);
+        mHeadsetType = (ListPreference) findPreference(PREF_HEADSET);
         mHeadsetType.setOnPreferenceChangeListener(this);
         mHeadsetType.setEnabled(enhancerEnabled);
-        // TODO: adapt to real values
         String[] headsetEntries = new String[] {
-            getString(R.string.dirac_headset_0),
-            getString(R.string.dirac_headset_1),
-            getString(R.string.dirac_headset_2),
-            getString(R.string.dirac_headset_3)
+            getString(R.string.dirac_headset_default),
+            getString(R.string.dirac_headset_earbuds),
+            getString(R.string.dirac_headset_in_ear_2013),
+            getString(R.string.dirac_headset_piston_1),
+            getString(R.string.dirac_headset_general),
+            getString(R.string.dirac_headset_general_inear),
+            getString(R.string.dirac_headset_piston_basic),
+            getString(R.string.dirac_headset_piston_2),
+            getString(R.string.dirac_headset_piston_standard),
+            getString(R.string.dirac_headset_headphone),
+            getString(R.string.dirac_headset_piston_youth),
+            getString(R.string.dirac_headset_piston_color),
+            getString(R.string.dirac_headset_in_ear),
+            getString(R.string.dirac_headset_capsule),
+            getString(R.string.dirac_headset_in_ear_pro),
+            getString(R.string.dirac_headset_comfort),
+            getString(R.string.dirac_headset_reduction_noise),
+            getString(R.string.dirac_headset_cancelling),
+            getString(R.string.dirac_headset_half_in_ear),
+            getString(R.string.dirac_headset_in_ear2),
+            getString(R.string.dirac_headset_earphone_basic),
+            getString(R.string.dirac_headset_earphone)
         };
         String[] headSetValues = new String[] {
-            "0", "1", "2", "3"
+            "0", "1", "2", "3", "5", "6", "7", "8", "9", "10",
+                "11", "12", "13", "14", "15", "16", "17", "18",
+                    "19", "20", "21", "22", "23"
         };
         mHeadsetType.setEntries(headsetEntries);
         mHeadsetType.setEntryValues(headSetValues);
 
-        mPreset = (SwitchPreference) findPreference(PREF_PRESET);
+        mPreset = (ListPreference) findPreference(PREF_PRESET);
         mPreset.setOnPreferenceChangeListener(this);
         mPreset.setEnabled(enhancerEnabled);
-        // TODO: adapt to real values
         String[] presetEntries = new String[] {
-            getString(R.string.dirac_preset_0),
-            getString(R.string.dirac_preset_1),
-            getString(R.string.dirac_preset_2),
-            getString(R.string.dirac_preset_3)
+            getString(R.string.dirac_preset_default),
+            getString(R.string.dirac_preset_rock),
+            getString(R.string.dirac_preset_jazz),
+            getString(R.string.dirac_preset_pop),
+            getString(R.string.dirac_preset_classical),
+            getString(R.string.dirac_preset_hiphop),
+            getString(R.string.dirac_preset_blues),
+            getString(R.string.dirac_preset_electronic),
+            getString(R.string.dirac_preset_country),
+            getString(R.string.dirac_preset_dance),
+            getString(R.string.dirac_preset_metal),
         };
         String[] preSetValues = new String[] {
-            "0", "1", "2", "3"
+            "0,0,0,0,0,0,0",
+            "4,2,-2,0,-2,-2,4",
+            "0,0,0,-2,-3,0,0",
+            "0,-3,-5,0,0,-3,0",
+            "0,0,0,0,3,6,6",
+            "3,3,-3,0,-3,0,2",
+            "2,4,-6,4,0,1,2",
+            "3,3,-1,0,-3,0,0",
+            "0,0,-2,-2,2,2,0",
+            "0,4,2,0,-2,-2,4",
+            "2,0,0,-2,-4,0,0"
         };
-        mpresetType.setEntries(presetEntries);
-        mpresetType.setEntryValues(preSetValues);
+        mPreset.setEntries(presetEntries);
+        mPreset.setEntryValues(preSetValues);
 
     }
 
@@ -98,7 +138,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        boolean enhancerEnabled = Utils.isDiracEnabled(getActivity());
+        boolean enhancerEnabled = DiracUtils.isDiracEnabled(getActivity());
 
         mTextView = view.findViewById(R.id.switch_text);
         mTextView.setText(getString(enhancerEnabled ?
@@ -115,10 +155,10 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         switch (preference.getKey()) {
             case PREF_HEADSET:
-                // TODO: on Headset changed
+                DiracUtils.setHeadsetType(Integer.parseInt(newValue.toString()));
                 return true;
             case PREF_PRESET:
-                // TODO: on Preset changed
+                DiracUtils.setLevel(String.valueOf(newValue));
                 return true;
             default: return false;
         }
@@ -127,6 +167,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         // TODO: Toggle enhacer
+        DiracUtils.setMusic(isChecked);
 
         mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
 
