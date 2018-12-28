@@ -16,13 +16,13 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <SwitchPreference
+    <ListPreference
         android:key="dirac_headset_pref"
         android:defaultValue="0"
         android:title="@string/dirac_headset_title"
         android:summary="%s" />
 
-    <SwitchPreference
+    <ListPreference
         android:key="dirac_preset_pref"
         android:defaultValue="0"
         android:title="@string/dirac_preset_title"
