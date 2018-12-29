@@ -1,0 +1,2 @@
+allow hal_nfc nfc_data_file:dir search;
+allow hal_nfc nfc_data_file:file rw_file_perms;
