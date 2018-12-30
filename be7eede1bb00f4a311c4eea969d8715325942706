@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad24e6d2_c19eca87",
+        "filename": "sepolicy/private/property_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2018-12-30T06:27:08Z",
+      "side": 1,
+      "message": "became persist.vendor.sys.pay.ifaa on pie",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "be7eede1bb00f4a311c4eea969d8715325942706",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
