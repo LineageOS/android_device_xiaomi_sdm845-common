@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d03babac_1a676b1f",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManagerImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-30T09:45:42Z",
+      "side": 1,
+      "message": "We no longer have 1.0 service. Vendor images have 1.1 service.",
+      "range": {
+        "startLine": 36,
+        "startChar": 56,
+        "endLine": 36,
+        "endChar": 105
+      },
+      "revId": "7327422a865d4685552030e0be55a23526578a07",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a29067f_36254670",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManagerImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-30T09:45:42Z",
+      "side": 1,
+      "message": "Remove stray spaces.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "7327422a865d4685552030e0be55a23526578a07",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c73132cb_6f23539f",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManagerImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-30T09:45:42Z",
+      "side": 1,
+      "message": "Line too long.",
+      "range": {
+        "startLine": 215,
+        "startChar": 8,
+        "endLine": 215,
+        "endChar": 129
+      },
+      "revId": "7327422a865d4685552030e0be55a23526578a07",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "526e6091_5a08dd69",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManagerImpl.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-30T09:45:42Z",
+      "side": 1,
+      "message": "Remove stray spaces.",
+      "range": {
+        "startLine": 234,
+        "startChar": 0,
+        "endLine": 234,
+        "endChar": 12
+      },
+      "revId": "7327422a865d4685552030e0be55a23526578a07",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fc1dc16_64bc94bb",
+        "filename": "sepolicy/private/property_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-12-30T09:45:42Z",
+      "side": 1,
+      "message": "Update with vendor prefix for P.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "7327422a865d4685552030e0be55a23526578a07",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
