@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "5757c8a8_e1e12474",
+        "filename": "parts/src/org/lineageos/settings/dirac/DiracSettingsFragment.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2018-12-31T13:01:07Z",
+      "side": 1,
+      "message": "yes we can do this, just make sure to put it in res/values/arrays.xml.\n\nYou should also be able to inflate it with xml instead of java then. I didn\u0027t write\nit in xml because i didn\u0027t know whether this list was static or fetched somehow\nfrom something else at runtime",
+      "parentUuid": "07846943_0c935f56",
+      "revId": "5316319f878c5ca443aae827bdf4226953e13393",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a507ef82_82dacb6e",
         "filename": "parts/src/org/lineageos/settings/dirac/DiracSettingsFragment.java",
         "patchSetId": 6
