@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c2a6f25a_79d2fa8a",
+        "filename": "parts/res/drawable/switchbar_background.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2018-12-31T12:58:23Z",
+      "side": 1,
+      "message": "To match the Pie UI changed (look at wifi settings)",
+      "parentUuid": "28a76be8_81b337e0",
+      "range": {
+        "startLine": 19,
+        "startChar": 42,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "583dff54f9fa1277ef57d84d19db7c26d22fcc5c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c9cc6f6b_83d640c5",
         "filename": "parts/res/layout/switch_bar.xml",
         "patchSetId": 1
