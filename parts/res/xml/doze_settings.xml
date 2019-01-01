@@ -16,8 +16,16 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:key="always_on_display"
+        android:defaultValue="false"
+        android:disableDependentsState="true"
+        android:title="@string/doze_always_on_title"
+        android:summary="@string/doze_always_on_summary" />
+
     <PreferenceCategory
         android:key="pickup_sensor"
+        android:dependency="always_on_display"
         android:title="@string/pickup_sensor_title">
 
         <SwitchPreference
@@ -30,6 +38,7 @@
 
     <PreferenceCategory
         android:key="proximity_sensor"
+        android:dependency="always_on_display"
         android:title="@string/proximity_sensor_title">
 
         <SwitchPreference
