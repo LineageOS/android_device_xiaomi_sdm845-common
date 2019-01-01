@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be825747_ea8ce3d7",
+        "filename": "sdm845.mk",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-01T16:56:05Z",
+      "side": 1,
+      "message": "Maybe this section should be named IFAA instead of Alipay? After all it supports not only Alipay, but also WeChat.",
+      "revId": "37767d9c2b912b091eac0f3009242017dc528139",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
