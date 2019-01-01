@@ -16,6 +16,12 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:key="always_on_display"
+        android:defaultValue="false"
+        android:title="Always on display"
+        android:summary="" />
+
     <PreferenceCategory
         android:key="pickup_sensor"
         android:title="@string/pickup_sensor_title">

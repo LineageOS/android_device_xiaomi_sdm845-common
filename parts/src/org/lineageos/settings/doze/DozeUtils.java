@@ -27,6 +27,8 @@ import android.support.v7.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
+import com.android.internal.hardware.AmbientDisplayConfiguration;
+
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 
 public final class DozeUtils {
@@ -37,6 +39,8 @@ public final class DozeUtils {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
     protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
+
+    protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
 
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
@@ -123,5 +127,9 @@ public final class DozeUtils {
             }
         }
         return null;
+    }
+
+    protected static boolean alwaysOnDisplayAvailable(Context context) {
+        return new AmbientDisplayConfiguration(context).alwaysOnAvailable();
     }
 }
