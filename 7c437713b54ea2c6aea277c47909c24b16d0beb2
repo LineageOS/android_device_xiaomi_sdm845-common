@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07ceae7e_6bb575d4",
+        "filename": "common-props.mk",
+        "patchSetId": 18
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-02T20:07:05Z",
+      "side": 0,
+      "message": "These props are no longer needed.",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 29
+      },
+      "revId": "7c437713b54ea2c6aea277c47909c24b16d0beb2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
