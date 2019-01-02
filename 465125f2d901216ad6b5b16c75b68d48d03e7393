@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c36553ac_430bc934",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManagerImpl.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2019-01-02T04:29:09Z",
+      "side": 1,
+      "message": "this",
+      "range": {
+        "startLine": 82,
+        "startChar": 26,
+        "endLine": 82,
+        "endChar": 47
+      },
+      "revId": "465125f2d901216ad6b5b16c75b68d48d03e7393",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4697a98b_1cfbd14f",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManagerV4.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2019-01-02T04:29:09Z",
+      "side": 1,
+      "message": "eol",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "465125f2d901216ad6b5b16c75b68d48d03e7393",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
