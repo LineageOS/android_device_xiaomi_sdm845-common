@@ -16,6 +16,24 @@
       "revId": "37767d9c2b912b091eac0f3009242017dc528139",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6b48561_f6506a9e",
+        "filename": "sdm845.mk",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 19921
+      },
+      "writtenOn": "2019-01-02T01:29:45Z",
+      "side": 1,
+      "message": "WeChat pay use SOTER, while Alipay use IFAA, they are different and competing organizations",
+      "parentUuid": "be825747_ea8ce3d7",
+      "revId": "37767d9c2b912b091eac0f3009242017dc528139",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
