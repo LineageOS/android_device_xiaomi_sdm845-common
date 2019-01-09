@@ -1,0 +1,16 @@
+type shal_trust_default, domain;
+hwbinder_use(shal_trust_default)
+
+type shal_trust_default_exec, exec_type, file_type;
+init_daemon_domain(shal_trust_default)
+
+# Add vendor.lineage.trust::IUsbRestrict service to hwservicemanager
+add_hwservice(shal_trust_default, shal_lineage_trust_hwservice)
+
+# Talk to the binder device node
+allow shal_trust_default binder_device:chr_file rw_file_perms;
+
+# Check if hwservicemanager is ready
+get_prop(shal_trust_default, hwservicemanager_prop)
+
+# TODO: allow shal_trust_default display_data_file:dir rw_dir_perms;
