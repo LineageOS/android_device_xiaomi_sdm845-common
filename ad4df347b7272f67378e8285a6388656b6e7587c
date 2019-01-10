@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3f119ce2_3423d8e5",
+        "filename": "sdm845.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-10T15:50:40Z",
+      "side": 1,
+      "message": "No, the system variant is named as this (no vendor. prefix).",
+      "parentUuid": "2dbe9f16_5be88325",
+      "revId": "ad4df347b7272f67378e8285a6388656b6e7587c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f7f185e0_ae445dd7",
         "filename": "sepolicy/private/file_contexts",
         "patchSetId": 3
