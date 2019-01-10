@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7f185e0_ae445dd7",
+        "filename": "sepolicy/private/file_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-10T11:50:48Z",
+      "side": 1,
+      "message": "Isn\u0027t it \"bin\"?",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "ad4df347b7272f67378e8285a6388656b6e7587c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
