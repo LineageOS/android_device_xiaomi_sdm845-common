@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "e218047a_002d3ae2",
+        "filename": "sdm845.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2019-01-10T15:39:09Z",
+      "side": 1,
+      "message": "Isn\u0027t this vendor.lineage.trust?",
+      "revId": "ad4df347b7272f67378e8285a6388656b6e7587c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dbe9f16_5be88325",
+        "filename": "sdm845.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2019-01-10T15:39:09Z",
+      "side": 1,
+      "message": "Isn\u0027t this vendor.lineage.trust?",
+      "revId": "ad4df347b7272f67378e8285a6388656b6e7587c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f7f185e0_ae445dd7",
         "filename": "sepolicy/private/file_contexts",
         "patchSetId": 3
