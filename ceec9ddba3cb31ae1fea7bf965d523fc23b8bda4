@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "232601fb_180b37ec",
+        "filename": "parts/src/org/lineageos/settings/doze/DozeUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-18T13:32:23Z",
+      "side": 1,
+      "message": "Does this actually work? alwaysOnDisplayAvailable(context) returns true on the devices that have AoD enabled.",
+      "range": {
+        "startLine": 105,
+        "startChar": 32,
+        "endLine": 105,
+        "endChar": 73
+      },
+      "revId": "ceec9ddba3cb31ae1fea7bf965d523fc23b8bda4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
