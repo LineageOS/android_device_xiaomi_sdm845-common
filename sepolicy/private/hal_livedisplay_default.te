@@ -4,7 +4,7 @@ hwbinder_use(shal_livedisplay_default)
 type shal_livedisplay_default_exec, exec_type, file_type;
 init_daemon_domain(shal_livedisplay_default)
 
-# Add vendor.lineage.livedisplay::IColor service to hwservicemanager
+# Add vendor.lineage.livedisplay::* services to hwservicemanager
 add_hwservice(shal_livedisplay_default, shal_lineage_livedisplay_hwservice)
 
 # Allow LiveDisplay to perform binder IPC to vendor.display.color::IDisplayColor
@@ -26,3 +26,6 @@ allow shal_livedisplay_default display_data_file:file create_file_perms;
 # Allow LiveDisplay to access pps socket
 type mm-pp-daemon, domain;
 unix_socket_connect(shal_livedisplay_default, pps, mm-pp-daemon)
+
+# Allow LiveDisplay to read display props
+get_prop(shal_livedisplay_default, vendor_display_prop)

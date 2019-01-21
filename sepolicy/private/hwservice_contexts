@@ -1,2 +1,11 @@
 vendor.display.color::IDisplayColor      u:object_r:hal_display_color_hwservice:s0
-vendor.lineage.livedisplay::IColor       u:object_r:shal_lineage_livedisplay_hwservice:s0
+
+vendor.lineage.livedisplay::IAdaptiveBacklight          u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IAutoContrast               u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IColorBalance               u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IColorEnhancement           u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IDisplayColorCalibration    u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IDisplayModes               u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IPictureAdjustment          u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::IReadingEnhancement         u:object_r:shal_lineage_livedisplay_hwservice:s0
+vendor.lineage.livedisplay::ISunlightEnhancement        u:object_r:shal_lineage_livedisplay_hwservice:s0
