@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4319fa6_f6f13198",
+        "filename": "framework_manifest.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-23T14:34:01Z",
+      "side": 1,
+      "message": "This likely must be moved to devices that support it. Otherwise it will endlessly try to register the service on those devices that don\u0027t have support.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "2fc3e127ec3189e0b9d93066b233b42caed831f2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
