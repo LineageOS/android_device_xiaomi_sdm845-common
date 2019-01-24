@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6fe26ff5_84e00021",
+        "filename": "framework_manifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-24T23:10:23Z",
+      "side": 1,
+      "message": "Yea, all this needs to be moved out of the common tree a be set per device.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 10
+      },
+      "revId": "87046545a1a54bf5fbb5ce90e909990219a6bb98",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
