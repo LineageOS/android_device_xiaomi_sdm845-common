@@ -233,9 +233,8 @@ static int process_interaction_hint(void* data) {
 
     if (duration >= kMinFlingDuration) {
         perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, -1, SCROLL_PREFILING);
-    } else {
-        perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
     }
+    perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
     return HINT_HANDLED;
 }
 
