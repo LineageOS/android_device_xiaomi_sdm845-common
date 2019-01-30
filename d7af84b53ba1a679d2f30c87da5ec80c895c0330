@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "487933ec_82a89d13",
+        "filename": "sepolicy/private/hal_power.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-30T13:13:33Z",
+      "side": 0,
+      "message": "You can remove this definition from sepolicy now.",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 32
+      },
+      "revId": "d7af84b53ba1a679d2f30c87da5ec80c895c0330",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
