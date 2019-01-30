@@ -40,6 +40,7 @@
 #define LOG_TAG "QCOM PowerHAL"
 #include <hardware/hardware.h>
 #include <hardware/power.h>
+#include <linux/input.h>
 #include <utils/Log.h>
 
 #include "hint-data.h"
@@ -47,6 +48,9 @@
 #include "performance.h"
 #include "power-common.h"
 #include "utils.h"
+
+#define INPUT_EVENT_WAKUP_MODE_OFF 4
+#define INPUT_EVENT_WAKUP_MODE_ON 5
 
 static int saved_dcvs_cpu0_slack_max = -1;
 static int saved_dcvs_cpu0_slack_min = -1;
@@ -443,10 +447,16 @@ void set_interactive(struct power_module* module, int on) {
 }
 
 void set_feature(struct power_module* module, feature_t feature, int state) {
+    int fd;
     switch (feature) {
 #ifdef TAP_TO_WAKE_NODE
         case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
-            sysfs_write(TAP_TO_WAKE_NODE, state ? "1" : "0");
+            fd = open(TAP_TO_WAKE_NODE, O_RDWR);
+            struct input_event ev;
+            ev.type = EV_SYN;
+            ev.code = SYN_CONFIG;
+            ev.value = state ? INPUT_EVENT_WAKUP_MODE_ON : INPUT_EVENT_WAKUP_MODE_OFF;
+            write(fd, &ev, sizeof(ev));
             break;
 #endif
         default:
