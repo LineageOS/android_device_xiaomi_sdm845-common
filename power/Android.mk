@@ -22,7 +22,13 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := external/libxml2/include \
                     external/icu/icu4c/source/common
 
-LOCAL_SHARED_LIBRARIES := liblog libcutils libdl libxml2
+LOCAL_SHARED_LIBRARIES := \
+    liblog \
+    libcutils \
+    libdl \
+    libxml2 \
+    libhardware \
+    libutils
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
