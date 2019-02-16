@@ -1,0 +1,2 @@
+type sysfs_displaycount, sysfs_type, fs_type;
+type sysfs_white_led, sysfs_type, fs_type;
