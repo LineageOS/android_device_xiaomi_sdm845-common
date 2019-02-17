@@ -2225,7 +2225,7 @@ case "$target" in
                      #set the hispeed_freq
                      echo 1497600 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
                      echo 80 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_load
-                     echo 960000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+                     echo 1305600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
                      # sched_load_boost as -6 is equivalent to target load as 85.
                      echo -6 > /sys/devices/system/cpu/cpu0/sched_load_boost
                      echo -6 > /sys/devices/system/cpu/cpu1/sched_load_boost
@@ -2273,12 +2273,6 @@ case "$target" in
                      echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
                      echo 1 > /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster
                      echo 4 > /sys/devices/system/cpu/cpu0/core_ctl/task_thres
-
-                     # Big cluster min frequency adjust settings
-                     if [ -f /sys/module/big_cluster_min_freq_adjust/parameters/min_freq_cluster ]; then
-                         echo "0-3" > /sys/module/big_cluster_min_freq_adjust/parameters/min_freq_cluster
-                     fi
-                     echo 1305600 > /sys/module/big_cluster_min_freq_adjust/parameters/min_freq_floor
                  ;;
                  *)
                      # Apply settings for sdm429/sda429
@@ -2317,12 +2311,6 @@ case "$target" in
 
                 # Enable low power modes
                 echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-
-                case "$soc_id" in
-                     "353" | "363" )
-                     echo 1 > /sys/module/big_cluster_min_freq_adjust/parameters/min_freq_adjust
-                     ;;
-                esac
             ;;
         esac
 
@@ -2504,9 +2492,7 @@ case "$target" in
             echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 
             # Start cdsprpcd only for sdm660 and disable for sdm630
-            if [ "$soc_id" -eq "317" ]; then
-                start vendor.cdsprpcd
-            fi
+            start vendor.cdsprpcd
 
             # Start Host based Touch processing
                 case "$hw_platform" in
@@ -3622,11 +3608,17 @@ case "$target" in
         # to one of the CPU from the default IRQ affinity mask.
         echo f > /proc/irq/default_smp_affinity
 
-        if [ -f /sys/devices/soc0/soc_id ]; then
-                soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-                soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
+    #if [ -f /sys/devices/soc0/soc_id ]; then
+    #            soc_id=`cat /sys/devices/soc0/soc_id`
+    #    else
+    #            soc_id=`cat /sys/devices/system/soc/soc0/id`
+    #    fi
+
+    #case "$soc_id" in
+    #	"321" | "341") #sdm845
+    #	start_hbtp
+    #	;;
+    #esac
 
         if [ -f /sys/devices/soc0/hw_platform ]; then
                 hw_platform=`cat /sys/devices/soc0/hw_platform`
@@ -3684,6 +3676,8 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl
 	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+	echo "0:0 1:0 2:0 3:0 4:2323200 5:0 6:0 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+	echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 	# Limit the min frequency to 825MHz
 	echo 825000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
@@ -3749,8 +3743,13 @@ case "$target" in
 	echo 10 > /sys/class/devfreq/soc:qcom,mincpubw/polling_interval
 
 	# cpuset parameters
-        echo 0-3 > /dev/cpuset/background/cpus
-        echo 0-3 > /dev/cpuset/system-background/cpus
+        #echo 0-3 > /dev/cpuset/background/cpus
+        #echo 0-3 > /dev/cpuset/system-background/cpus
+        echo 0-1 > /dev/cpuset/background/cpus
+        echo 0-2 > /dev/cpuset/system-background/cpus
+        echo 4-7 > /dev/cpuset/foreground/boost/cpus
+        echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+        echo 0-7 > /dev/cpuset/top-app/cpus
 
 	# Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
@@ -3768,6 +3767,14 @@ case "$target" in
         echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 	echo 100 > /proc/sys/vm/swappiness
 	echo 120 > /proc/sys/vm/watermark_scale_factor
+
+        # set lmk minfree for MemTotal greater than 6G
+	arch_type=`uname -m`
+	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+	MemTotal=${MemTotalStr:16:8}
+	if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 5505024 ]; then
+	    echo "18432,23040,27648,32256,85296,120640" > /sys/module/lowmemorykiller/parameters/minfree
+	fi
     ;;
 esac
 
@@ -3812,6 +3819,11 @@ case "$target" in
 
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
+
+	# Affinity settings for unity engine
+	echo 0x80 > /proc/sys/kernel/sched_lib_mask_check
+	echo 0xf0 > /proc/sys/kernel/sched_lib_mask_force
+	echo "libunity.so" > /proc/sys/kernel/sched_lib_name
 
 	# configure governor settings for silver cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
