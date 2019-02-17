@@ -42,11 +42,20 @@ else
 fi
 
 #
-# Check ESOC for external modem
+# Check ESOC for external MDM
 #
-# Note: currently only a single MDM/SDX is supported
+# Note: currently only a single MDM is supported
 #
-esoc_name=`cat /sys/bus/esoc/devices/esoc0/esoc_name 2> /dev/null`
+if [ -d /sys/bus/esoc/devices ]; then
+for f in /sys/bus/esoc/devices/*; do
+    if [ -d $f ]; then
+    if [ `grep -e "^MDM" -e "^SDX" $f/esoc_name` ]; then
+            esoc_link=`cat $f/esoc_link`
+            break
+        fi
+    fi
+done
+fi
 
 target=`getprop ro.board.platform`
 
@@ -57,20 +66,19 @@ else
 	soc_id=`cat /sys/devices/system/soc/soc0/id`
 fi
 
-if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
-	echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
-fi
+#
+# Allow USB enumeration with default PID/VID
+#
+baseband=`getprop ro.baseband`
 
-#
-# Override USB default composition
-#
-# If USB persist config not set, set default configuration
-if [ "$(getprop persist.vendor.usb.config)" == "" -a \
-	"$(getprop init.svc.vendor.usb-gadget-hal-1-0)" != "running" ]; then
-    if [ "$esoc_name" != "" ]; then
+echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
+usb_config=`getprop persist.vendor.usb.config`
+debuggable=`getprop ro.debuggable`
+if [ "$usb_config" == "" ]; then #USB persist config not set, select default configuration
+      if [ "$esoc_link" != "" ]; then
 	  setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
-    else
-	  case "$(getprop ro.baseband)" in
+      else
+	  case "$baseband" in
 	      "apq")
 	          setprop persist.vendor.usb.config diag,adb
 	      ;;
@@ -78,6 +86,13 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	      case "$soc_hwplatform" in
 	          "Dragon" | "SBC")
 	              setprop persist.vendor.usb.config diag,adb
+	          ;;
+	          "DIPPER" | "POLARIS" | "PERSEUS" | "BERYLLIUM" | "URSA" | "EQUULEUS")
+                      if [ -z "$debuggable" -o "$debuggable" = "1"  ]; then
+                         setprop persist.vendor.usb.config adb
+                      else
+                         setprop persist.vendor.usb.config none
+                      fi
 	          ;;
                   *)
 		  soc_machine=${soc_machine:0:3}
@@ -99,6 +114,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 			    else
 			               case "$soc_id" in
 				               "313" | "320")
+						  echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
 				                  setprop persist.vendor.usb.config diag,serial_smd,rmnet_ipa,adb
 				               ;;
 				               *)
@@ -120,7 +136,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	              "sdm845" | "sdm710")
 		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
-	              "msmnile" | "sm6150")
+	              "msmnile" | "talos")
 			  setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
 		      ;;
 	              *)
@@ -136,45 +152,36 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
       fi
 fi
 
-# set rndis transport to BAM2BAM_IPA for 8920 and 8940
-if [ "$target" == "msm8937" ]; then
-	if [ ! -d /config/usb_gadget ]; then
-	   case "$soc_id" in
-		"313" | "320")
-		   echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
-		;;
-		*)
-		;;
-	   esac
-	else
-	   case "$soc_id" in
-		"313" | "320")
-		   setprop vendor.usb.rndis.func.name "rndis_bam"
-		   setprop vendor.usb.rmnet.func.name "rmnet_bam"
-		   setprop vendor.usb.rmnet.inst.name "rmnet"
-		   setprop vendor.usb.dpl.inst.name "dpl"
-		;;
-		*)
-		;;
-	   esac
-	fi
-fi
+# set device mode notification to USB driver for SA8150 Auto ADP
+product=`getprop ro.build.product`
+
+case "$product" in
+	"msmnile_au")
+	echo peripheral > /sys/bus/platform/devices/a600000.ssusb/mode
+         ;;
+	*)
+	;;
+esac
 
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
-	# Chip-serial is used for unique MSM identification in Product string
-	msm_serial=`cat /sys/devices/soc0/serial_number`;
-	msm_serial_hex=`printf %08X $msm_serial`
-	machine_type=`cat /sys/devices/soc0/machine`
-	product_string="$machine_type-$soc_hwplatform _SN:$msm_serial_hex"
-	echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
-
 	# ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
 	serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber` 2> /dev/null
 	if [ "$serialnumber" == "" ]; then
 		serialno=1234567
 		echo $serialno > /config/usb_gadget/g1/strings/0x409/serialnumber
 	fi
+
+    persist_comp=`getprop persist.vendor.usb.config`
+    comp=`getprop sys.usb.config`
+    echo $persist_comp
+    echo $comp
+    if [ "$comp" != "$persist_comp" ]; then
+        echo "setting sys.usb.config"
+        setprop sys.usb.config $persist_comp
+    fi
+
+    setprop sys.usb.configfs 1
 fi
 
 #
