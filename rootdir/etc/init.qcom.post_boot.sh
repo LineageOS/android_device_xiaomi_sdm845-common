@@ -3622,11 +3622,11 @@ case "$target" in
         # to one of the CPU from the default IRQ affinity mask.
         echo f > /proc/irq/default_smp_affinity
 
-        if [ -f /sys/devices/soc0/soc_id ]; then
-                soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-                soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
+        #if [ -f /sys/devices/soc0/soc_id ]; then
+        #        soc_id=`cat /sys/devices/soc0/soc_id`
+        #else
+        #        soc_id=`cat /sys/devices/system/soc/soc0/id`
+        #fi
 
         if [ -f /sys/devices/soc0/hw_platform ]; then
                 hw_platform=`cat /sys/devices/soc0/hw_platform`
@@ -3684,6 +3684,9 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/pl
 	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+	# Set up powerkey boost freq
+	echo "0:0 1:0 2:0 3:0 4:2323200 5:0 6:0 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+	echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 	# Limit the min frequency to 825MHz
 	echo 825000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
@@ -3749,8 +3752,13 @@ case "$target" in
 	echo 10 > /sys/class/devfreq/soc:qcom,mincpubw/polling_interval
 
 	# cpuset parameters
-        echo 0-3 > /dev/cpuset/background/cpus
-        echo 0-3 > /dev/cpuset/system-background/cpus
+        #echo 0-3 > /dev/cpuset/background/cpus
+        #echo 0-3 > /dev/cpuset/system-background/cpus
+        echo 0-1 > /dev/cpuset/background/cpus
+        echo 0-2 > /dev/cpuset/system-background/cpus
+        echo 4-7 > /dev/cpuset/foreground/boost/cpus
+        echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+        echo 0-7 > /dev/cpuset/top-app/cpus
 
 	# Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
@@ -3768,6 +3776,14 @@ case "$target" in
         echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 	echo 100 > /proc/sys/vm/swappiness
 	echo 120 > /proc/sys/vm/watermark_scale_factor
+
+    # Set LMK minfree for MemTotal greater than 6G
+	arch_type=`uname -m`
+	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+	MemTotal=${MemTotalStr:16:8}
+	if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 5505024 ]; then
+	    echo "18432,23040,27648,32256,85296,120640" > /sys/module/lowmemorykiller/parameters/minfree
+	fi
     ;;
 esac
 
