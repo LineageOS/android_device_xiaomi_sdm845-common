@@ -27,6 +27,10 @@
 #
 #
 
+import init.batteryd.rc
+import /vendor/etc/init/hw/init.brcm.rc
+import /vendor/etc/init/hw/init.remosaic.rc
+
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules pinctrl-wcd wcd-dsp-glink snd-soc-wcd-spi snd-soc-sdm845
     write /proc/sys/kernel/sched_boost 1
@@ -42,6 +46,12 @@ on init
     write /dev/stune/top-app/schedtune.colocate 1
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
+    chown system camera /dev/mi-camera-vendor2hal
+    chown system camera /dev/mi-camera-hal2vendor
+    chmod 0660 /dev/mi-camera-vendor2hal
+    chmod 0660 /dev/mi-camera-hal2vendor
+    chown system system /sys/class/touch/tp_dev/fod_status
+
 # Add a cpuset for the camera daemon
 # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
@@ -54,12 +64,44 @@ on init
 on fs
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
+    mkdir /mnt/vendor/persist 0771 root system
     mount_all /vendor/etc/fstab.qcom
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     swapon_all /vendor/etc/fstab.qcom
+    mkdir /mnt/vendor/persist/fdsd 0777 root root
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
+    mkdir /mnt/vendor/persist/audio 0755 system system
+    chown system system /dev/tiload_node
+    chmod 660 /dev/tiload_node
+    chmod 644 /mnt/vendor/persist/audio/us_manual_cal
+    mkdir /mnt/vendor/persist/wlan_bt 0755 system system
+    chmod 644 /persist/audio/us_manual_cal
+    chown root system /sys/bus/i2c/devices/3-0049/grip_enable
+    on property:sys.tp.grip_enable=90
+        write sys/bus/i2c/devices/3-0049/grip_area 100
+    on property:sys.tp.grip_enable=270
+        write sys/bus/i2c/devices/3-0049/grip_area 100
+    on property:sys.tp.grip_enable=0
+        write sys/bus/i2c/devices/3-0049/grip_area 30
+    on property:sys.tp.grip_enable=1
+        write sys/bus/i2c/devices/3-0049/grip_area 30
+    on property:sys.tp.grip_enable=180
+        write sys/bus/i2c/devices/3-0049/grip_area 30
+
+    chown system system /persist/rfs
+    chown system system /persist/rfs/msm
+    chown system system /persist/rfs/mdm
+    chown system system /persist/rfs/apq
+    chown system system /persist/rfs/shared
+    chown system system /persist/rfs/msm/mpss
+    chown system system /persist/rfs/msm/adsp
+    chown system system /persist/rfs/msm/slpi
+    chown system system /persist/rfs/msm/mpss/server_check.txt
+    chown system system /persist/rfs/shared/server_info.txt
+
+    mkdir /mnt/vendor/persist/stability 0755 system system
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -74,7 +116,13 @@ service sec_nvm /vendor/bin/sec_nvm
     user system
     group system
 
+service MiCameraDaemon /vendor/bin/MiCameraDaemon
+    class core
+    user system
+    group system camera sdcard_rw
+
 on post-fs-data
+    mkdir /data/vendor/diag 2771 root log
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
     mkdir /tombstones/lpass 0771 system system
@@ -82,12 +130,33 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
+    mkdir /data/misc/touch 0771 root system
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
+    mkdir /data/vendor/misc/touch 0771 root system
+    chmod 0644 /dev/elliptic0
+    chmod 0644 /dev/elliptic1
     mkdir /data/vendor/nnhal 0700 system system
+    mkdir /data/vendor/mac_addr 0770 system wifi
+    mkdir /data/vendor/misc/display 0771 system system
+    chmod 666 /sys/class/drm/card0-DSI-1/disp_count
+
+on property:ro.boot.dp=0x0
+    write  /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8998@0:qcom,power-on@800/pshold_reboot 7
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
     chown system system /sys/kernel/hbtp/display_pwr
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/blink
+    chown cameraserver system /sys/class/leds/ir/brightness
+    chmod 0664 /sys/class/leds/ir/brightness
+    chown system system /sys/class/leds/ir_torch/brightness
+    chown system system /sys/class/drm/card0-DSI-1/disp_param
+    chown system system /proc/tp_selftest
+    chown system system /sys/class/thermal/thermal_message/sconfig
+    chown root system /sys/bus/i2c/devices/3-0050/pressure
     start rmt_storage
     start rfs_access
     write /dev/cpuset/top-app/cpus 0-3
@@ -148,6 +217,11 @@ service vendor.pd_mapper /vendor/bin/pd-mapper
     user system
     group system
 
+service mmbn-daemon /vendor/bin/mmbn-daemon
+    class main
+    disabled
+    oneshot
+
 #Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
@@ -166,13 +240,25 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
-    stop vendor.ims_rtp_daemon
 
 on charger
-    start vendor.hvdcp_opti
+    write /sys/module/msm_thermal/parameters/enabled "N"
+    symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
+    mkdir /mnt/vendor/persist
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    mkdir /data/vendor/charge_logger 0771 system system
+    start vendor.poweroffm64
     start vendor.power_off_alarm
-    setprop vendor.usb.controller a600000.dwc3
+    start vendor.hvdcp_opti
+    start leds-sh
+    write /sys/module/msm_thermal/parameters/enabled "N"
+    mount tmpfs tmpfs /data
+    start thermal-engine
+	start charge_logger
     setprop sys.usb.configfs 1
+    setprop vendor.usb.controller a600000.dwc3
 
 ## import cne init file
 #on post-fs
@@ -209,7 +295,7 @@ service hdcp_srm /vendor/bin/hdcp_srm
 #   group system
 #   disabled
 #
-service thermal-engine /system/vendor/bin/thermal-engine
+service thermal-engine /system/vendor/bin/thermal-engine -T
    class main
    user root
    socket thermal-send-client stream 0666 system system
@@ -388,10 +474,10 @@ on property:vold.decrypt=trigger_restart_framework
    start cnss_diag
 
 service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
-   class main
-   user system
-   group system wifi inet sdcard_rw media_rw diag
-   oneshot
+    class main
+    user system
+    group system wifi inet sdcard_rw media_rw diag
+    oneshot
 
 service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
@@ -400,6 +486,16 @@ service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
     restart vendor.ims_rtp_daemon
+
+service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
+    class core
+    user root
+    oneshot
+
+service panel-info-sh /system/vendor/bin/sh /vendor/etc/init.panel_info.sh
+    class core
+    user root
+    oneshot
 
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
@@ -416,6 +512,12 @@ on property:init.svc.vendor.hwcomposer-2-1=running
 
 on property:init.svc.vendor.hwcomposer-2-1=restarting
     stop ppd
+
+on property:vold.decrypt=trigger_restart_framework && property:ro.crypto.type=block && property:persist.ppd.fde.config=0
+    stop displayfeature-hal-1-0
+    start displayfeature-hal-1-0
+    setprop persist.ppd.fde.config 1
+    start ppd
 
 #service nqs /system/bin/nqs
 #    class late_start
@@ -435,18 +537,24 @@ on property:init.svc.vendor.hwcomposer-2-1=restarting
 #    user system
 #    group system
 
-service hbtp /system/vendor/bin/hbtp_daemon
-     class main
-     user system
-     group system
-     capabilities SYS_NICE
-     disabled
+#service hbtp /system/vendor/bin/hbtp_daemon
+#     class main
+#     user system
+#     group system
+#     capabilities SYS_NICE
+#     disabled
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main
     user system
     group system
     oneshot
+
+#poweroff monitor service
+service vendor.poweroffm64 /vendor/bin/poweroffm64
+    class late_start
+    oneshot
+    seclabel u:r:poweroffm64:s0
 
 service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
@@ -462,3 +570,78 @@ service vendor.tlocd /vendor/bin/tloc_daemon
     class late_start
     user system
     group drmrpc gps net_raw
+
+service displayfeature /system/bin/displayfeature
+    class late_start
+    user root
+    group root
+
+service displaycount /vendor/bin/displaycount
+    class late_start
+    user system
+    group system
+    oneshot
+
+service gpu_monitor /system/bin/gpu_monitor
+    class late_start
+    user system
+    group system sdcard_rw
+    oneshot
+
+on property:init.svc.surfaceflinger=stopped
+    stop displayfeature
+
+on property:init.svc.surfaceflinger=running
+    start displayfeature
+
+on property:init.svc.surfaceflinger=restarting
+    stop displayfeature
+
+on property:init.svc.zygote=stopped
+    stop displayfeature
+    stop ppd
+
+on property:init.svc.zygote=running
+    start displayfeature
+    start ppd
+
+on property:init.svc.zygote=restarting
+    stop displayfeature
+    stop ppd
+
+on property:vendor.audio.cit.spkcal.copy=true
+    copy /data/vendor/cit/tas2559_cal.bin /mnt/vendor/persist/audio/tas2559_cal.bin
+    copy /data/vendor/cit/tas2559_cal.txt /mnt/vendor/persist/audio/tas2559_cal.txt
+    copy /data/vendor/cit/tas2559_chk.txt /mnt/vendor/persist/audio/tas2559_chk.txt
+    chmod 666 /mnt/vendor/persist/audio/tas2559_cal.bin
+    chmod 666 /mnt/vendor/persist/audio/tas2559_cal.txt
+    chmod 666 /mnt/vendor/persist/audio/tas2559_chk.txt
+    copy /data/vendor/cit/tas2557_cal.bin /mnt/vendor/persist/audio/tas2557_cal.bin
+    copy /data/vendor/cit/tas2557_cal.txt /mnt/vendor/persist/audio/tas2557_cal.txt
+    copy /data/vendor/cit/tas2557_chk.txt /mnt/vendor/persist/audio/tas2557_chk.txt
+    chmod 666 /mnt/vendor/persist/audio/tas2557_cal.bin
+    chmod 666 /mnt/vendor/persist/audio/tas2557_cal.txt
+    chmod 666 /mnt/vendor/persist/audio/tas2557_chk.txt
+
+on property:vendor.audio.cit.us.copy=true
+    copy /data/vendor/cit/us_manual_cal /mnt/vendor/persist/audio/us_manual_cal
+    chmod 644 /mnt/vendor/persist/audio/us_manual_cal
+
+service audioshell_service /vendor/bin/audioshell_service
+    oneshot
+    disabled
+
+on property:ro.vendor.miui.region=*
+    start audioshell_service
+
+service checknv /system/bin/checknv
+    class late_start
+    user root
+    oneshot
+    seclabel u:r:vendor_init:s0
+
+service vendor.nv_mac /vendor/bin/nv_mac
+    class late_start
+    user system
+    group system inet net_admin wifi net_raw
+    oneshot
