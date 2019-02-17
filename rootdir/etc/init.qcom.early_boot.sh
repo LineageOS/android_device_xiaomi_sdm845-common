@@ -129,7 +129,7 @@ case "$target" in
             365|366)
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
-                    setprop vendor.media.sdmmagpie.version 1
+                    setprop vendor.media.sm7150.version 1
                 fi
                 ;;
             355)
@@ -257,11 +257,6 @@ case "$target" in
         case "$soc_hwid" in
             294|295|296|297|298|313|353|354|363|364)
                 setprop vendor.opengles.version 196610
-                if [ $soc_hwid = 354 ]
-                then
-                    setprop vendor.media.msm8937.version 1
-                    log -t BOOT -p i "SDM429 early_boot prop set for: HwID '$soc_hwid'"
-                fi
                 ;;
             303|307|308|309|320)
                 # Vulkan is not supported for 8917 variants
@@ -309,6 +304,13 @@ case "$target" in
                 ;;
         esac
         ;;
+    "talos")
+        case "$soc_hwplatform" in
+            *)
+                    setprop vendor.display.lcd_density 480
+                    setprop dalvik.vm.heapgrowthlimit 256m
+        esac
+        ;;
     "sdm710" | "msmpeafowl")
         case "$soc_hwplatform" in
             *)
@@ -317,26 +319,6 @@ case "$target" in
                     setprop vendor.media.sdm710.version 1
                 fi
                 ;;
-        esac
-        ;;
-    "msm8953")
-        cap_ver = 1
-                if [ -e "/sys/devices/platform/soc/1d00000.qcom,vidc/capability_version" ]; then
-                    cap_ver=`cat /sys/devices/platform/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
-                else
-                    cap_ver=`cat /sys/devices/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
-                fi
-
-                if [ $cap_ver -eq 1 ]; then
-                    setprop vendor.media.msm8953.version 1
-                fi
-                ;;
-    #Set property to differentiate SDM660 & SDM455
-    #SOC ID for SDM455 is 385
-    "sdm660")
-        case "$soc_hwid" in
-           385)
-               setprop vendor.media.sdm660.version 1
         esac
         ;;
 esac
@@ -363,27 +345,16 @@ product=`getprop ro.build.product`
 case "$product" in
         "msmnile_au")
          setprop vendor.display.lcd_density 160
-         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
-         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
-         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/max_freq
+         echo 1344000000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
+         echo 1344000000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
+         echo 1344000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
+         echo 1344000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/max_freq
          ;;
         *)
         ;;
 esac
 case "$product" in
-        "msmnile_gvmq")
-         setprop vendor.display.lcd_density 160
-         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
-         echo 864000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
-         echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/max_freq
-         ;;
-        *)
-        ;;
-esac
-case "$product" in
-        "sm6150_au")
+        "talos_au")
          setprop vendor.display.lcd_density 160
          ;;
         *)

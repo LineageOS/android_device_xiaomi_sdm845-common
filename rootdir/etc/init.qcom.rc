@@ -80,6 +80,7 @@ on late-fs
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
+    insmod /vendor/lib/modules/exfat.ko
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -110,10 +111,6 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
-
-on property:ro.hardware.type=automotive
-    wait /sys/class/net/can0
-    start can
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -258,6 +255,10 @@ on boot
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
 
+    #Create camera directory
+    mkdir /mnt/vendor/persist/camera 0755 system cameraserver
+
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -303,6 +304,8 @@ on post-fs-data
     mkdir /data/vendor/wifi/hostapd 0770 wifi wifi
     mkdir /data/vendor/wifi/hostapd/ctrl 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa_supplicant 0770 wifi wifi
+    mkdir /data/vendor/wlan_logs 0770 system wifi
+    mkdir /data/vendor/mac_addr 0770 system wifi
     mkdir /data/vendor/wifi/wigig_hostapd 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
@@ -329,6 +332,8 @@ on post-fs-data
 
     # Create directory used by audio subsystem
     mkdir /data/vendor/audio 0770 audio audio
+    # Create directory used by audio cit
+    mkdir /data/vendor/cit 0770 system system
 
     # Create directory for audio delta files
     mkdir /data/vendor/audio/acdbdata 0770 media audio
@@ -436,11 +441,22 @@ on post-fs-data
     write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/dm-2/queue/read_ahead_kb 2048
 
+    #add torch node for cit
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:torch_2/brightness
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chown system system /sys/class/leds/led:switch_1/brightness
+    chown system system /sys/class/leds/flashlight/brightness
+
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system system
+
+    #Make MTU adjusting
+    write /proc/sys/net/ipv4/tcp_mtu_probing 1
 
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
@@ -474,11 +490,11 @@ service vendor.ssr_setup /system/vendor/bin/ssr_setup
     oneshot
     disabled
 
-service vendor.ss_ramdump /system/vendor/bin/subsystem_ramdump
-    class main
-    user system
+service vendor.ss_ramdump /system/bin/subsystem_ramdump_system 2
+    class late_start
+#   user system
     group system
-    disabled
+#   disabled
 
 on property:ro.vendor.iocgrp.config=1
     mkdir /dev/blkio
@@ -510,7 +526,7 @@ on property:persist.vendor.ssr.restart_level=*
 on property:persist.vendor.ssr.enable_ramdumps=1
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
     mkdir /data/vendor/ramdump_ssr 770 system system
-    start vendor.ss_ramdump
+#   start vendor.ss_ramdump
 
 on property:persist.vendor.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
@@ -573,6 +589,12 @@ on property:vendor.bluetooth.startbtlogger=true
 on property:vendor.bluetooth.startbtlogger=false
     stop vendor.bt_logger
 
+on property:vendor.bluetooth.startwdsdaemon=true
+    start vendor.bt_wdsdaemon
+
+on property:vendor.bluetooth.startwdsdaemon=false
+    stop vendor.bt_wdsdaemon
+
 service qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
     class core
     user root
@@ -588,10 +610,12 @@ service qcom-c_late-sh /vendor/bin/init.class_late.sh
     user root
     oneshot
 
+#xiaomi bsp-wifi: start vendor.cnss_diag is added by bsp-wifi
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
     start wcnss-service
     start qcom-c_late-sh
+    start vendor.cnss_diag
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
@@ -606,11 +630,11 @@ service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
     user system
     group system
 
-service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
+service vendor.qrtr-ns /vendor/bin/qrtr-ns -f -i 1
     class core
-    user vendor_qrtr
-    group vendor_qrtr
-    capabilities NET_BIND_SERVICE
+    user system
+    group system net_admin
+    capabilities NET_BIND_SERVICE NET_ADMIN
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -653,6 +677,13 @@ service vendor.btsnoop /system/bin/btsnoop
    class late_start
    disabled
    oneshot
+
+service vendor.bt_wdsdaemon /system/vendor/bin/wdsdaemon -su
+    class late_start
+    user root
+    group bluetooth diag system wakelock
+    disabled
+    oneshot
 
 service vendor.bt_logger /system/bin/bt_logger
    user bluetooth
@@ -770,14 +801,6 @@ service vendor.wigig_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-# Data Migration
-service vendor.move_wifi_data /system/bin/move_wifi_data.sh
-    class main
-    user  wifi
-    group wifi
-    disabled
-    oneshot
-
 # FST Manager with hostapd (softap) - all settings inside ini file
 service fstman /vendor/bin/fstman -B -ddd -c /data/vendor/wifi/fstman.ini -a 1
     user wifi
@@ -878,26 +901,70 @@ service wifi_ftmd /system/vendor/bin/wifi_ftmd
 on property:vendor.wifi.ftmd.load=true
     insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
 
-on property:persist.vendor.data.shs_ko_load=1
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules rmnet_shs
+service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f
+    class late_start
+    user system
+    group system wifi inet net_admin sdcard_rw media_rw diag
+    disabled
+    oneshot
 
-on property:persist.vendor.data.shs_ko_load=0
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules rmnet_shs
+service tcpdump /vendor/bin/tcpdump -i any -W 2 -C 2 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap
+    class main
+    user root
+    group root wifi
+    disabled
+    oneshot
 
-on property:persist.vendor.data.perf_ko_load=1
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules rmnet_perf
+service tcpdump_full /vendor/bin/tcpdump -i any -W 3 -C 40 -w /data/vendor/wlan_logs/tcpdump_full.pcap
+    class main
+    user root
+    group root wifi
+    disabled
+    oneshot
 
-on property:persist.vendor.data.perf_ko_load=0
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules rmnet_perf
+service sniffer /vendor/bin/tcpdump -i wlan0 -w /data/vendor/wlan_logs/sniffer.pcap
+    class main
+    user root
+    group root wifi
+    disabled
+    oneshot
 
-service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
+on property:sys.user.0.ce_available=true
+    start vendor.cnss_diag
+    start tcpdump
+
+#start vendor.cnss_diag and tcpdump when quit extreme power mode
+on property:sys.power.extreme=false
+    start vendor.cnss_diag
+    start tcpdump
+
+#stop vendor.cnss_diag and tcpdump when enter extreme power mode
+on property:sys.power.extreme=true
+    stop vendor.cnss_diag
+    stop tcpdump
+
+service startpktlog /system/bin/iwpriv wlan0 pktlog 2
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+service stoppktlog /system/bin/iwpriv wlan0 pktlog 0
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+service vendor.cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
 
 on property:sys.shutdown.requested=*
-    stop cnss-daemon
+    stop vendor.cnss-daemon
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
     class late_start
@@ -908,18 +975,6 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     class late_start
     disabled
     oneshot
-
-service ssgqmigd /vendor/bin/ssgqmigd
-    class late_start
-    user radio
-    group radio gps system
-    socket ssgqmig seqpacket 0660 radio inet
-
-service ssgtzd /vendor/bin/ssgtzd
-    class late_start
-    user system
-    group system
-    socket ssgtzd stream 0660 system inet
 
 service mlid /vendor/bin/mlid
     class late_start
@@ -1067,12 +1122,6 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service can /vendor/bin/init.qti.can.sh
-   class late_start
-   user root
-   disabled
-   oneshot
-
 service charger /charger
     class charger
     group system graphics
@@ -1110,14 +1159,14 @@ on property:sys.qbcharger.enable=true
 on property:sys.qbcharger.enable=false
     stop qbcharger
 
-service diag_mdlog_start /system/vendor/bin/diag_mdlog
+service diag_mdlog_start /system/bin/diag_mdlog_system -n 20
     class late_start
     user shell
     group system oem_2901 sdcard_rw sdcard_r media_rw
     disabled
     oneshot
 
-service diag_mdlog_stop /system/vendor/bin/diag_mdlog -k
+service diag_mdlog_stop /system/bin/diag_mdlog_system -k
     class late_start
     user shell
     group system oem_2901 sdcard_rw sdcard_r media_rw
@@ -1183,9 +1232,11 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
     group nfc
 
 on charger
-    setprop persist.sys.usb.config mass_storage
     load_system_props
     start qcom-post-boot
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+    setprop sys.usb.config adb
 
 #add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
@@ -1267,6 +1318,13 @@ on property:vendor.opengles.version=*
 #Set gpu available frequencies property
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
+
+# Sync persist file led flag with property value
+on property:persist.vendor.sys.led=0
+    write /persist/subsys/led_flag 0
+
+on property:persist.vendor.sys.led=1
+    write /persist/subsys/led_flag 1
 
 service vendor.wifilearner /system/vendor/bin/wifilearner
     class main
