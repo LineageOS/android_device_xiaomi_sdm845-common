@@ -87,7 +87,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.class_late.sh \
     init.class_main.sh \
+    init.leds.sh \
     init.msm.usb.configfs.rc \
+    init.panel_info.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \

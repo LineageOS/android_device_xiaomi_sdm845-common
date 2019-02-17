@@ -79,6 +79,13 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	          "Dragon" | "SBC")
 	              setprop persist.vendor.usb.config diag,adb
 	          ;;
+	          "DIPPER" | "POLARIS" | "PERSEUS" | "BERYLLIUM" | "URSA" | "EQUULEUS")
+                      if [ -z "$debuggable" -o "$debuggable" = "1"  ]; then
+                         setprop persist.vendor.usb.config adb
+                      else
+                         setprop persist.vendor.usb.config none
+                      fi
+	          ;;
                   *)
 		  soc_machine=${soc_machine:0:3}
 		  case "$soc_machine" in
