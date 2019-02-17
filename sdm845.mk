@@ -82,7 +82,9 @@ PRODUCT_PACKAGES += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.class_main.sh \
+    init.leds.sh \
     init.msm.usb.configfs.rc \
+    init.panel_info.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
@@ -93,6 +95,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qti.qseecomd.sh \
     init.recovery.qcom.rc \
+    init.remosaic.rc \
     init.target.rc \
     ueventd.qcom.rc
 
