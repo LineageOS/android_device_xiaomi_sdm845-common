@@ -53,8 +53,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ipaNatTable          0660   radio      radio
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
-/dev/ipa_odl_ctl          0660   radio      radio
-/dev/ipa_adpl             0660   system     oem_2905
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -147,6 +145,15 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/adsprpc-smd-secure   0644   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
+
+#permissions for 3DSL
+/dev/cam-sl-eeprom        0660   system     system
+/dev/flood                0660   system     system
+/dev/rtmv20               0660   system     system
+
+#permissions for Elliptics
+/dev/elliptic0            0644   root       root
+/dev/elliptic1            0644   root       root
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
