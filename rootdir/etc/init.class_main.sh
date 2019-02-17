@@ -1,6 +1,6 @@
 #! /vendor/bin/sh
 
-# Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2013-2014, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -33,20 +33,17 @@
 baseband=`getprop ro.baseband`
 sgltecsfb=`getprop persist.vendor.radio.sglte_csfb`
 datamode=`getprop persist.vendor.data.mode`
-qcrild_status=true
+rild_status=`getprop init.svc.ril-daemon`
+vendor_rild_status=`getprop init.svc.vendor.ril-daemon`
 
 case "$baseband" in
     "apq" | "sda" | "qcs" )
     setprop ro.vendor.radio.noril yes
-    stop ril-daemon
-    stop vendor.ril-daemon
-    stop vendor.qcrild
-    start vendor.ipacm
-esac
-
-case "$baseband" in
-    "sa8")
-    start vendor.ipacm
+    if [ -n "$rild_status" ] || [ -n "$vendor_rild_status" ]; then
+      stop ril-daemon
+      stop vendor.ril-daemon
+      start vendor.ipacm
+    fi
 esac
 
 case "$baseband" in
@@ -55,57 +52,51 @@ case "$baseband" in
 esac
 
 case "$baseband" in
-    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx" | "sm6")
+    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx")
 
-    # For older modem packages launch ril-daemon.
     if [ -f /vendor/firmware_mnt/verinfo/ver_info.txt ]; then
         modem=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
                 sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                 sed 's/.*MPSS.\(.*\)/\1/g' | cut -d \. -f 1`
+        # Check if this is AT 3.0 or below. If so, start ril-daemon 
         if [ "$modem" = "AT" ]; then
             version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
                     sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                     sed 's/.*AT.\(.*\)/\1/g' | cut -d \- -f 1`
             if [ ! -z $version ]; then
                 if [ "$version" \< "3.1" ]; then
-                    qcrild_status=false
+                    # For OTA targets, ril-daemon will be defined and for new vendor.ril-daemon
+                    # To keep this script agnostic,start both of them as only valid one will start.
+                    start ril-daemon
+                    start vendor.ril-daemon
                 fi
             fi
+        # For older than TA 3.0 start ril-daemon
         elif [ "$modem" = "TA" ]; then
             version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
                     sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                     sed 's/.*TA.\(.*\)/\1/g' | cut -d \- -f 1`
             if [ ! -z $version ]; then
                 if [ "$version" \< "3.0" ]; then
-                    qcrild_status=false
+                    # For OTA targets, ril-daemon will be defined and for new vendor.ril-daemon
+                    # To keep this script agnostic,start both of them as only valid one will start.
+                    start ril-daemon
+                    start vendor.ril-daemon
                 fi
             fi
-        elif [ "$modem" = "JO" ]; then
-            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
-                    sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
-                    sed 's/.*JO.\(.*\)/\1/g' | cut -d \- -f 1`
-            if [ ! -z $version ]; then
-                if [ "$version" \< "3.2" ]; then
-                    qcrild_status=false
-                fi
-            fi
-        elif [ "$modem" = "TH" ]; then
-            qcrild_status=false
+        else
+            start ril-daemon
+            start vendor.ril-daemon
         fi
     fi
 
-    if [ "$qcrild_status" = "true" ]; then
-        # Make sure both rild, qcrild are not running at same time.
-        # This is possible with vanilla aosp system image.
-        stop ril-daemon
-        stop vendor.ril-daemon
+    # Get ril-daemon status again to ensure that we have latest info
+    rild_status=`getprop init.svc.ril-daemon`
+    vendor_rild_status=`getprop init.svc.vendor.ril-daemon`
 
-        start vendor.qcrild
-    else
-        start ril-daemon
-        start vendor.ril-daemon
+    if [ -z "$rild_status" ] && [ -z "$vendor_rild_status" ]; then
+      start vendor.qcrild
     fi
-
     start vendor.ipacm-diag
     start vendor.ipacm
     case "$baseband" in
@@ -124,13 +115,13 @@ case "$baseband" in
     multisim=`getprop persist.radio.multisim.config`
 
     if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
-        if [ "$qcrild_status" = "true" ]; then
+        if [ -z "$rild_status" ] &&  [ -z "$vendor_rild_status" ]; then
           start vendor.qcrild2
         else
           start vendor.ril-daemon2
         fi
     elif [ "$multisim" = "tsts" ]; then
-        if [ "$qcrild_status" = "true" ]; then
+        if [ -z "$rild_status" ] && [ -z "$vendor_rild_status" ]; then
           start vendor.qcrild2
           start vendor.qcrild3
         else
