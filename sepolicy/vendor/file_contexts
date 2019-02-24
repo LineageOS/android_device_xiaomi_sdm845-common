@@ -3,10 +3,19 @@
 /system/lib64/soundfx/libvolumelistener\.so   u:object_r:vendor_file:s0
 /system/lib/soundfx/libvolumelistener\.so     u:object_r:vendor_file:s0
 
+/dev/elliptic(.*)?                            u:object_r:sound_device:s0
+/dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
+/persist/audio(/.*)?                          u:object_r:persist_audio_file:s0
+/mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
+
 # Data files
 /data/vendor/fpc(/.*)?          u:object_r:fingerprint_data_file:s0
 /data/vendor/goodix(/.*)?       u:object_r:fingerprint_data_file:s0
 /data/vendor/syna(/.*)?         u:object_r:fingerprint_data_file:s0
+
+/data/vendor/thermal(/.*)?      u:object_r:thermal_data_file:s0
+
+/data/vendor/mac_addr(/.*)?     u:object_r:wifi_vendor_data_file:s0
 
 # Graphics nodes
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/dpms              u:object_r:sysfs_displaycount:s0
@@ -18,6 +27,13 @@
 # Fingerprint devices
 /dev/goodix_fp                  u:object_r:fingerprint_device:s0
 /dev/vfsspi                     u:object_r:fingerprint_device:s0
+
+# Health
+/sys/devices(/platform)?/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/idt(/.*)?                                                                     u:object_r:sysfs_wireless_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/dc(/.*)?          u:object_r:sysfs_wireless_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi1-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/dc(/.*)?          u:object_r:sysfs_wireless_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/wireless(/.*)?    u:object_r:sysfs_wireless_supply:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi1-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/wireless(/.*)?    u:object_r:sysfs_wireless_supply:s0
 
 # Leds nodes
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,leds@d000/leds/white(/.*)?              u:object_r:sysfs_white_led:s0
