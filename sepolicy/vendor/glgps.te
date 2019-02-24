@@ -1,0 +1,26 @@
+type glgps, domain;
+type glgps_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(glgps)
+net_domain(glgps)
+
+allow glgps fwk_sensor_hwservice:hwservice_manager find;
+
+allow glgps gps_data_file:dir create_dir_perms;
+allow glgps gps_data_file:fifo_file create_file_perms;
+allow glgps gps_data_file:file create_file_perms;
+allow glgps gps_data_file:lnk_file create_file_perms;
+allow glgps gps_data_file:sock_file create_file_perms;
+
+allow glgps gps_device:chr_file rw_file_perms;
+
+allow glgps self:netlink_kobject_uevent_socket { create bind read setopt };
+allow glgps gps_socket:sock_file create_file_perms;
+
+binder_call(glgps, system_server)
+
+typeattribute glgps halclientdomain;
+
+unix_socket_connect(glgps, property, rild);
+
+wakelock_use(glgps)
