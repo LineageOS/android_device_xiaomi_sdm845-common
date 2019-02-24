@@ -1168,7 +1168,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
-    group root
+    group system root diag
 
 service adsprpcd /vendor/bin/adsprpcd
     class main
