@@ -1,0 +1,3 @@
+allow thermal-engine thermal_data_file:dir search;
+allow thermal-engine thermal_data_file:file create_file_perms;
+set_prop(thermal-engine, thermal_engine_prop)
