@@ -1,4 +1,17 @@
+# Data files
+/data/vendor/fpc(/.*)?          u:object_r:fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?       u:object_r:fingerprint_data_file:s0
+/data/vendor/syna(/.*)?         u:object_r:fingerprint_data_file:s0
+
+# Fingerprint devices
+/dev/goodix_fp                  u:object_r:fingerprint_device:s0
+/dev/vfsspi                     u:object_r:fingerprint_device:s0
+
 # Fingerprint nodes
+/sys/devices/platform/soc/soc:fingerprint_fpc/device_prepare	               u:object_r:sysfs_fp:s0
+/sys/devices/platform/soc/soc:fingerprint_fpc/irq		               u:object_r:sysfs_fp:s0
+/sys/devices/platform/soc/soc:fingerprint_fpc/wakeup_enable	               u:object_r:sysfs_fp:s0
+/sys/devices/platform/soc/soc:fingerprint_fpc/fingerdown_wait	               u:object_r:sysfs_fp:s0
 /sys/devices/platform/soc/soc:fingerprint_goodix/proximity_state               u:object_r:sysfs_fp_proximity:s0
 
 # Graphics nodes
