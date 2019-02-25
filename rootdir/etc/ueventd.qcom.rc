@@ -407,3 +407,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb0     dynamic_bitclk           0664    system  graphics
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+#QG device
+/dev/qg               0660   system     system
+/dev/qg_battery       0660   system     system
