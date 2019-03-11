@@ -16,6 +16,24 @@
       "revId": "0566df1172f699035c2ea4ec7904786f35815f5d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "612a7fe8_3c27fc07",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 25
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-03-11T20:36:35Z",
+      "side": 1,
+      "message": "Yes, but as I wrote previously, it is in the TODO list.",
+      "parentUuid": "ff044076_9bb12138",
+      "revId": "0566df1172f699035c2ea4ec7904786f35815f5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
