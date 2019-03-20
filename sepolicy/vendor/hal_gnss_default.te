@@ -1,0 +1,1 @@
+allow hal_gnss_default gps_data_file:dir r_dir_perms;
