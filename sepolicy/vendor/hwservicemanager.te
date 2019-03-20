@@ -1,0 +1,4 @@
+allow hwservicemanager glgps:dir search;
+allow hwservicemanager glgps:file r_file_perms;
+allow hwservicemanager glgps:process getattr;
+allow hwservicemanager glgps:binder transfer;
