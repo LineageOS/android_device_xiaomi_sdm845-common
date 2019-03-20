@@ -1,6 +1,7 @@
 type audio_socket, file_type;
 
 type fingerprint_data_file, data_file_type, file_type;
+type gps_data_file, data_file_type, file_type;
 type thermal_data_file, data_file_type, file_type;
 
 type sysfs_wireless_supply, sysfs_type, fs_type;
