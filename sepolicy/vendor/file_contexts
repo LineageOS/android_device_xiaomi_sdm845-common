@@ -18,6 +18,11 @@
 
 /data/vendor/mac_addr(/.*)?     u:object_r:wifi_vendor_data_file:s0
 
+/data/vendor/gps(/.*)?          u:object_r:gps_data_file:s0
+
+# GPS
+/(vendor|system/vendor)/bin/glgps             u:object_r:glgps_exec:s0
+
 # Graphics nodes
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/dpms              u:object_r:sysfs_displaycount:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_count        u:object_r:sysfs_displaycount:s0

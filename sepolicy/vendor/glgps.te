@@ -1,0 +1,4 @@
+type glgps, domain;
+type glgps_exec, exec_type, vendor_file_type, file_type;
+
+allow glgps gps_data_file:file create_file_perms;
