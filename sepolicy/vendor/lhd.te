@@ -1,0 +1,2 @@
+type lhd, domain;
+type lhd_exec, exec_type, vendor_file_type, file_type;
