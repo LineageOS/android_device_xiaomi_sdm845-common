@@ -20,6 +20,9 @@
 
 /data/vendor/gps(/.*)?          u:object_r:gps_data_file:s0
 
+# Display feature HAL
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service                    u:object_r:hal_displayfeature_xiaomi_default_exec:s0
+
 # GPS
 /dev/(bbd_control|bbd_patch|bbd_sensor|ttyBCM)               u:object_r:gps_device:s0
 
