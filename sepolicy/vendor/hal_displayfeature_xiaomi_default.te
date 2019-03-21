@@ -1,0 +1,18 @@
+type hal_displayfeature_xiaomi_default, domain;
+hal_server_domain(hal_displayfeature_xiaomi_default, hal_displayfeature_xiaomi)
+
+type hal_displayfeature_xiaomi_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_displayfeature_xiaomi_default)
+
+binder_call(hal_displayfeature_xiaomi_client, hal_displayfeature_xiaomi_server)
+
+add_hwservice(hal_displayfeature_xiaomi_server, hal_displayfeature_xiaomi_hwservice)
+allow hal_displayfeature_xiaomi_client hal_displayfeature_xiaomi_hwservice:hwservice_manager find;
+
+allow hal_displayfeature_xiaomi_default sysfs_graphics:lnk_file read;
+allow hal_displayfeature_xiaomi_default sysfs_graphics:file rw_file_perms;
+allow hal_displayfeature_xiaomi_default sysfs_graphics:dir r_dir_perms;
+
+set_prop(hal_displayfeature_xiaomi_default, vendor_displayfeature_prop)
+
+vndbinder_use(hal_displayfeature_xiaomi_default)
