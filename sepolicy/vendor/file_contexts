@@ -1,3 +1,9 @@
+# Camera
+/persist/camera(/.*)?                                                          u:object_r:persist_camera_file:s0
+/mnt/vendor/persist/camera(/.*)?                                               u:object_r:persist_camera_file:s0
+
+/(vendor|system/vendor)/bin/remosaic_daemon                                    u:object_r:remosaic_daemon_exec:s0
+
 # Fingerprint HAL
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_sdm845                   u:object_r:hal_fingerprint_default_exec:s0
 
