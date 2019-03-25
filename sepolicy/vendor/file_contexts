@@ -2,6 +2,9 @@
 /dev/elliptic(.*)?                            u:object_r:sound_device:s0
 /dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
 
+# Camera
+/(vendor|system/vendor)/bin/remosaic_daemon   u:object_r:remosaic_daemon_exec:s0
+
 # Data files
 /data/vendor/fpc(/.*)?          u:object_r:fingerprint_data_file:s0
 /data/vendor/goodix(/.*)?       u:object_r:fingerprint_data_file:s0
@@ -55,4 +58,6 @@
 
 # Persist files
 /persist/audio(/.*)?                          u:object_r:persist_audio_file:s0
+/persist/camera(/.*)?                         u:object_r:persist_camera_file:s0
 /mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
+/mnt/vendor/persist/camera(/.*)?              u:object_r:persist_camera_file:s0
