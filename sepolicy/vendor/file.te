@@ -9,5 +9,6 @@ type fingerprint_data_file, data_file_type, file_type;
 type gps_device, dev_type;
 type gps_data_file, data_file_type, file_type;
 type persist_audio_file, file_type, vendor_persist_type;
+type persist_camera_file, file_type, vendor_persist_type;
 type thermal_data_file, data_file_type, file_type;
 type vendor_dpps_prop, property_type;

@@ -1,1 +1,12 @@
 get_prop(hal_camera_default, vendor_camera_prop)
+
+allow hal_camera gpu_device:chr_file {ioctl read write getattr lock append map open};
+
+allow hal_camera_default persist_camera_file:dir r_dir_perms;
+allow hal_camera_default persist_camera_file:file r_file_perms;
+allow hal_camera_default persist_camera_file:lnk_file r_file_perms;
+
+allow hal_camera_default remosaic_daemon_service:service_manager find;
+
+allow hal_camera_default sysfs_kgsl:file {getattr read open};
+allow hal_camera_default sysfs_kgsl:dir search;
