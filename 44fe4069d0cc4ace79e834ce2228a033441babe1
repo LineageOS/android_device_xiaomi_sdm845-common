@@ -34,6 +34,24 @@
       "revId": "44fe4069d0cc4ace79e834ce2228a033441babe1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ee73d6f_cffd5b53",
+        "filename": "sdm845.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 16299
+      },
+      "writtenOn": "2019-03-26T13:24:34Z",
+      "side": 1,
+      "message": "I see, thanks for clarifying",
+      "parentUuid": "b974f713_1416191f",
+      "revId": "44fe4069d0cc4ace79e834ce2228a033441babe1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
