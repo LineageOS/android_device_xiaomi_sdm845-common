@@ -44,18 +44,18 @@ int main() {
         goto shutdown;
     }
 
-    if (!sunlightEnhancement->isSupported()) {
-        LOG(ERROR) << "SunlightEnhancement Iface is not supported, gracefully bailing out.";
-        return 1;
-    }
-
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status = sunlightEnhancement->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
-                   << status << ")";
-        goto shutdown;
+    if (sunlightEnhancement->isSupported()) {
+        status = sunlightEnhancement->registerAsService();
+        if (status != OK) {
+            LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement"
+                       << " Iface (" << status << ")";
+            goto shutdown;
+        }
+    } else {
+        LOG(ERROR) << "SunlightEnhancement Iface is not supported, gracefully bailing out.";
+        return 1;
     }
 
     LOG(INFO) << "LiveDisplay HAL custom service is ready.";
