@@ -75,61 +75,6 @@ on init
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-    # Setup cpusets used by the VR services
-    mkdir /dev/cpuset/kernel 0750 root system
-    write /dev/cpuset/kernel/cpus 0
-    write /dev/cpuset/kernel/mems 0
-    chown system system /dev/cpuset/kernel/tasks
-    chown system system /dev/cpuset/kernel/cpus
-    chmod 0660 /dev/cpuset/kernel/tasks
-    chmod 0660 /dev/cpuset/kernel/cpus
-
-    mkdir /dev/cpuset/system 0750 root system
-    write /dev/cpuset/system/cpus 0
-    write /dev/cpuset/system/mems 0
-    chown system system /dev/cpuset/system/tasks
-    chmod 0660 /dev/cpuset/system/tasks
-
-    mkdir /dev/cpuset/system/performance 0750 root system
-    write /dev/cpuset/system/performance/cpus 0
-    write /dev/cpuset/system/performance/mems 0
-    chown system system /dev/cpuset/system/performance/tasks
-    chmod 0660 /dev/cpuset/system/performance/tasks
-
-    mkdir /dev/cpuset/system/background 0750 root system
-    write /dev/cpuset/system/background/cpus 0
-    write /dev/cpuset/system/background/mems 0
-    chown system system /dev/cpuset/system/background/tasks
-    chmod 0660 /dev/cpuset/system/background/tasks
-
-    mkdir /dev/cpuset/application 0750 root system
-    write /dev/cpuset/application/cpus 0
-    write /dev/cpuset/application/mems 0
-    chown system system /dev/cpuset/application/tasks
-    chmod 0660 /dev/cpuset/application/tasks
-
-    mkdir /dev/cpuset/application/performance 0750 root system
-    write /dev/cpuset/application/performance/cpus 0
-    write /dev/cpuset/application/performance/mems 0
-    chown system system /dev/cpuset/application/performance/tasks
-    chmod 0660 /dev/cpuset/application/performance/tasks
-
-    mkdir /dev/cpuset/application/background 0750 root system
-    write /dev/cpuset/application/background/cpus 0
-    write /dev/cpuset/application/background/mems 0
-    chown system system /dev/cpuset/application/background/tasks
-    chmod 0660 /dev/cpuset/application/background/tasks
-
-    # Create UDS structure for base VR services
-    mkdir /dev/socket/pdx 0775 system system
-    mkdir /dev/socket/pdx/system 0775 system system
-    mkdir /dev/socket/pdx/system/buffer_hub 0775 system system
-    mkdir /dev/socket/pdx/system/performance 0775 system system
-    mkdir /dev/socket/pdx/system/vr 0775 system system
-    mkdir /dev/socket/pdx/system/vr/display 0775 system system
-    mkdir /dev/socket/pdx/system/vr/pose 0775 system system
-    mkdir /dev/socket/pdx/system/vr/sensors 0775 system system
-
 on boot
     # For cpusets initialize for Silver only first and then Silver + Gold
     # Silver only configuration cannot work with 0-7
@@ -144,17 +89,6 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
-
-    # Update DVR cpusets to boot-time values
-    write /dev/cpuset/kernel/cpus 0-7
-    write /dev/cpuset/system/cpus 0-7
-    write /dev/cpuset/system/performance/cpus 0-7
-    write /dev/cpuset/system/background/cpus 0-7
-    write /dev/cpuset/system/cpus 0-7
-    write /dev/cpuset/application/cpus 0-7
-    write /dev/cpuset/application/performance/cpus 0-7
-    write /dev/cpuset/application/background/cpus 0-7
-    write /dev/cpuset/application/cpus 0-7
 
     # Disable console_suspend to get better logging for kernel crashes
     write /sys/module/printk/parameters/console_suspend N
@@ -279,15 +213,6 @@ on enable-low-power
     write /dev/cpuset/foreground/boost/cpus 4-7
     write /dev/cpuset/foreground/cpus 0-2,4-7
     write /dev/cpuset/top-app/cpus 0-7
-
-    # Update DVR cpusets to runtime values
-    # Kernel cpuset will be apply on PowerHAL
-    write /dev/cpuset/system/performance/cpus 6-7
-    write /dev/cpuset/system/background/cpus 0-1
-    write /dev/cpuset/system/cpus 0-1,6-7
-    write /dev/cpuset/application/performance/cpus 4-5
-    write /dev/cpuset/application/background/cpus 0-1
-    write /dev/cpuset/application/cpus 0-1,4-5
 
     # Turn off scheduler boost at the end
     write /proc/sys/kernel/sched_boost 0
