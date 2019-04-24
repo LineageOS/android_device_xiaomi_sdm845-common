@@ -217,6 +217,13 @@ on enable-low-power
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/restricted/cpus 0-3
 
+    # Setup runtime blkio
+    # value for group_idle is us
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 10
+    write /dev/blkio/blkio.group_idle 2000
+    write /dev/blkio/background/blkio.group_idle 0
+
     # Turn off scheduler boost at the end
     write /proc/sys/kernel/sched_boost 0
 
