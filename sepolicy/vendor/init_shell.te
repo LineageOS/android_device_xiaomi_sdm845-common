@@ -1,0 +1,2 @@
+allow qti_init_shell sysfs_leds:file write;
+allow qti_init_shell sysfs_white_led:file write;

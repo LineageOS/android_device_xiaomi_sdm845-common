@@ -58,6 +58,7 @@
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,leds@d000/leds/white(/.*)?              u:object_r:sysfs_white_led:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-1/spmi1-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,leds@d000/leds/white(/.*)?              u:object_r:sysfs_white_led:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-1/spmi1-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?        u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/a88000.i2c/i2c-0/0-0063/leds/ir(/.*)? 	u:object_r:sysfs_leds:s0
 
 # Lights HAL
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sdm845            u:object_r:hal_light_default_exec:s0
