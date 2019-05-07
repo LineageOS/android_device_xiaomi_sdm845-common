@@ -240,6 +240,7 @@ on charger
     start vendor.hvdcp_opti
     start vendor.power_off_alarm
     start vendor.poweroffm64
+    start leds-sh
     mount tmpfs tmpfs /data
     start vendor.thermal-engine
     setprop vendor.usb.controller a600000.dwc3
@@ -476,6 +477,11 @@ service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
     user system
     group system inet net_admin wifi net_raw
+    oneshot
+
+service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
+    class core
+    user root
     oneshot
 
 service ppd /vendor/bin/mm-pp-dpps
