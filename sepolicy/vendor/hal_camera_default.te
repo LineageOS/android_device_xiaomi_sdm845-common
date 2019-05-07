@@ -10,3 +10,7 @@ allow hal_camera_default remosaic_daemon_service:service_manager find;
 
 allow hal_camera_default sysfs_kgsl:file {getattr read open};
 allow hal_camera_default sysfs_kgsl:dir search;
+
+allow hal_camera_default sysfs_leds:dir {ioctl read getattr lock search open};
+allow hal_camera_default sysfs_leds:file {ioctl read write getattr lock append map open};
+allow hal_camera_default sysfs_leds:lnk_file read;
