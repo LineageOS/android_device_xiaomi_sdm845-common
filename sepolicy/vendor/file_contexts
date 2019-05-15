@@ -64,3 +64,7 @@
 
 # LiveDisplay custom HAL
 /vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi_sdm845        u:object_r:hal_lineage_livedisplay_default_exec:s0
+
+# Mlipay
+/vendor/bin/mlipayd@1\.1             u:object_r:hal_mlipay_default_exec:s0
+
