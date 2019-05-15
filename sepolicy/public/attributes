@@ -1,1 +1,3 @@
 hal_attribute(displayfeature_xiaomi)
+
+hal_attribute(mlipay)
