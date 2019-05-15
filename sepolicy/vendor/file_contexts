@@ -48,6 +48,9 @@
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sdm845                                     u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi_sdm845                                 u:object_r:hal_lineage_livedisplay_default_exec:s0
 
+# Mlipay
+/vendor/bin/mlipayd@1\.1             u:object_r:hal_mlipay_default_exec:s0
+
 # Persist files
 /persist/audio(/.*)?                          u:object_r:persist_audio_file:s0
 /persist/camera(/.*)?                         u:object_r:persist_camera_file:s0
