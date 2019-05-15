@@ -17,6 +17,7 @@
 /(vendor|system/vendor)/bin/glgps             u:object_r:glgps_exec:s0
 /(vendor|system/vendor)/bin/ignss_1_1         u:object_r:hal_gnss_default_exec:s0
 /(vendor|system/vendor)/bin/lhd               u:object_r:lhd_exec:s0
+/(vendor|system/vendor)/bin/mlipayd@1\.1      u:object_r:hal_mlipay_default_exec:s0
 
 # Fingerprint devices
 /dev/goodix_fp                  u:object_r:fingerprint_device:s0
