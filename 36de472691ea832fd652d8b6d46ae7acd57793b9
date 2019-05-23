@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80fc4281_53ad8d38",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-05-23T20:13:07Z",
+      "side": 1,
+      "message": "This must be moved to a different place in this file. What comes after this new property trigger belongs to the one above.",
+      "revId": "36de472691ea832fd652d8b6d46ae7acd57793b9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
