@@ -16,6 +16,24 @@
       "revId": "a506493b1f052d81ba1fa624842d1eba5a684bba",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f3b083c_2acbae82",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 33
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 16299
+      },
+      "writtenOn": "2019-05-26T18:58:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66d375af_f7a09bbc",
+      "revId": "a506493b1f052d81ba1fa624842d1eba5a684bba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
