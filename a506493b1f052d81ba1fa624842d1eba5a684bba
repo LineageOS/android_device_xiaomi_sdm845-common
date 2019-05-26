@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66d375af_f7a09bbc",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 33
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 16299
+      },
+      "writtenOn": "2019-05-26T18:53:16Z",
+      "side": 1,
+      "message": "These three libraries aren\u0027t available in vendor partition (at least on dipper), causes problems on blobs extraction and system running",
+      "revId": "a506493b1f052d81ba1fa624842d1eba5a684bba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
