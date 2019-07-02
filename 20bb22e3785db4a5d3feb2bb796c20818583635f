@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3601debe_21978727",
+        "filename": "power/android.hardware.power@1.0-service.xiaomi_sdm845.rc",
+        "patchSetId": 48
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 20225
+      },
+      "writtenOn": "2019-07-02T03:58:49Z",
+      "side": 0,
+      "message": "Can we add this back or fix the reason its required as without it DT2W isnt working.",
+      "range": {
+        "startLine": 2,
+        "startChar": 4,
+        "endLine": 2,
+        "endChar": 12
+      },
+      "revId": "20bb22e3785db4a5d3feb2bb796c20818583635f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
