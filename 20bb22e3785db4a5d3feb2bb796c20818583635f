@@ -22,6 +22,30 @@
       "revId": "20bb22e3785db4a5d3feb2bb796c20818583635f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1fcfaccf_b0de5604",
+        "filename": "power/android.hardware.power@1.0-service.xiaomi_sdm845.rc",
+        "patchSetId": 48
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-05T10:21:12Z",
+      "side": 0,
+      "message": "My bad, I forgot about this. I\u0027ll restore it.",
+      "parentUuid": "3601debe_21978727",
+      "range": {
+        "startLine": 2,
+        "startChar": 4,
+        "endLine": 2,
+        "endChar": 12
+      },
+      "revId": "20bb22e3785db4a5d3feb2bb796c20818583635f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
