@@ -41,6 +41,7 @@ public class ProximitySensor implements SensorEventListener {
     private Context mContext;
     private Sensor mSensor;
     private SensorManager mSensorManager;
+    private boolean mIsNear;
 
     public ProximitySensor(Context context) {
         mContext = context;
@@ -55,11 +56,14 @@ public class ProximitySensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        try {
-            FileUtils.stringToFile(FP_PROX_NODE, isNear ? "1" : "0");
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to write to " + FP_PROX_NODE, e);
+        final boolean isNear = event.values[0] < mSensor.getMaximumRange();
+        if (isNear != mIsNear) {
+            mIsNear = isNear;
+            try {
+                FileUtils.stringToFile(FP_PROX_NODE, isNear ? "1" : "0");
+            } catch (IOException e) {
+                Log.e(TAG, "Failed to write to " + FP_PROX_NODE, e);
+            }
         }
     }
 
