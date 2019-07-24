@@ -137,6 +137,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.latch_unsignaled=1 \
+    debug.sf.enable_gl_backpressure=1 \
     debug.sf.hw=0 \
     persist.demo.hdmirotationlock=false \
     persist.sys.sf.native_mode=0 \
