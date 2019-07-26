@@ -16,6 +16,24 @@
       "revId": "0229fefa2a9e7cd00b9c5bed82d61e42e7a807a5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9b85ddd_466eedd4",
+        "filename": "sdm845.mk",
+        "patchSetId": 39
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-26T18:57:20Z",
+      "side": 0,
+      "message": "Yes, I am aware of that. But with this change as is, the lib is automatically built.",
+      "parentUuid": "9306e2ca_35c278f2",
+      "revId": "0229fefa2a9e7cd00b9c5bed82d61e42e7a807a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
