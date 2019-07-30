@@ -878,10 +878,6 @@ vendor/lib/libsubsystem_control.so
 vendor/lib64/libSubSystemShutdown.so
 vendor/lib64/libsubsystem_control.so
 
-# Thermal
-vendor/lib64/hw/thermal.sdm845.so
-vendor/lib/hw/thermal.sdm845.so
-
 # Thermal engine
 vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
@@ -919,10 +915,6 @@ vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
-
-# VR
-vendor/lib64/hw/vr.sdm845.so
-vendor/lib/hw/vr.sdm845.so
 
 # WiFi
 vendor/bin/hw/hostapd
