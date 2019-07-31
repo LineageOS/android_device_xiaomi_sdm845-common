@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "702178d7_ddf9735a",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-31T09:04:27Z",
+      "side": 1,
+      "message": "Where did you get this from?",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 30
+      },
+      "revId": "e561bac303f307e548f7f785bef42997bc9ada64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18c1e014_b3f570e4",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-31T09:04:27Z",
+      "side": 1,
+      "message": "Are these used anywhere?",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 27
+      },
+      "revId": "e561bac303f307e548f7f785bef42997bc9ada64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89673fae_9a0ca91e",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-31T09:04:27Z",
+      "side": 1,
+      "message": "This one is set globally: https://github.com/LineageOS/android_vendor_lineage/blob/lineage-16.0/config/BoardConfigQcom.mk#L45-L47",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 26
+      },
+      "revId": "e561bac303f307e548f7f785bef42997bc9ada64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b63563a_a59f14b3",
+        "filename": "sdm845.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-31T09:04:27Z",
+      "side": 1,
+      "message": "This package doesn\u0027t exist.",
+      "range": {
+        "startLine": 135,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 15
+      },
+      "revId": "e561bac303f307e548f7f785bef42997bc9ada64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
