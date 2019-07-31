@@ -91,6 +91,29 @@
       "revId": "e561bac303f307e548f7f785bef42997bc9ada64",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58237e22_2b245a6c",
+        "filename": "sdm845.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-07-31T09:07:42Z",
+      "side": 1,
+      "message": "Also, it looks like this is implicitly build. \n\nhttps://github.com/LineageOS/android_hardware_qcom_display/blob/lineage-16.0-caf-845/common.mk#L15-L17 + https://github.com/LineageOS/android_hardware_qcom_display/blob/lineage-16.0-caf-845/sdm/libs/hwc2/Android.mk#L41-L45",
+      "range": {
+        "startLine": 141,
+        "startChar": 4,
+        "endLine": 141,
+        "endChar": 29
+      },
+      "revId": "e561bac303f307e548f7f785bef42997bc9ada64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
