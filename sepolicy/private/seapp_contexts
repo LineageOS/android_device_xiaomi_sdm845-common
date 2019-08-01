@@ -1,1 +1,3 @@
 user=system seinfo=platform name=org.lineageos.pocketmode domain=pocketmode_app type=system_app_data_file
+
+user=system seinfo=platform name=org.ifaa.android.manager domain=mlipay_app type=system_app_data_file
