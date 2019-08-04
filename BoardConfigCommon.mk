@@ -136,7 +136,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2018-06-05
+VENDOR_SECURITY_PATCH := 2019-06-05
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
