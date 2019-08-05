@@ -309,7 +309,9 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
+    android.hardware.wifi@1.0-service \
+    vendor.qti.hardware.wifi.hostapd@1.0 \
+    vendor.qti.hardware.wifi.supplicant@2.0
 
 # WiFi Display
 PRODUCT_PACKAGES += \

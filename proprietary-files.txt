@@ -929,8 +929,6 @@ vendor/lib64/libwapi_cert.so
 vendor/lib64/libwifi-hal-qcom.so
 vendor/lib64/libwifi-hal.so
 vendor/lib64/libwpa_client.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
 
 # WiFi Display
 bin/wfdservice
