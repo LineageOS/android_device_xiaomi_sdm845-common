@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec54ccf_f41b7b30",
+        "filename": "releasetools.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-08-06T08:21:43Z",
+      "side": 1,
+      "message": "Maybe better to remove this completely?",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 54
+      },
+      "revId": "6663582b6d717e07ae60a20c3c491f3b7e73ab02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
