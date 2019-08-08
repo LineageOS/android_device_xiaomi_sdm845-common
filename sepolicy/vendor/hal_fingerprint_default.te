@@ -8,6 +8,11 @@ allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_default input_device:dir r_dir_perms;
 allow hal_fingerprint_default input_device:chr_file rw_file_perms;
 
+allow hal_fingerprint_default sysfs_graphics:dir search;
+allow hal_fingerprint_default sysfs_graphics:file r_file_perms;
+allow hal_fingerprint_default sysfs_msm_subsys:dir search;
+allow hal_fingerprint_default sysfs_msm_subsys:file r_file_perms;
+
 set_prop(hal_fingerprint_default, vendor_fp_prop)
 hal_client_domain(hal_fingerprint_default, hal_perf)
 
