@@ -35,9 +35,7 @@ ro.miui.cust_variant       u:object_r:exported_default_prop:s0
 persist.vendor.sys.pay.ifaa              u:object_r:vendor_tee_listener_prop:s0
 
 # PowerHAL
-vendor.powerhal.audio      u:object_r:power_prop:s0
-vendor.powerhal.init       u:object_r:power_prop:s0
-vendor.powerhal.rendering  u:object_r:power_prop:s0
+vendor.powerhal.           u:object_r:vendor_power_prop:s0
 
 # Sensors
 persist.sensor.sardisable  u:object_r:sensors_prop:s0
