@@ -214,7 +214,7 @@ vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|170dfc63a063afab8e33ee6d34c20
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
-etc/init/dpmd.rc
+#etc/init/dpmd.rc
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
@@ -895,10 +895,10 @@ vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
 
 # WiFi Display
 bin/wfdservice
-etc/init/wfdservice.rc
+#etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
--framework/WfdCommon.jar
+#-framework/WfdCommon.jar
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib64/libmmrtpdecoder.so
 lib64/libmmrtpencoder.so
