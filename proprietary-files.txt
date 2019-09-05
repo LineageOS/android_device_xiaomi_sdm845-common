@@ -72,8 +72,8 @@ vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so
 
 # Bluetooth (aptX) - from crosshatch - PD1A.180720.030
-lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
-lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
+#lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
+#lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -214,7 +214,7 @@ vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|170dfc63a063afab8e33ee6d34c20
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
-etc/init/dpmd.rc
+#etc/init/dpmd.rc
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
@@ -895,10 +895,10 @@ vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
 
 # WiFi Display
 bin/wfdservice
-etc/init/wfdservice.rc
+#etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
--framework/WfdCommon.jar
+#-framework/WfdCommon.jar
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib64/libmmrtpdecoder.so
 lib64/libmmrtpencoder.so
