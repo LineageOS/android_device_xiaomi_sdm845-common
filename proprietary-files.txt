@@ -898,7 +898,7 @@ bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
--framework/WfdCommon.jar
+#-framework/WfdCommon.jar
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib64/libmmrtpdecoder.so
 lib64/libmmrtpencoder.so
