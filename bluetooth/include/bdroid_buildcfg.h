@@ -23,10 +23,18 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#include <cutils/properties.h>
+#include <stdint.h>
 #include <string.h>
 
 #include "osi/include/osi.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+int property_get(const char *key, char *value, const char *default_value);
+#ifdef __cplusplus
+}
+#endif
 
 typedef struct {
     const char *product_device;
@@ -60,7 +68,6 @@ static inline const char *BtmGetDefaultName()
 }
 
 #define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
-#undef PROPERTY_VALUE_MAX
 // Disables read remote device feature
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    16
