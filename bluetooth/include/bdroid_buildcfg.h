@@ -23,7 +23,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#include <cutils/properties.h>
+#include <stdint.h>
 #include <string.h>
 
 #include "osi/include/osi.h"
@@ -45,7 +45,7 @@ static const device_t devices[] = {
 static inline const char *BtmGetDefaultName()
 {
     char product_device[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device", product_device, "");
+    osi_property_get("ro.product.device", product_device, "");
 
     for (unsigned int i = 0; i < ARRAY_SIZE(devices); i++) {
         device_t device = devices[i];
@@ -60,7 +60,6 @@ static inline const char *BtmGetDefaultName()
 }
 
 #define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
-#undef PROPERTY_VALUE_MAX
 // Disables read remote device feature
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    16
