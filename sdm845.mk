@@ -304,6 +304,12 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vndk-compat/ld.config.compat.txt:system/etc/ld.config.compat.txt
+
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
+
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp

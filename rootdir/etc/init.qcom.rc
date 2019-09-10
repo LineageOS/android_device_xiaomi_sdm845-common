@@ -104,6 +104,8 @@ on late-fs
     write /sys/block/dm-3/queue/read_ahead_kb 2048
 
 on post-fs
+    export LD_CONFIG_FILE /system/etc/ld.config.compat.txt
+
     chmod 0755 /sys/kernel/debug/tracing
 
     # set RLIMIT_MEMLOCK to 64MB
