@@ -22,6 +22,30 @@
       "revId": "28d31a4324a4d3b7dd116b381f5ad4a576550e41",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d359331_15d9e7d9",
+        "filename": "bluetooth/include/bdroid_buildcfg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2019-09-11T13:00:03Z",
+      "side": 1,
+      "message": "osi_property_get simply wraps property_get on android https://github.com/LineageOS/android_system_bt/blob/lineage-17.0/osi/src/properties.cc#L44, but I agree it\u0027s a better solution to avoid forward declaration.",
+      "parentUuid": "a3c2904a_7e485092",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 16
+      },
+      "revId": "28d31a4324a4d3b7dd116b381f5ad4a576550e41",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
