@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b13be09d_605a8676",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 24
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-09-11T09:32:54Z",
+      "side": 1,
+      "message": "This must be disabled for beryllium and polaris.",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 37
+      },
+      "revId": "bc5710787633bbe7a3868fed5aa4200023c66409",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
