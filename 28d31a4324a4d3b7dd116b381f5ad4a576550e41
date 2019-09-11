@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3c2904a_7e485092",
+        "filename": "bluetooth/include/bdroid_buildcfg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-09-11T12:51:50Z",
+      "side": 1,
+      "message": "Luk suggested to use osi_property_get instead.",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 16
+      },
+      "revId": "28d31a4324a4d3b7dd116b381f5ad4a576550e41",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
