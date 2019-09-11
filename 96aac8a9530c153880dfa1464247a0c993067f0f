@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a289639e_313ef6d7",
+        "filename": "bluetooth/include/bdroid_buildcfg.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2019-09-11T11:53:23Z",
+      "side": 1,
+      "message": "PROPERTY_VALUE_MAX is defined in system/bt/osi/include/properties.h and will be included before including this header, so no need to replace it with an instance number",
+      "range": {
+        "startLine": 55,
+        "startChar": 17,
+        "endLine": 55,
+        "endChar": 28
+      },
+      "revId": "96aac8a9530c153880dfa1464247a0c993067f0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
