@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fa3aff4_ae43bd2f",
+        "filename": "bluetooth/include/bdroid_buildcfg.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-09-12T16:31:06Z",
+      "side": 1,
+      "message": "I still don\u0027t like this. Only reverted to this patchset to be able to go ahead with compilation.",
+      "range": {
+        "startLine": 55,
+        "startChar": 24,
+        "endLine": 55,
+        "endChar": 26
+      },
+      "revId": "0b8d86f23d8944a39e8dea0477730b35d1409c7f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
