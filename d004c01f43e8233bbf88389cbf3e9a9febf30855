@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de5eb6ee_cb9b6530",
+        "filename": "releasetools.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-09-17T21:12:49Z",
+      "side": 1,
+      "message": "What about \"Patching {} image unconditionally\", just like it\u0027s showed in case of system and vendor?",
+      "range": {
+        "startLine": 44,
+        "startChar": 21,
+        "endLine": 44,
+        "endChar": 39
+      },
+      "revId": "d004c01f43e8233bbf88389cbf3e9a9febf30855",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
