@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fdf4d164_af56cdef",
+        "filename": "light/Light.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-10-25T13:15:17Z",
+      "side": 1,
+      "message": "Stray tab.",
+      "range": {
+        "startLine": 173,
+        "startChar": 12,
+        "endLine": 173,
+        "endChar": 13
+      },
+      "revId": "60bd46a961afd4ff929e936716547b6baf7d3c4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
