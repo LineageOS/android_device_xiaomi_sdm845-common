@@ -47,10 +47,11 @@ class Light : public ILight {
   private:
     void handleBacklight(const LightState& state);
     void handleNotification(const LightState& state, size_t index);
+    void handleBattery(const LightState& state);
 
     std::mutex mLock;
     std::unordered_map<Type, std::function<void(const LightState&)>> mLights;
-    std::array<LightState, 3> mLightStates;
+    std::array<LightState, 2> mLightStates;
 };
 
 }  // namespace implementation
