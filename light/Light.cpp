@@ -72,7 +72,7 @@ static uint32_t getBrightness(const LightState& state) {
         blue = blue * alpha / 0xff;
     }
 
-    return (77 * red + 150 * green + 29 * blue) >> 8;
+    return (77 * red + 150 * green + 29 * blue) >> 11;
 }
 
 static uint32_t rgbToBrightness(const LightState& state) {
