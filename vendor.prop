@@ -130,6 +130,9 @@ drm.service.enabled=true
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# FS-verity
+ro.apk_verity.mode=2
+
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 
