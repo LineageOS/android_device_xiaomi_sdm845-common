@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6598f52a_a06565a3",
+        "filename": "org.ifaa.android.manager/src/org/ifaa/android/manager/IFAAManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16908
+      },
+      "writtenOn": "2020-01-11T13:23:35Z",
+      "side": 1,
+      "message": "This.",
+      "revId": "306cc21d85226fed83cda97f53599e972b5cbc4e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
