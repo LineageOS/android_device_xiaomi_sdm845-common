@@ -34,6 +34,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -136,6 +137,26 @@ void set_feature(feature_t feature, int state) {
 #ifdef TAP_TO_WAKE_NODE
         case POWER_FEATURE_DOUBLE_TAP_TO_WAKE: {
             int fd = open(TAP_TO_WAKE_NODE, O_RDWR);
+            
+        #ifdef TAP_TO_WAKE_NODE_POLARIS_EBBG
+            char buf[32];
+            int fd_ebbg = open(TAP_TO_WAKE_NODE_POLARIS_EBBG, O_RDWR);
+            /* Try reading the device name of TAP_TO_WAKE_NODE */
+            int rc = ioctl(fd_ebbg, EVIOCGNAME(sizeof(buf)), buf);
+            if (rc >= 0) {
+                ALOGI("TAP_TO_WAKE_NODE_POLARIS_EBBG dev name: %s.", buf);
+                /* the touchscreen driver is from polaris ebbg screen */
+                if (!strcmp(buf, "ft5x46")) {
+                    /* close the previous fd and use the ebbg one instead */
+                    close(fd);
+                    fd = fd_ebbg;
+                    ALOGI("ft5x46 driver detected. Use TAP_TO_WAKE_NODE_POLARIS_EBBG instead.");
+                }
+            } else {
+                ALOGI("TAP_TO_WAKE_NODE ioctl failed.");
+            }
+        #endif
+
             struct input_event ev;
             ev.type = EV_SYN;
             ev.code = SYN_CONFIG;
