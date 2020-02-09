@@ -1,0 +1,8 @@
+allow priv_app camera_prop:file { getattr open read };
+
+allow priv_app bt_firmware_file:filesystem getattr;
+allow priv_app firmware_file:filesystem getattr;
+allow priv_app sysfs:dir open;
+allow priv_app sysfs_loop:file { open read };
+
+allow priv_app vendor_audio_prop:file read;

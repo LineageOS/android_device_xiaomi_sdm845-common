@@ -1,0 +1,2 @@
+allow platform_app radio_data_file:dir getattr; 
+allow platform_app sysfs_kgsl:dir search;

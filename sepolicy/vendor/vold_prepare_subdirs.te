@@ -1,0 +1,1 @@
+allow vold_prepare_subdirs self:capability sys_admin;
