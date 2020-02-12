@@ -75,6 +75,7 @@ vendor/lib64/soundfx/libdirac.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libdirac.so
+vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libshoebox.so
 
 # Bluetooth
