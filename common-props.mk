@@ -208,8 +208,14 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.rcs.supported=0 \
-    persist.vendor.ims.disableUserAgent=0
+    persist.rcs.supported=1 \
+    persist.vendor.ims.disableUserAgent=0 \
+    persist.radio.data_con_rprt=1 \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.volte.dan_support=true \
+    persist.data.iwlan=1 \
+    persist.data.iwlan.ipsec.ap=1 \
+    persist.sys.cust.lte_config=true
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
