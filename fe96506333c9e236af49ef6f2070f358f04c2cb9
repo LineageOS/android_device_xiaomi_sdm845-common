@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23371bc2_7480a40f",
+        "filename": "sepolicy/vendor/abdb.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "should be in lineage sepolicy or resolved in a proper way",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35df875f_a6d172c9",
+        "filename": "sepolicy/vendor/isolated_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "whats ur problem",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0abb49f_3337e047",
+        "filename": "sepolicy/vendor/platform_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "extra tab.",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed66b055_318e9c3a",
+        "filename": "sepolicy/vendor/priv_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "macro",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7aa624b2_306c16e5",
+        "filename": "sepolicy/vendor/proc_net.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "no?",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b9ce250_6533e481",
+        "filename": "sepolicy/vendor/system_server.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "did u just use audit2allow?",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7b88b2a_15fe3c40",
+        "filename": "sepolicy/vendor/untrusted_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-02-13T00:05:31Z",
+      "side": 1,
+      "message": "had better label gcam like what google guys did",
+      "revId": "fe96506333c9e236af49ef6f2070f358f04c2cb9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
