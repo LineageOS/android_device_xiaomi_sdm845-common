@@ -33,6 +33,9 @@ persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
 
+# fastbootd
+ro.fastbootd.available=true
+
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.early_app_phase_offset_ns=500000
