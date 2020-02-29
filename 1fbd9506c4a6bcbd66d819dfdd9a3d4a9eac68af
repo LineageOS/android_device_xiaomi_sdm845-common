@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d5820c9_7c9680f2",
+        "filename": "audio/audio_effects.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-02-29T09:35:35Z",
+      "side": 0,
+      "message": "This is clearly common among all targets.",
+      "revId": "1fbd9506c4a6bcbd66d819dfdd9a3d4a9eac68af",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e170d6d3_3223137e",
+        "filename": "audio/audio_output_policy.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-02-29T09:35:35Z",
+      "side": 0,
+      "message": "Same.",
+      "revId": "1fbd9506c4a6bcbd66d819dfdd9a3d4a9eac68af",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae6a6ce5_fb301443",
+        "filename": "audio/graphite_ipc_platform_info.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-02-29T09:35:35Z",
+      "side": 0,
+      "message": "This can be kept common.",
+      "revId": "1fbd9506c4a6bcbd66d819dfdd9a3d4a9eac68af",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef5bcc95_4c2a90e2",
+        "filename": "audio/listen_platform_info.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-02-29T09:35:35Z",
+      "side": 0,
+      "message": "Same.",
+      "revId": "1fbd9506c4a6bcbd66d819dfdd9a3d4a9eac68af",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
