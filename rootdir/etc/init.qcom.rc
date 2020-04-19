@@ -613,10 +613,6 @@ service chre /vendor/bin/chre
 on property:vendor.opengles.version=*
     setprop ro.opengles.version ${vendor.opengles.version}
 
-# Set gpu available frequencies property
-on property:vendor.gpu.available_frequencies=*
-    setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
-
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
