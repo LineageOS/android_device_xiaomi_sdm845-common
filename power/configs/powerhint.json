@@ -231,10 +231,9 @@
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
-        "CAMERA_STREAMING",
         "VR_SUSTAINED_PERFORMANCE",
         "SUSTAINED_PERFORMANCE",
-        "VR_MODE",
+        "VR",
         ""
       ],
       "Type": "Property"
@@ -243,7 +242,7 @@
       "Name": "PowerHALAudioState",
       "Path": "vendor.powerhal.audio",
       "Values": [
-        "AUDIO_LOW_LATENCY",
+        "AUDIO_STREAMING_LOW_LATENCY",
         ""
       ],
       "Type": "Property"
@@ -293,55 +292,55 @@
       "Value": "342000000"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "PowerHALMainState",
       "Duration": 0,
-      "Value": "VR_MODE"
+      "Value": "VR"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "ThermalMode",
       "Duration": 0,
       "Value": "-vr"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1459200"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
       "Value": "1459200"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
       "Value": "1420800"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
       "Value": "1420800"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "342000000"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "342000000"
     },
     {
-      "PowerHint": "VR_MODE",
+      "PowerHint": "VR",
       "Node": "GPUBusMinFreq",
       "Duration": 0,
       "Value": "5931"
@@ -563,55 +562,49 @@
       "Value": "44"
     },
     {
-      "PowerHint": "CAMERA_STREAMING",
-      "Node": "PowerHALMainState",
-      "Duration": 0,
-      "Value": "CAMERA_STREAMING"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING",
+      "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1996800"
     },
     {
-      "PowerHint": "CAMERA_STREAMING",
+      "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "CPUBWSampleMs",
       "Duration": 0,
       "Value": "10"
     },
     {
-      "PowerHint": "CAMERA_STREAMING",
+      "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "CPUBWIOPercent",
       "Duration": 0,
       "Value": "80"
     },
     {
-      "PowerHint": "CAMERA_STREAMING",
+      "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "LLCCBWSampleMs",
       "Duration": 0,
       "Value": "10"
     },
     {
-      "PowerHint": "AUDIO_STREAMING",
+      "PowerHint": "AUDIO_LAUNCH",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 2000,
       "Value": "1459200"
     },
     {
-      "PowerHint": "AUDIO_STREAMING",
+      "PowerHint": "AUDIO_LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "44"
     },
     {
-      "PowerHint": "AUDIO_LOW_LATENCY",
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
       "Node": "PowerHALAudioState",
       "Duration": 0,
-      "Value": "AUDIO_LOW_LATENCY"
+      "Value": "AUDIO_STREAMING_LOW_LATENCY"
     },
     {
-      "PowerHint": "AUDIO_LOW_LATENCY",
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 0,
       "Value": "44"
