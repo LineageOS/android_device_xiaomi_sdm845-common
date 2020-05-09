@@ -1,0 +1,6 @@
+type xiaomi_parts, domain;
+
+app_domain(xiaomi_parts)
+
+# Allow XiaomiParts to write to sysfs_thermal
+allow xiaomi_parts sysfs_thermal:file w_file_perms;
