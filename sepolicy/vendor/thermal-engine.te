@@ -1,3 +1,7 @@
 allow thermal-engine thermal_data_file:dir rw_dir_perms;
 allow thermal-engine thermal_data_file:file create_file_perms;
+
+allow thermal-engine self:capability { chown fowner };
+allow thermal-engine sysfs_devfreq:dir { search read };
+
 set_prop(thermal-engine, thermal_engine_prop)
