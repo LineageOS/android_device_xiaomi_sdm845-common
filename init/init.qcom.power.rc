@@ -180,36 +180,6 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/up_scale 250
     write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/idle_mbps 1600
 
-    # Enable mem_latency governor for DDR scaling
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/mem_latency/ratio_ceil 400
-
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/mem_latency/ratio_ceil 400
-
-    # Enable mem_latency governor for L3 scaling
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/mem_latency/ratio_ceil 400
-
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/mem_latency/ratio_ceil 400
-
-    # Enable userspace governor for L3 cdsp nodes
-    write /sys/class/devfreq/soc:qcom,cdsp-cdsp-l3-lat/governor "userspace"
-    chown system /sys/class/devfreq/soc:qcom,cdsp-cdsp-l3-lat/userspace/set_freq
-
-    # Gold L3 ratio ceil
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/mem_latency/ratio_ceil 4000
-
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-latfloor/governor "compute"
-    write /sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-latfloor/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor "compute"
-    write /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/polling_interval 10
-
     # Set cpuset parameters
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/system-background/cpus 0-3
@@ -251,6 +221,8 @@ on enable-low-power
 
     start vendor.per_proxy
 
+    start dcvs-sh
+
 on property:sys.boot_completed=1
     trigger enable-low-power
 
@@ -271,3 +243,10 @@ service vendor.poweroffm64 /vendor/bin/poweroffm64
     class late_start
     oneshot
     seclabel u:r:poweroffm64:s0
+
+service dcvs-sh /vendor/bin/init.qti.dcvs.sh
+    class late_start
+    user root
+    group root system
+    disabled
+    oneshot
