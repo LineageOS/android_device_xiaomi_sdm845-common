@@ -115,6 +115,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.qti.dcvs.sh \
     ueventd.qcom.rc
 
 # Configstore
