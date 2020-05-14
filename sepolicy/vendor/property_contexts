@@ -1,3 +1,6 @@
+# ADSP RPC
+vendor.fastrpc.             u:object_r:adsprpc_prop:s0
+
 # Camera
 camera.                     u:object_r:camera_prop:s0
 persist.camera.             u:object_r:camera_prop:s0
