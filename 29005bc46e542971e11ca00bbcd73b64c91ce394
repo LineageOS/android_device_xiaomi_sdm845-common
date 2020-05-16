@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cb99b314_dd21479a",
+        "filename": "parts/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-16T21:44:18Z",
+      "side": 1,
+      "message": "Only Xiaomi can tell, because they have an \"incall\" profile: https://gist.github.com/bgcngm/c0451e125459c4a7acec4af64d8527ef",
+      "parentUuid": "b28ce6f8_fed728dd",
+      "range": {
+        "startLine": 67,
+        "startChar": 34,
+        "endLine": 67,
+        "endChar": 40
+      },
+      "revId": "29005bc46e542971e11ca00bbcd73b64c91ce394",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3d14ceac_3b772581",
         "filename": "parts/res/values/strings.xml",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2020-05-16T19:20:46Z",
       "side": 1,
       "message": "This should have been something more generic like \"video\" rather than being product-specific",
+      "range": {
+        "startLine": 69,
+        "startChar": 35,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "29005bc46e542971e11ca00bbcd73b64c91ce394",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b651c973_aa7e9c17",
+        "filename": "parts/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-16T21:44:18Z",
+      "side": 1,
+      "message": "I thought of that as well. \"Video\" or \"Streaming\" may fit better.",
+      "parentUuid": "3d14ceac_3b772581",
       "range": {
         "startLine": 69,
         "startChar": 35,
