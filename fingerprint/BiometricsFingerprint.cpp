@@ -290,6 +290,22 @@ fingerprint_device_t* getFingerprintDevice()
         return fp_device;
     }
 
+    fp_device = getDeviceForVendor("goodix_fod");
+    if (fp_device == nullptr) {
+        ALOGE("Failed to load goodix_fod fingerprint module");
+    } else {
+        setFpVendorProp("goodix_fod");
+        return fp_device;
+    }
+
+    fp_device = getDeviceForVendor("syna");
+    if (fp_device == nullptr) {
+        ALOGE("Failed to load syna fingerprint module");
+    } else {
+        setFpVendorProp("syna");
+        return fp_device;
+    }
+
     setFpVendorProp("none");
 
     return nullptr;
