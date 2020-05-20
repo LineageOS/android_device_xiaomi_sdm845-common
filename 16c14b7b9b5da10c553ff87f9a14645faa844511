@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "c9ed22a0_283b4f26",
+        "filename": "sepolicy/vendor/hal_lineage_fod_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-20T12:04:29Z",
+      "side": 1,
+      "message": "Okay, maybe that6 a better alternative. I\u0027ll give it a try.",
+      "parentUuid": "2a975619_540290eb",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 86
+      },
+      "revId": "16c14b7b9b5da10c553ff87f9a14645faa844511",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "14a1649d_e74fa287",
         "filename": "sepolicy/vendor/hwservice_contexts",
         "patchSetId": 4
