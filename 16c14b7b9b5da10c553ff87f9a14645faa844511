@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df37f70b_528b79b6",
+        "filename": "fod/FingerprintInscreen.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-05-20T11:04:16Z",
+      "side": 1,
+      "message": "Additional kernel DRM changes is needed if u decide to use this one, however, with current Xiaomi\u0027s disp_param API, it could do the job as well.\nhttps://github.com/TingyiChen/device_xiaomi_raphael/commits/00a253f6fb5c9f62f17179889ece179edac30f57/fod",
+      "range": {
+        "startLine": 29,
+        "startChar": 22,
+        "endLine": 29,
+        "endChar": 84
+      },
+      "revId": "16c14b7b9b5da10c553ff87f9a14645faa844511",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14a1649d_e74fa287",
+        "filename": "sepolicy/vendor/hwservice_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-05-20T11:04:16Z",
+      "side": 1,
+      "message": "I know this is what Xiaomi does.\nBut...\nIs there any specific reason of not keeping the old labels?",
+      "range": {
+        "startLine": 7,
+        "startChar": 89,
+        "endLine": 7,
+        "endChar": 121
+      },
+      "revId": "16c14b7b9b5da10c553ff87f9a14645faa844511",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
