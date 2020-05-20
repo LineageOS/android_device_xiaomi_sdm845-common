@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "2a975619_540290eb",
+        "filename": "sepolicy/vendor/hal_lineage_fod_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-05-20T12:02:12Z",
+      "side": 1,
+      "message": "I use this hal_client_domain(hal_lineage_fod_*, hal_fingerprint) instead and seems all fine without any denials or neverallows.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 86
+      },
+      "revId": "16c14b7b9b5da10c553ff87f9a14645faa844511",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "14a1649d_e74fa287",
         "filename": "sepolicy/vendor/hwservice_contexts",
         "patchSetId": 4
