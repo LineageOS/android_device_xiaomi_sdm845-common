@@ -65,7 +65,6 @@
       "Name": "GPUMinFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
       "Values": [
-        "520000000",
         "342000000",
         "257000000"
       ],
@@ -113,8 +112,8 @@
       "Name": "TASchedtuneBoost",
       "Path": "/dev/stune/top-app/schedtune.boost",
       "Values": [
-        "50",
-        "10"
+        "10",
+        "5"
       ],
       "ResetOnInit": true
     },
@@ -292,13 +291,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "1056000"
+      "Value": "576000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "TASchedtuneBoost",
       "Duration": 0,
-      "Value": "50"
+      "Value": "10"
     },
     {
       "PowerHint": "INTERACTION",
@@ -454,7 +453,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "520000000"
+      "Value": "342000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
