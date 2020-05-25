@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81fdc19f_b9fc2b50",
+        "filename": "fod/FingerprintInscreen.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-25T11:07:38Z",
+      "side": 1,
+      "message": "As per stock (set for equuleus and ursa):\n\npersist.vendor.sys.fp.fod.location.X_Y\u003d453,1640\npersist.vendor.sys.fp.fod.size.width_height\u003d173,173",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 27
+      },
+      "revId": "c59ef37b521d926d6dac409959583663bba4b6d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
