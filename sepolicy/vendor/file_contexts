@@ -36,6 +36,7 @@
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui                                           u:object_r:sysfs_graphics:s0
 
 # Leds nodes
 /sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/leds/ir(/.*)?                         u:object_r:sysfs_leds:s0
