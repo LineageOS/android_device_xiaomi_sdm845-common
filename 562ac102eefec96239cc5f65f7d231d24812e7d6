@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4cdc7cb4_ea2a2a55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-06-24T15:38:32Z",
+      "side": 1,
+      "message": "I know that you picked this change from op2 so this part that highlight here only applies to its display HAL. Our display HAL doesn\u0027t need it.",
+      "range": {
+        "startLine": 10,
+        "startChar": 48,
+        "endLine": 12,
+        "endChar": 49
+      },
+      "revId": "562ac102eefec96239cc5f65f7d231d24812e7d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
