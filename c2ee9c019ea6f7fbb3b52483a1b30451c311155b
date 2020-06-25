@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b90bd4c_6ccd9763",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2020-06-25T11:34:24Z",
+      "side": 0,
+      "message": "they\u0027re not used when a2dp split is enabled. if you don\u0027t take care of the case where users disable it from dev settings, it\u0027s fine to drop.",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 75
+      },
+      "revId": "c2ee9c019ea6f7fbb3b52483a1b30451c311155b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
