@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "03857171_70942bcc",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-06-26T17:25:51Z",
+      "side": 1,
+      "message": "My bad, it\u0027s bluetooth_audio_policy_configuration in your case.\nhttps://github.com/LineageOS/android_device_xiaomi_sdm845-common/blob/c2ee9c019ea6f7fbb3b52483a1b30451c311155b/audio/audio_policy_configuration_a2dp_offload_disabled.xml#L328.\nRename it to bluetooth_qti_audio_policy_configuration.xml otherwise it won\u0027t be used at all.",
+      "parentUuid": "5258bf41_d8554cd2",
+      "range": {
+        "startLine": 100,
+        "startChar": 24,
+        "endLine": 100,
+        "endChar": 64
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f45a491c_cfbacd14",
         "filename": "sdm845.mk",
         "patchSetId": 1
@@ -88,6 +112,29 @@
         "startChar": 55,
         "endLine": 101,
         "endChar": 89
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7878c4c_b6338a63",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-06-26T17:25:51Z",
+      "side": 1,
+      "message": "No idea why dian included this one in his commit I4d12752ae5fb2829d6612647c8740c84967f5434 ,\nGoogle was using hearing aid:\nhttps://github.com/LineageOS/android_device_google_crosshatch/commit/63234c5cd774a6073b4082659f94f13d7d6a74cb",
+      "range": {
+        "startLine": 102,
+        "startChar": 126,
+        "endLine": 102,
+        "endChar": 162
       },
       "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
