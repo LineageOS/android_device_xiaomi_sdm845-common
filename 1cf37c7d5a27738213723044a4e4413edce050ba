@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5258bf41_d8554cd2",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-06-26T13:43:17Z",
+      "side": 1,
+      "message": "I didn\u0027t follow you on this one. What do you mean?",
+      "parentUuid": "68ae3874_0dc93338",
+      "range": {
+        "startLine": 100,
+        "startChar": 24,
+        "endLine": 100,
+        "endChar": 64
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f45a491c_cfbacd14",
         "filename": "sdm845.mk",
         "patchSetId": 1
