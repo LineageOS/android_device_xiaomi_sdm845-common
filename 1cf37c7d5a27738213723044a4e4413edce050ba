@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3751341b_cca8dde9",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-06-26T00:34:35Z",
+      "side": 1,
+      "message": "Drop.",
+      "range": {
+        "startLine": 99,
+        "startChar": 24,
+        "endLine": 99,
+        "endChar": 72
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68ae3874_0dc93338",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-06-26T00:34:35Z",
+      "side": 1,
+      "message": "Include this in the disabled policy to replace bluetooth_hearing_aid_audio_policy_configuration.",
+      "range": {
+        "startLine": 100,
+        "startChar": 24,
+        "endLine": 100,
+        "endChar": 64
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f45a491c_cfbacd14",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-06-26T00:34:35Z",
+      "side": 1,
+      "message": "Normal one works as well.",
+      "range": {
+        "startLine": 101,
+        "startChar": 55,
+        "endLine": 101,
+        "endChar": 89
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59912dc9_2e7df5c0",
+        "filename": "sdm845.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-06-26T00:34:35Z",
+      "side": 1,
+      "message": "That\u0027s a dep.",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 20
+      },
+      "revId": "1cf37c7d5a27738213723044a4e4413edce050ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
