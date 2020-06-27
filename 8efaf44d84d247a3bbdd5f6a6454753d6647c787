@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0753bf6e_f3bc3ce9",
+        "filename": "audio/audio_policy_configuration.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2020-06-27T08:21:16Z",
+      "side": 1,
+      "message": "why do you add a2dp out here? when a2dp offload enabled, audio hal is responsible for a2dp out. https://github.com/LineageOS/android_hardware_qcom_audio/blob/lineage-17.1-caf-sdm845/configs/sdm845/audio_policy_configuration.xml#L358 is how it should be",
+      "range": {
+        "startLine": 365,
+        "startChar": 37,
+        "endLine": 365,
+        "endChar": 48
+      },
+      "revId": "8efaf44d84d247a3bbdd5f6a6454753d6647c787",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
