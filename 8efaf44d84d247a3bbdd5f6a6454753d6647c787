@@ -22,6 +22,30 @@
       "revId": "8efaf44d84d247a3bbdd5f6a6454753d6647c787",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "662d27ab_1572511f",
+        "filename": "audio/audio_policy_configuration.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-06-29T14:26:14Z",
+      "side": 1,
+      "message": "This was a plain copy of stock audio policy config. But comparing to CAF now I see it\u0027s kinda wrong. I\u0027ll fix it.",
+      "parentUuid": "0753bf6e_f3bc3ce9",
+      "range": {
+        "startLine": 365,
+        "startChar": 37,
+        "endLine": 365,
+        "endChar": 48
+      },
+      "revId": "8efaf44d84d247a3bbdd5f6a6454753d6647c787",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
