@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2df95065_e1b8f475",
+        "filename": "vendor.prop",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 24438
+      },
+      "writtenOn": "2020-07-10T05:54:57Z",
+      "side": 1,
+      "message": "Yes, it should be in system: persist.vendor.bt.a2dp                     u:object_r:bluetooth_prop:s0",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 42
+      },
+      "revId": "e1f1fe4918e358c832501afca354f1bac13eb35b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
