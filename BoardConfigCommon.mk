@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-BOARD_VENDOR := xiaomi
-
 COMMON_PATH := device/xiaomi/sdm845-common
 
 # Architecture
