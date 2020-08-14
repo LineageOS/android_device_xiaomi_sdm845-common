@@ -57,6 +57,14 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        system/lib64/libwfdnative.so | vendor/lib64/libgoodixhwfingerprint_gf9118.so )
+            patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+            ;;
+    esac
+}
+
 if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
     setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
