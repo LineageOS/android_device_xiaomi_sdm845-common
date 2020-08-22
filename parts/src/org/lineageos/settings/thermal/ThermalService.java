@@ -17,14 +17,16 @@
 package org.lineageos.settings.thermal;
 
 import android.app.ActivityManager;
+import android.app.ActivityManager.StackInfo;
+import android.app.IActivityManager;
 import android.app.Service;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
 
 import java.util.List;
@@ -89,16 +91,18 @@ public class ThermalService extends Service {
 
         @Override
         public void run() {
-            ActivityManager manager = context.getSystemService(ActivityManager.class);
-            List<ActivityManager.RunningTaskInfo> runningTasks = manager.getRunningTasks(1);
-            if (runningTasks != null && runningTasks.size() > 0) {
-                ComponentName topActivity = runningTasks.get(0).topActivity;
-                String foregroundApp = topActivity.getPackageName();
-                mHandler.postDelayed(this, 500);
-                if (!foregroundApp.equals(mPreviousApp)) {
-                    mThermalUtils.setThermalProfile(foregroundApp);
-                    mPreviousApp = foregroundApp;
+            IActivityManager iam = ActivityManager.getService();
+            try {
+                StackInfo focusedStack = iam.getFocusedStackInfo();
+                if (focusedStack != null && focusedStack.topActivity != null) {
+                    String foregroundApp = focusedStack.topActivity.getPackageName();
+                    mHandler.postDelayed(this, 500);
+                    if (!foregroundApp.equals(mPreviousApp)) {
+                        mThermalUtils.setThermalProfile(foregroundApp);
+                        mPreviousApp = foregroundApp;
+                    }
                 }
+            } catch (RemoteException ignored) {
             }
         }
     }
