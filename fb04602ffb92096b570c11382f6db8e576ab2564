@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c9d1bd4_96f95b92",
+        "filename": "parts/src/org/lineageos/settings/thermal/ThermalService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13559
+      },
+      "writtenOn": "2020-08-22T08:19:16Z",
+      "side": 1,
+      "message": "can move it to onCreate instead of keeping it in runnable",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 64
+      },
+      "revId": "fb04602ffb92096b570c11382f6db8e576ab2564",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
