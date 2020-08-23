@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c7e8a39_31e3a722",
+        "filename": "parts/src/org/lineageos/settings/thermal/ThermalService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-08-23T10:29:02Z",
+      "side": 1,
+      "message": "I\u0027d rather move this initilization to onCreate method.",
+      "range": {
+        "startLine": 44,
+        "startChar": 52,
+        "endLine": 44,
+        "endChar": 83
+      },
+      "revId": "99dc1a61aab99a2c88d70cae14b233c3e7a948c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
