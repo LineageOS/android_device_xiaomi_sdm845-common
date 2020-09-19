@@ -6,6 +6,8 @@
 
 BOARD_VENDOR := xiaomi
 
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 COMMON_PATH := device/xiaomi/sdm845-common
 
 # Architecture
@@ -149,6 +151,8 @@ VENDOR_SECURITY_PATCH := 2020-05-01
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
+
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
