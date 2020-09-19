@@ -7,6 +7,8 @@
 BOARD_VENDOR := xiaomi
 
 BUILD_BROKEN_PREBUILT_ELF_FILES := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 
 COMMON_PATH := device/xiaomi/sdm845-common
 
@@ -150,11 +152,12 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 VENDOR_SECURITY_PATCH := 2020-05-01
 
 # Sepolicy
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
+#BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
