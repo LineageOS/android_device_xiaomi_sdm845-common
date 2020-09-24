@@ -166,6 +166,9 @@ ro.telephony.iwlan_operation_mode=legacy
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
+# Radio
+persist.vendor.radio.enableadvancedscan=false
+
 # USB
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
