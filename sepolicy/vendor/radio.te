@@ -1,0 +1,2 @@
+binder_call(radio, hal_imsrtp)
+get_prop(radio, qcom_ims_prop)
