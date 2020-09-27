@@ -1,0 +1,18 @@
+# Started by init
+init_daemon_domain(hal_imsrtp)
+net_domain(hal_imsrtp)
+
+hwbinder_use(hal_imsrtp)
+get_prop(hal_imsrtp, hwservicemanager_prop)
+add_hwservice(hal_imsrtp, hal_imsrtp_hwservice)
+
+allow hal_imsrtp self: qipcrtr_socket  create_socket_perms_no_ioctl;
+unix_socket_connect(hal_imsrtp, ims, ims)
+
+allow hal_imsrtp self:capability net_bind_service;
+
+allow hal_imsrtp ion_device:chr_file r_file_perms;
+allow hal_imsrtp sysfs_data:file r_file_perms;
+r_dir_file(hal_imsrtp, sysfs_diag)
+
+binder_call(hal_imsrtp, radio)

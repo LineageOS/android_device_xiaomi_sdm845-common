@@ -1,0 +1,4 @@
+get_prop(radio, qcom_ims_prop)
+
+allow radio hal_imsrtp_hwservice:hwservice_manager find;
+binder_call(radio, hal_imsrtp)
