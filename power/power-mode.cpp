@@ -15,15 +15,24 @@
  */
 
 #include <dirent.h>
-#include <hardware/power.h>
 #include <linux/input.h>
 #include <string.h>
 #include <unistd.h>
 #include <utils.h>
 #include <utils/Log.h>
 
+#include <aidl/android/hardware/power/BnPower.h>
+
 #define INPUT_EVENT_WAKUP_MODE_OFF 4
 #define INPUT_EVENT_WAKUP_MODE_ON 5
+
+using ::aidl::android::hardware::power::Mode;
+
+namespace aidl {
+namespace android {
+namespace hardware {
+namespace power {
+namespace impl {
 
 int open_ts_input() {
     int fd = -1;
@@ -60,22 +69,38 @@ int open_ts_input() {
     return fd;
 }
 
-void set_device_specific_feature(feature_t feature, int state) {
-    switch (feature) {
-        case POWER_FEATURE_DOUBLE_TAP_TO_WAKE: {
+bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
+    switch (type) {
+        case Mode::DOUBLE_TAP_TO_WAKE:
+            *_aidl_return = true;
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool setDeviceSpecificMode(Mode type, bool enabled) {
+    switch (type) {
+        case Mode::DOUBLE_TAP_TO_WAKE: {
             int fd = open_ts_input();
             if (fd == -1) {
                 ALOGW("DT2W won't work because no supported touchscreen input devices were found");
-                return;
+                return false;
             }
             struct input_event ev;
             ev.type = EV_SYN;
             ev.code = SYN_CONFIG;
-            ev.value = state ? INPUT_EVENT_WAKUP_MODE_ON : INPUT_EVENT_WAKUP_MODE_OFF;
+            ev.value = enabled ? INPUT_EVENT_WAKUP_MODE_ON : INPUT_EVENT_WAKUP_MODE_OFF;
             write(fd, &ev, sizeof(ev));
             close(fd);
-        } break;
+        } return true;
         default:
-            break;
+            return false;
     }
 }
+
+}  // namespace impl
+}  // namespace power
+}  // namespace hardware
+}  // namespace android
+}  // namespace aidl

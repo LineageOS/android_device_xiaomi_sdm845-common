@@ -686,7 +686,7 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     socket audio_hw_socket seqpacket 0666 system system
     onrestart restart audioserver
 
-service vendor.power-hal-1-2 /vendor/bin/hw/android.hardware.power@1.2-service-qti
+service vendor.power-hal /vendor/bin/hw/android.hardware.power-service-qti
     override
     class hal
     user system
