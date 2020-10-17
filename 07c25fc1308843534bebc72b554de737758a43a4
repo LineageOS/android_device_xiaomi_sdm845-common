@@ -22,6 +22,30 @@
       "revId": "07c25fc1308843534bebc72b554de737758a43a4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4a5fe35_1e597cbe",
+        "filename": "rro_overlays/WifiOverlay/AndroidManifest.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-10-17T20:22:59Z",
+      "side": 1,
+      "message": "Damn it!",
+      "parentUuid": "45c09efc_fe1e607f",
+      "range": {
+        "startLine": 18,
+        "startChar": 40,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "07c25fc1308843534bebc72b554de737758a43a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
