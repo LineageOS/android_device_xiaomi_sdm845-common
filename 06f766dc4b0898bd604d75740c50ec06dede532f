@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eca9d66e_c04d6070",
+        "filename": "rro_overlays/TetheringOverlay/AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2020-10-20T03:46:16Z",
+      "side": 1,
+      "message": "Reminder",
+      "range": {
+        "startLine": 2,
+        "startChar": 48,
+        "endLine": 2,
+        "endChar": 59
+      },
+      "revId": "06f766dc4b0898bd604d75740c50ec06dede532f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
