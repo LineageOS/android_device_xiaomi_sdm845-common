@@ -263,6 +263,12 @@ on boot
 
     chmod 0666 /dev/input/event2
 
+    # Enable qcrild and data services
+    enable vendor.qcrild
+    enable vendor.qcrild2
+    enable vendor.dataqti
+    enable vendor.dataadpl
+
 # MSM specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/diag 2771 root log
@@ -418,9 +424,6 @@ on post-fs-data
 
     # Make MTU adjusting
     write /proc/sys/net/ipv4/tcp_mtu_probing 1
-
-    start vendor.qcrild
-    start vendor.qcrild2
 
     # Create directories for fingerprint
     mkdir /data/vendor/fpc 0770 system system
