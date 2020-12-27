@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libvulkan \
     memtrack.sdm845 \
-    vendor.display.config@1.7 \
+    vendor.display.config@2.0 \
     vendor.qti.hardware.display.allocator@1.0-service
 
 # DRM
@@ -358,8 +358,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig \
-    libdisplayconfig.vendor \
+    libdisplayconfig.qti \
     libnl \
     libqdMetaData \
     libqdMetaData.system
