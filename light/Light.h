@@ -45,7 +45,6 @@ class Light : public ILight {
     Return<void> getSupportedTypes(getSupportedTypes_cb _hidl_cb) override;
 
   private:
-    void handleBacklight(const LightState& state);
     void handleBattery(const LightState& state);
     void handleNotification(const LightState& state, size_t index);
 
