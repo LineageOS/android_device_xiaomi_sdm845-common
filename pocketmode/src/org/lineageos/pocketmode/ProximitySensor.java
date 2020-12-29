@@ -34,7 +34,10 @@ public class ProximitySensor implements SensorEventListener {
     private static final String TAG = "PocketModeProximity";
     private static final boolean DEBUG = false;
 
-    private static final String FP_PROX_NODE =
+    // TODO Check which vendor is present and modify FP_NODE and setFPProximityState
+    private static final String FPC_PROX_NODE =
+            "/sys/devices/platform/soc/soc:fingerprint_fpc/proximity_state";
+    private static final String GOODIX_PROX_NODE =
             "/sys/devices/platform/soc/soc:fingerprint_goodix/proximity_state";
 
     private ExecutorService mExecutorService;
@@ -61,9 +64,15 @@ public class ProximitySensor implements SensorEventListener {
 
     private void setFPProximityState(boolean isNear) {
         try {
-            FileUtils.stringToFile(FP_PROX_NODE, isNear ? "1" : "0");
+            FileUtils.stringToFile(FPC_PROX_NODE, isNear ? "1" : "0");
         } catch (IOException e) {
-            Log.e(TAG, "Failed to write to " + FP_PROX_NODE, e);
+            Log.e(TAG, "Failed to write to " + FPC_PROX_NODE, e);
+        }
+
+        try {
+            FileUtils.stringToFile(GOODIX_PROX_NODE, isNear ? "1" : "0");
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to write to " + GOODIX_PROX_NODE, e);
         }
     }
 
