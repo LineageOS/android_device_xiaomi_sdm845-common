@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- *               2017-2019 The LineageOS Project
+ *               2017-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,10 @@ public class ProximitySensor implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         boolean isNear = event.values[0] < mSensor.getMaximumRange();
+        setFPProximityState(isNear);
+    }
+
+    private void setFPProximityState(boolean isNear) {
         try {
             FileUtils.stringToFile(FP_PROX_NODE, isNear ? "1" : "0");
         } catch (IOException e) {
@@ -80,6 +84,7 @@ public class ProximitySensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Disabling");
         submit(() -> {
             mSensorManager.unregisterListener(this, mSensor);
+            setFPProximityState(false);
         });
     }
 }
