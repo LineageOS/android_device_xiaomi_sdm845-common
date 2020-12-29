@@ -23,6 +23,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.FileUtils;
+import android.os.SystemProperties;
 import android.util.Log;
 
 import java.io.IOException;
@@ -34,8 +35,11 @@ public class ProximitySensor implements SensorEventListener {
     private static final String TAG = "PocketModeProximity";
     private static final boolean DEBUG = false;
 
-    private static final String FP_PROX_NODE =
+    private static final String FPC_PROX_NODE =
+            "/sys/devices/platform/soc/soc:fingerprint_fpc/proximity_state";
+    private static final String GOODIX_PROX_NODE =
             "/sys/devices/platform/soc/soc:fingerprint_goodix/proximity_state";
+    private final String FPC_FILE;
 
     private ExecutorService mExecutorService;
     private Context mContext;
@@ -47,6 +51,11 @@ public class ProximitySensor implements SensorEventListener {
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         mExecutorService = Executors.newSingleThreadExecutor();
+
+        private final String vendor =
+                SystemProperties.get("persist.vendor.sys.fp.vendor", "");
+        FPC_FILE = vendor.equals("fpc") ? FPC_PROX_NODE : GOODIX_PROX_NODE;
+        if (DEBUG) Log.d(TAG, "Using proximity state from " + FPC_FILE);
     }
 
     private Future<?> submit(Runnable runnable) {
@@ -65,9 +74,9 @@ public class ProximitySensor implements SensorEventListener {
 
     private void setFPProximityState(boolean isNear) {
         try {
-            FileUtils.stringToFile(FP_PROX_NODE, isNear ? "1" : "0");
+            FileUtils.stringToFile(FPC_FILE, isNear ? "1" : "0");
         } catch (IOException e) {
-            Log.e(TAG, "Failed to write to " + FP_PROX_NODE, e);
+            Log.e(TAG, "Failed to write to " + FPC_FILE, e);
         }
     }
 
