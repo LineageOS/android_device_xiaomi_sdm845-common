@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7ed743d_b0aca2b3",
+        "filename": "pocketmode/src/org/lineageos/pocketmode/ProximitySensor.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-12-30T16:34:51Z",
+      "side": 1,
+      "message": "Update to 2020",
+      "range": {
+        "startLine": 3,
+        "startChar": 22,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "b3441d39860fa365e2fccfcc7965bfdba11b55b2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "babedca1_2a8e4c10",
+        "filename": "pocketmode/src/org/lineageos/pocketmode/ProximitySensor.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-12-30T16:34:51Z",
+      "side": 1,
+      "message": "Rename to FP_PROX_NODE, to avoid touching line 68 ad 70.",
+      "range": {
+        "startLine": 42,
+        "startChar": 25,
+        "endLine": 42,
+        "endChar": 33
+      },
+      "revId": "b3441d39860fa365e2fccfcc7965bfdba11b55b2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
