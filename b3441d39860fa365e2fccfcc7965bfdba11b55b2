@@ -45,6 +45,30 @@
       "revId": "b3441d39860fa365e2fccfcc7965bfdba11b55b2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b797e24_790d89d8",
+        "filename": "pocketmode/src/org/lineageos/pocketmode/ProximitySensor.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-12-30T16:38:31Z",
+      "side": 1,
+      "message": "Actually... since it\u0027s a member variable, you need to name it properly. Something like \"mFPProximityNode\"",
+      "parentUuid": "babedca1_2a8e4c10",
+      "range": {
+        "startLine": 42,
+        "startChar": 25,
+        "endLine": 42,
+        "endChar": 33
+      },
+      "revId": "b3441d39860fa365e2fccfcc7965bfdba11b55b2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
