@@ -38,7 +38,7 @@ public class PocketModeService extends Service {
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        screenStateFilter.addAction(Intent.ACTION_USER_PRESENT);
+        screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
         registerReceiver(mScreenStateReceiver, screenStateFilter);
     }
 
@@ -61,8 +61,8 @@ public class PocketModeService extends Service {
         return null;
     }
 
-    private void onDeviceUnlocked() {
-        if (DEBUG) Log.d(TAG, "Device unlocked");
+    private void onDisplayOn() {
+        if (DEBUG) Log.d(TAG, "Display On");
         mProximitySensor.disable();
     }
 
@@ -74,8 +74,8 @@ public class PocketModeService extends Service {
     private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_USER_PRESENT)) {
-                onDeviceUnlocked();
+            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+                onDisplayOn();
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 onDisplayOff();
             }
