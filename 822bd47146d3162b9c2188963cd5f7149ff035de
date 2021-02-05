@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d92d33a_a8493f01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2021-02-05T18:08:53Z",
+      "side": 1,
+      "message": "Sidenote here: Even though you experienced the issue, I never did and that\u0027s probably you updated RIL blobs from R. I only decided to merge this change because the prop is indeed found in stock MIUI builds.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 164
+      },
+      "revId": "822bd47146d3162b9c2188963cd5f7149ff035de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
