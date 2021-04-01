@@ -123,7 +123,7 @@ limitations under the License.
         </MediaCodec>
         <MediaCodec name="OMX.qti.video.decoder.mpeg4sw" type="video/mp4v-es" update="true">
             <Limit name="measured-frame-rate-176x144" range="590-950" />
-            <Limit name="measured-frame-rate-480x360" range="164-360" />
+            <Limit name="measured-frame-rate-480x360" range="930-1000" />
             <Limit name="measured-frame-rate-1280x720" range="480-502" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.vp8" type="video/x-vnd.on2.vp8" update="true">
