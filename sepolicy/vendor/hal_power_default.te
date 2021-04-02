@@ -7,9 +7,6 @@ allow hal_power_default sysfs_graphics:file r_file_perms;
 allow hal_power_default sysfs_rpm:file r_file_perms;
 allow hal_power_default sysfs_system_sleep_stats:file r_file_perms;
 
-allow hal_power_default debugfs_wlan:dir r_dir_perms;
-allow hal_power_default debugfs_wlan:file r_file_perms;
-
 # To do powerhint on nodes defined in powerhint.json
 allow hal_power_default sysfs_devfreq:dir search;
 allow hal_power_default sysfs_devfreq:file rw_file_perms;
@@ -21,7 +18,6 @@ allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_power_default device_latency:chr_file rw_file_perms;
 allow hal_power_default cgroup:dir search;
 allow hal_power_default cgroup:file rw_file_perms;
-allow hal_power_default debugfs_sched_features:file rw_file_perms;
 allow hal_power_default proc_sysctl_schedboost:file rw_file_perms;
 
 # To get/set powerhal state property
