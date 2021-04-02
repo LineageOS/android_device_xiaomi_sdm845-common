@@ -1,6 +1,3 @@
-genfscon debugfs /sched_features                      u:object_r:debugfs_sched_features:s0
-genfscon debugfs /wlan0                               u:object_r:debugfs_wlan:s0
-
 genfscon proc /sys/kernel/sched_autogroup_enabled     u:object_r:proc_sysctl_autogroup:s0
 genfscon proc /sys/kernel/sched_boost                 u:object_r:proc_sysctl_schedboost:s0
 genfscon proc /tp_fw_version       u:object_r:proc_tp:s0
