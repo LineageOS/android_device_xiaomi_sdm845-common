@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ccf93fa_4f07c1f0",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 24334
+      },
+      "writtenOn": "2021-04-24T15:24:32Z",
+      "side": 1,
+      "message": "It will cause problem in relocking the bootloader.",
+      "revId": "1716f05d6c254518a6d8ed5fe4d98aeedb4a3694",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
