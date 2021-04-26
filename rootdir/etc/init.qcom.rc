@@ -638,7 +638,7 @@ service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0
     disabled
 
 on property:vold.decrypt=trigger_restart_framework
-    restart vendor.audio-hal-2-0
+    restart vendor.audio-hal
     start vendor-sensor-sh
 
 on boot && property:persist.vendor.usb.controller.default=*
