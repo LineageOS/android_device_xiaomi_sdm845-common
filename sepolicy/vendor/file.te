@@ -12,6 +12,7 @@ type proc_sysctl_autogroup, proc_type, fs_type;
 type proc_sysctl_schedboost, proc_type, fs_type;
 type proc_tp, proc_type, fs_type;
 
+type sysfs_fingerprint, sysfs_type, fs_type;
 type sysfs_fod, sysfs_type, fs_type;
 type sysfs_gps, sysfs_type, fs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;
