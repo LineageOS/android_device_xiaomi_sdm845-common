@@ -1,1 +1,2 @@
 binder_call(system_server, glgps)
+binder_call(system_server, hal_lineage_fod_sdm845)
