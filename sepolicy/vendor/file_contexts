@@ -8,6 +8,9 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/vbmeta    u:object_r:vbmeta_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/vendor    u:object_r:system_block_device:s0
 
+# Block IO
+/dev/blkio(/.*)?                                         u:object_r:blkio_file:s0
+
 # Camera
 /(vendor|system/vendor)/bin/remosaic_daemon   u:object_r:remosaic_daemon_exec:s0
 
