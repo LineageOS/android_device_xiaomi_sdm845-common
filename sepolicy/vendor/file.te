@@ -1,4 +1,7 @@
 type audio_socket, file_type;
+
+type blkio_file, file_type;
+
 type gps_socket, file_type;
 
 type proc_tp, proc_type, fs_type;
