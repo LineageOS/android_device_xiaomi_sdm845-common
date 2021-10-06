@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,9 @@
 package org.lineageos.settings.thermal;
 
 import android.app.ActivityManager;
-import android.app.ActivityManager.StackInfo;
-import android.app.IActivityManager;
+import android.app.ActivityTaskManager;
+import android.app.ActivityTaskManager.RootTaskInfo;
+import android.app.IActivityTaskManager;
 import android.app.TaskStackListener;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -36,7 +37,8 @@ public class ThermalService extends Service {
 
     private String mPreviousApp;
     private ThermalUtils mThermalUtils;
-    private IActivityManager mIActivityManager;
+
+    private IActivityTaskManager mActivityTaskManager;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -50,12 +52,12 @@ public class ThermalService extends Service {
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
         try {
-            ActivityTaskManager.getService().registerTaskStackListener(mTaskListener);
+            mActivityTaskManager = ActivityTaskManager.getService();
+            mActivityTaskManager.registerTaskStackListener(mTaskListener);
         } catch (RemoteException e) {
             // Do nothing
         }
         mThermalUtils = new ThermalUtils(this);
-        mIActivityManager = ActivityManager.getService();
         registerReceiver();
         super.onCreate();
     }
@@ -81,14 +83,15 @@ public class ThermalService extends Service {
         @Override
         public void onTaskStackChanged() {
             try {
-                final StackInfo focusedStack = mIActivityManager.getFocusedStackInfo();
-                if (focusedStack != null && focusedStack.topActivity != null) {
-                    ComponentName taskComponentName = focusedStack.topActivity;
-                    String foregroundApp = taskComponentName.getPackageName();
-                    if (!foregroundApp.equals(mPreviousApp)) {
-                        mThermalUtils.setThermalProfile(foregroundApp);
-                        mPreviousApp = foregroundApp;
-                    }
+                final RootTaskInfo info = mActivityTaskManager.getFocusedRootTaskInfo();
+                if (info == null || info.topActivity == null) {
+                    return;
+                }
+
+                String foregroundApp = info.topActivity.getPackageName();
+                if (!foregroundApp.equals(mPreviousApp)) {
+                    mThermalUtils.setThermalProfile(foregroundApp);
+                    mPreviousApp = foregroundApp;
                 }
             } catch (RemoteException ignored) {
             }
