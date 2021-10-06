@@ -16,7 +16,7 @@
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:paddingBottom="8dp"
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
@@ -46,7 +46,7 @@
             android:ellipsize="marquee"
             android:singleLine="true"
             android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.Medium"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
             android:textColor="?android:attr/textColorPrimary" />
 
         <Spinner
