@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2018,2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,11 @@
 package org.lineageos.settings.dirac;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 
-public class DiracActivity extends PreferenceActivity {
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
+
+public class DiracActivity extends CollapsingToolbarBaseActivity {
 
     private static final String TAG_DIRAC = "dirac";
 
@@ -27,7 +29,7 @@ public class DiracActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
                 new DiracSettingsFragment(), TAG_DIRAC).commit();
     }
 }
