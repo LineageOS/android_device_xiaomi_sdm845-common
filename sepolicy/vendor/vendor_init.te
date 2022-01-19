@@ -14,3 +14,4 @@ allow vendor_init {
 }:file w_file_perms;
 
 allow vendor_init self:perf_event cpu;
+allow vendor_init self:capability kill;
