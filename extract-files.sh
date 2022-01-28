@@ -41,6 +41,9 @@ function blob_fixup() {
         system_ext/lib64/libdpmframework.so)
             sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
             ;;
+        system_ext/lib64/lib-imsvideocodec.so)
+            ${PATCHELF} --add-needed "lib-imsvtshim.so" "${2}"
+            ;;
     esac
 }
 
