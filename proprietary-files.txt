@@ -285,9 +285,11 @@ vendor/lib64/libgsl.so|4fc49e2fb38b7f79e9026ad86db4a84bded2dec1
 vendor/lib64/libllvm-glnext.so|9a67215899a28ee769e68306d0443c43bbb227a7
 vendor/lib64/libllvm-qcom.so|e4ff6f0d3cd3823fa65768b935adfe878a4bda7a
 
+# Graphics (Adreno firmware) - from OnePlus/OnePlus6/OnePlus6:11/RKQ1.201217.002/2109171635:user/release-keys
+vendor/firmware/a630_sqe.fw
+
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
-vendor/firmware/a630_sqe.fw
 vendor/firmware/a630_zap.b00
 vendor/firmware/a630_zap.b01
 vendor/firmware/a630_zap.b02
