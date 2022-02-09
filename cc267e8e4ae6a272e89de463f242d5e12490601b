@@ -34,6 +34,24 @@
       "parentUuid": "d6844538_8efb57bf",
       "revId": "cc267e8e4ae6a272e89de463f242d5e12490601b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cb6ba3a_9b04c6d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-09T18:18:12Z",
+      "side": 1,
+      "message": "I am not talking about the drop down menu. Here, simply scrolling the list of apps a bit down and then scrolling back up makes it totally messed up.",
+      "parentUuid": "f7b6836c_d24d0268",
+      "revId": "cc267e8e4ae6a272e89de463f242d5e12490601b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
