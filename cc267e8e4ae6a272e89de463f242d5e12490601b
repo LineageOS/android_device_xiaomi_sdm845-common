@@ -75,6 +75,30 @@
       },
       "revId": "cc267e8e4ae6a272e89de463f242d5e12490601b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36247a3a_f1e09e44",
+        "filename": "parts/src/org/lineageos/settings/thermal/ThermalSettingsFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-09T20:08:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbb5e4b8_f00e33d9",
+      "range": {
+        "startLine": 322,
+        "startChar": 12,
+        "endLine": 323,
+        "endChar": 56
+      },
+      "revId": "cc267e8e4ae6a272e89de463f242d5e12490601b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
