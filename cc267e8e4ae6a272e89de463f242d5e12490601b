@@ -52,6 +52,29 @@
       "parentUuid": "f7b6836c_d24d0268",
       "revId": "cc267e8e4ae6a272e89de463f242d5e12490601b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbb5e4b8_f00e33d9",
+        "filename": "parts/src/org/lineageos/settings/thermal/ThermalSettingsFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-02-09T19:07:50Z",
+      "side": 1,
+      "message": "you need to move this to onCreateViewHolder above, as it only needs to happen once during initialization and not everytime the view is visible.",
+      "range": {
+        "startLine": 322,
+        "startChar": 12,
+        "endLine": 323,
+        "endChar": 56
+      },
+      "revId": "cc267e8e4ae6a272e89de463f242d5e12490601b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
