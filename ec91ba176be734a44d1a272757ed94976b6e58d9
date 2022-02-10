@@ -16,6 +16,23 @@
       "message": "Here\u0027s a demo of what is happening after this change: https://drive.google.com/file/d/1009qu075pg0yaWaaYz8aJNDX5-N0lkRP/view?usp\u003dsharing",
       "revId": "ec91ba176be734a44d1a272757ed94976b6e58d9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca273c59_c80c0b9d",
+        "filename": "parts/res/layout/thermal_list_item.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 25187
+      },
+      "writtenOn": "2022-02-10T04:41:44Z",
+      "side": 1,
+      "message": "Change from match_parent to wrap_content will fix that issue",
+      "revId": "ec91ba176be734a44d1a272757ed94976b6e58d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
