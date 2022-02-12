@@ -16,6 +16,24 @@
       "message": "I have seen this patch floating around sometimes, but I have yet to see this error happen on 845. Do you know a way to reproduce?",
       "revId": "fac2241cdb6315a7fd918a54ad8b95678f16ac6c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "735ebe83_fca622a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21873
+      },
+      "writtenOn": "2022-02-12T07:10:51Z",
+      "side": 1,
+      "message": "It was on clear AOSP, was fix:\nhttps://review.arrowos.net/c/ArrowOS/android_frameworks_base/+/16144\nhttps://review.lineageos.org/c/LineageOS/android_frameworks_base/+/318606",
+      "parentUuid": "39292a82_1f9ac4d9",
+      "revId": "fac2241cdb6315a7fd918a54ad8b95678f16ac6c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
