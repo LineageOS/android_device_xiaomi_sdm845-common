@@ -12,6 +12,13 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/fingerdown_wait       u
 genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/irq                   u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup_enable         u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/proximity_state    u:object_r:sysfs_fingerprint:s0
-
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw                  u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                            u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-l3-lat                  u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-l3-lat                  u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw                  u:object_r:sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,mincpubw                         u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/extcon/extcon3/cable.0/     u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/extcon/extcon3/cable.1/     u:object_r:sysfs_extcon:s0
+genfscon sysfs /power/rpmh_stats/master_stats                                  u:object_r:sysfs_rpm:s0
+genfscon sysfs /power/system_sleep/stats                                       u:object_r:sysfs_system_sleep_stats:s0
