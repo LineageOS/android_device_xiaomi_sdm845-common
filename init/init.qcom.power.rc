@@ -156,57 +156,59 @@ on enable-low-power
     write /proc/sys/kernel/sched_walt_rotate_big_tasks 1
 
     # Enable bus-dcvs
-    write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
-    write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
-    write /sys/class/devfreq/soc:qcom,cpubw/min_freq 1525
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/mbps_zones "2288 4577 6500 8132 9155 10681"
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/sample_ms 4
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent 50
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory 20
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length 10
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/guard_band_mbps 0
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/up_scale 250
-    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor "bw_hwmon"
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/polling_interval 50
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq 1525
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/mbps_zones "2288 4577 6500 8132 9155 10681"
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/io_percent 50
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/bw_hwmon/idle_mbps 1600
 
-    write /sys/class/devfreq/soc:qcom,llccbw/governor "bw_hwmon"
-    write /sys/class/devfreq/soc:qcom,llccbw/polling_interval 50
-    write /sys/class/devfreq/soc:qcom,llccbw/min_freq 1525
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881"
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/sample_ms 4
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/io_percent 80
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/hist_memory 20
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/hyst_length 10
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/guard_band_mbps 0
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/up_scale 250
-    write /sys/class/devfreq/soc:qcom,llccbw/bw_hwmon/idle_mbps 1600
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor "bw_hwmon"
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/polling_interval 50
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq 1525
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/mbps_zones "1720 2929 3879 5931 6881"
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/io_percent 80
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/idle_mbps 1600
 
     # Enable mem_latency governor for DDR scaling
-    write /sys/class/devfreq/soc:qcom,memlat-cpu0/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,memlat-cpu0/mem_latency/ratio_ceil 400
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-llcc-lat/mem_latency/ratio_ceil 400
 
-    write /sys/class/devfreq/soc:qcom,memlat-cpu4/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-llcc-lat/mem_latency/ratio_ceil 400
 
     # Enable mem_latency governor for L3 scaling
-    write /sys/class/devfreq/soc:qcom,l3-cpu0/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,l3-cpu0/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,l3-cpu0/mem_latency/ratio_ceil 400
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/mem_latency/ratio_ceil 400
 
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 400
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/mem_latency/ratio_ceil 400
 
     # Enable userspace governor for L3 cdsp nodes
-    write /sys/class/devfreq/soc:qcom,l3-cdsp/governor "userspace"
-    chown system /sys/class/devfreq/soc:qcom,l3-cdsp/userspace/set_freq
+    write /sys/class/devfreq/soc:qcom,cdsp-cdsp-l3-lat/governor "userspace"
+    chown system /sys/class/devfreq/soc:qcom,cdsp-cdsp-l3-lat/userspace/set_freq
 
     # Gold L3 ratio ceil
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 4000
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/mem_latency/ratio_ceil 4000
 
-    write /sys/class/devfreq/soc:qcom,mincpubw/governor "compute"
-    write /sys/class/devfreq/soc:qcom,mincpubw/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-latfloor/governor "compute"
+    write /sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-latfloor/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/governor "compute"
+    write /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/polling_interval 10
 
     # Set cpuset parameters
     write /dev/cpuset/background/cpus 0-1
