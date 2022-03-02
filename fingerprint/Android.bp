@@ -35,3 +35,11 @@ cc_binary {
     ],
     proprietary: true,
 }
+
+cc_library_static {
+    name: "libudfps_extension.xiaomi_sdm845",
+    srcs: ["UdfpsExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ]
+}
