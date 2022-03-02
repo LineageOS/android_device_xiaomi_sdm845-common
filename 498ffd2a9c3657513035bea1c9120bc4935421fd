@@ -16,6 +16,24 @@
       "message": "Edit commit description corresponding to device name",
       "revId": "498ffd2a9c3657513035bea1c9120bc4935421fd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ee6d641_d555d75e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 26313
+      },
+      "writtenOn": "2022-03-02T05:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5668d63_618be451",
+      "revId": "498ffd2a9c3657513035bea1c9120bc4935421fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
