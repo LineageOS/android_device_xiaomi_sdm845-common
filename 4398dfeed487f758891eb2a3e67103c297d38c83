@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1527488d_44ba8f88",
+        "filename": "fingerprint/BiometricsFingerprint.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-02T11:37:23Z",
+      "side": 1,
+      "message": "Not common.",
+      "range": {
+        "startLine": 398,
+        "startChar": 11,
+        "endLine": 398,
+        "endChar": 15
+      },
+      "revId": "4398dfeed487f758891eb2a3e67103c297d38c83",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
