@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5ec4c9c_cc57f4da",
+        "filename": "fingerprint/BiometricsFingerprint.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-03T21:41:58Z",
+      "side": 1,
+      "message": "This is also what we do in livedisplay HAL, so let\u0027s stick to it.",
+      "range": {
+        "startLine": 424,
+        "startChar": 0,
+        "endLine": 425,
+        "endChar": 52
+      },
+      "revId": "c16bf3da9286ea8cbe7dbf69209515641dbd51a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
