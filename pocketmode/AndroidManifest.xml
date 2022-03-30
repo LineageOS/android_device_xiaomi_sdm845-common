@@ -25,6 +25,8 @@
 
     <application
         android:label="XiaomiPocketMode"
+        android:defaultToDeviceProtectedStorage="true"
+        android:directBootAware="true"
         android:persistent="true">
 
         <receiver android:name=".BootCompletedReceiver"
