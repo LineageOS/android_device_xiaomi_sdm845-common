@@ -1,0 +1,2 @@
+add_hwservice(hal_secure_element_default, hal_nxpese_hwservice)
+hal_client_domain(hal_secure_element_default, vendor_hal_qteeconnector)
