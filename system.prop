@@ -75,6 +75,3 @@ ril.subscription.types=NV,RUIM
 ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
-
-# Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
