@@ -251,6 +251,37 @@ on boot
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors
 
+    # Fingerprint
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/fingerdown_wait
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/regulator_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/screen_status
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/vreg_op_cnt
+
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/irq
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
+    chmod 0660 /sys/bus/platform/devices/soc:fingerprint_fpc/regulator_enable
+    chmod 0660 /sys/bus/platform/devices/soc:fingerprint_fpc/screen_status
+    chmod 0660 /sys/bus/platform/devices/soc:fingerprint_fpc/vreg_op_cnt
+
+    chown system system /sys/devices/platform/soc/soc:fingerprint_goodix/proximity_state
+
+    chmod 0666 /dev/input/event2
+
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+    chmod 0644 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+
+    chown system system /sys/devices/virtual/touch/tp_dev/fod_status
+    chmod 0644 /sys/devices/virtual/touch/tp_dev/fod_status
+
 # MSM specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/diag 2771 root log
@@ -406,6 +437,15 @@ on post-fs-data
 
     start vendor.qcrild
     start vendor.qcrild2
+
+    # Create directories for fingerprint
+    mkdir /data/vendor/fpc 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /data/vendor/goodix/gf_data/authenticate 0770 system system
+    mkdir /data/vendor/goodix/gf_data/enroll 0770 system system
+    mkdir /data/vendor/syna 0770 system system
+    mkdir /data/vendor/syna/ist/ 0770 system system
+    chown system system /data/vendor
 
 on property:ro.boot.dp=0x0
     write  /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8998@0:qcom,power-on@800/pshold_reboot 7
