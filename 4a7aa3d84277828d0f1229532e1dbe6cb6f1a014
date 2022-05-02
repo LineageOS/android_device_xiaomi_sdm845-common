@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98993e21_0d1578f8",
+        "filename": "fingerprint/UdfpsExtension.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2022-05-02T15:37:38Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure this doesn\u0027t compile",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 51
+      },
+      "revId": "4a7aa3d84277828d0f1229532e1dbe6cb6f1a014",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
