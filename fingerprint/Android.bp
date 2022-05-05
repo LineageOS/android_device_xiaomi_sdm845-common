@@ -30,7 +30,6 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.1",
         "android.hardware.biometrics.fingerprint@2.2",
         "android.hardware.biometrics.fingerprint@2.3",
-        "vendor.goodix.hardware.biometrics.fingerprint@2.1",
     ],
     proprietary: true,
 }
