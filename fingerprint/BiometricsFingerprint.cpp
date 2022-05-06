@@ -31,16 +31,16 @@
 #include <fstream>
 
 #define COMMAND_NIT 10
-#define PARAM_NIT_630_FOD 1
+#define PARAM_NIT_UDFPS 1
 #define PARAM_NIT_NONE 0
 
 #define DISPPARAM_PATH "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param"
-#define DISPPARAM_HBM_FOD_ON "0x20000"
-#define DISPPARAM_HBM_FOD_OFF "0xE0000"
+#define DISPPARAM_HBM_UDFPS_ON "0x20000"
+#define DISPPARAM_HBM_UDFPS_OFF "0xE0000"
 
-#define FOD_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
-#define FOD_STATUS_ON 1
-#define FOD_STATUS_OFF 0
+#define UDFPS_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
+#define UDFPS_STATUS_ON 1
+#define UDFPS_STATUS_OFF 0
 
 namespace {
 
@@ -423,16 +423,16 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t /* sensorId */) {
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t /* x */, uint32_t /* y */,
                                                 float /* minor */, float /* major */) {
-    set(DISPPARAM_PATH, DISPPARAM_HBM_FOD_ON);
-    mDevice->extCmd(mDevice, COMMAND_NIT, PARAM_NIT_630_FOD);
-    set(FOD_STATUS_PATH, FOD_STATUS_ON);
+    set(DISPPARAM_PATH, DISPPARAM_HBM_UDFPS_ON);
+    mDevice->extCmd(mDevice, COMMAND_NIT, PARAM_NIT_UDFPS);
+    set(UDFPS_STATUS_PATH, UDFPS_STATUS_ON);
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
-    set(DISPPARAM_PATH, DISPPARAM_HBM_FOD_OFF);
+    set(DISPPARAM_PATH, DISPPARAM_HBM_UDFPS_OFF);
     mDevice->extCmd(mDevice, COMMAND_NIT, PARAM_NIT_NONE);
-    set(FOD_STATUS_PATH, FOD_STATUS_OFF);
+    set(UDFPS_STATUS_PATH, UDFPS_STATUS_OFF);
     return Void();
 }
 
