@@ -42,6 +42,7 @@
 
 # HALs
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi_sdm845                   u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.camera\.provider@2\.4-service                                         u:object_r:hal_camera_default_exec:s0
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sdm845                                     u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti                                       u:object_r:hal_neuralnetworks_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr                                      u:object_r:hal_power_default_exec:s0
