@@ -16,6 +16,24 @@
       "message": "OK to push this + Dipper NFC change?",
       "revId": "5ab6f334fc3eba2029fa7ab19fb1003535dc625f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d1500f9_2f339308",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-14T13:56:23Z",
+      "side": 1,
+      "message": "Give me a few days to test this on my end as well. I need to apply config changes to all the rest of the devices.",
+      "parentUuid": "2387abae_2322cfae",
+      "revId": "5ab6f334fc3eba2029fa7ab19fb1003535dc625f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
