@@ -34,6 +34,23 @@
       "parentUuid": "2387abae_2322cfae",
       "revId": "5ab6f334fc3eba2029fa7ab19fb1003535dc625f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "101c8f1a_657dc52a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2022-05-16T18:13:20Z",
+      "side": 1,
+      "message": "binder_call(hal_nfc_default, hal_secure_element_default)\n\nallow hal_nfc_default hal_secure_element_default:binder call;\n\ndoes same stuff?",
+      "revId": "5ab6f334fc3eba2029fa7ab19fb1003535dc625f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
