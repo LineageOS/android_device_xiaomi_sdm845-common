@@ -3,6 +3,7 @@ allow hal_fingerprint_default fingerprint_data_file:dir create_dir_perms;
 allow hal_fingerprint_default fingerprint_data_file:file create_file_perms;
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 allow hal_fingerprint_default sysfs_fingerprint:file rw_file_perms;
+allow hal_fingerprint_default sysfs_fod:file rw_file_perms;
 allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_default input_device:dir r_dir_perms;
