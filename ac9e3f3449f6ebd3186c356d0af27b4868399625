@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35e33bbc_b6eea3a2",
+        "filename": "udfps/UdfpsHandler.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2022-05-20T15:16:12Z",
+      "side": 1,
+      "message": "https://github.com/xiaomi-sdm710-devs/android_kernel_xiaomi_sdm710/commit/669206e2d88bc9f4bdb27caa7e5e903e98031442\nUse this",
+      "range": {
+        "startLine": 21,
+        "startChar": 47,
+        "endLine": 21,
+        "endChar": 70
+      },
+      "revId": "ac9e3f3449f6ebd3186c356d0af27b4868399625",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
