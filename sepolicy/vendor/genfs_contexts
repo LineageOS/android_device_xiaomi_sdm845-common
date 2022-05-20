@@ -22,7 +22,6 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/irq                   u
 genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup_enable         u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/proximity_state    u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpubw                            u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/fod_hbm      u:object_r:sysfs_fod:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                            u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys2/restart_level    u:object_r:sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys3/restart_level   u:object_r:sysfs_ssr_toggle:s0
@@ -30,6 +29,5 @@ genfscon sysfs /devices/platform/soc/soc:qcom,l3-cpu0                          u
 genfscon sysfs /devices/platform/soc/soc:qcom,l3-cpu4                          u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,llccbw                           u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,mincpubw                         u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/virtual/touch/tp_dev/fod_status                        u:object_r:sysfs_fod:s0
 genfscon sysfs /power/rpmh_stats/master_stats                                  u:object_r:sysfs_rpm:s0
 genfscon sysfs /power/system_sleep/stats                                       u:object_r:sysfs_system_sleep_stats:s0
