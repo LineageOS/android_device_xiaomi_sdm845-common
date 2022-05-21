@@ -52,6 +52,9 @@
 /mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
 /mnt/vendor/persist/camera(/.*)?              u:object_r:persist_camera_file:s0
 
+# Sensors nodes
+/sys/devices/virtual/touch/tp_dev/fp_state                                                              u:object_r:sysfs_sensors:s0
+
 # Sockets
 /dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
 /dev/socket/gps                               u:object_r:gps_socket:s0
