@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b84576d6_a43abde3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2022-05-22T13:23:30Z",
+      "side": 1,
+      "message": "This label is already in AOSP, I\u0027m not sure why you need to duplicate it\n\nTry without this patch and do\n adb shell ls /vendor/bin/hw/ -Z",
+      "revId": "9ab6b6f6018330add1db047346913378281a96a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
