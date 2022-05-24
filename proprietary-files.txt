@@ -521,8 +521,8 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# Power-off charging daemon
-system/bin/charger:system/bin/chargeonlymode|69b29c2c7b7c65a0d8fd26c2a56f6211e2795fc5
+# Power-off charging daemon - from vayu - SKQ1.211006.001
+system/bin/charger:system/bin/chargeonlymode|bc8f81390ab691ddd815d27644b49afd988f8e47
 
 # QMI
 system/etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml
