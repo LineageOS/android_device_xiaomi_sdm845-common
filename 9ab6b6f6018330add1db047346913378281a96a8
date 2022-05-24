@@ -34,6 +34,23 @@
       "parentUuid": "b84576d6_a43abde3",
       "revId": "9ab6b6f6018330add1db047346913378281a96a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "779dfb6e_2bf5ff5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-24T21:54:24Z",
+      "side": 1,
+      "message": "Yea, this isn\u0027t needed:\n\n-rwxr-xr-x 1 root      shell     u:object_r:hal_camera_default_exec:s0                       11272 2022-05-24 22:50 android.hardware.camera.provider@2.4-service\n",
+      "revId": "9ab6b6f6018330add1db047346913378281a96a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
