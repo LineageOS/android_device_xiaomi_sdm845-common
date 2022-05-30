@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2017-2021 The LineageOS Project
+// Copyright (C) 2017-2022 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -12,6 +12,7 @@ android_app {
     certificate: "platform",
     platform_apis: true,
     privileged: true,
+    system_ext_specific: true,
 
     static_libs: [
         "org.lineageos.settings.resources",
