@@ -22,6 +22,30 @@
       },
       "revId": "42cb877fc2ee712d2231ec297d807b06efac48e0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29db6da6_68e1e90a",
+        "filename": "udfps/UdfpsHandler.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-31T15:50:07Z",
+      "side": 1,
+      "message": "Fixed, thanks.",
+      "parentUuid": "479036e9_673ab5df",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "42cb877fc2ee712d2231ec297d807b06efac48e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
