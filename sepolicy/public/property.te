@@ -1,5 +1,2 @@
 # SettingsLib
 system_public_prop(settingslib_prop)
-
-# IMEI
-vendor_public_prop(deviceid_prop)
