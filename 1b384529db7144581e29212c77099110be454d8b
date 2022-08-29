@@ -16,6 +16,24 @@
       "message": "We should probably put this in vendor/lineage",
       "revId": "1b384529db7144581e29212c77099110be454d8b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74b56eda_e4bd535f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-08-29T16:06:24Z",
+      "side": 1,
+      "message": "Here: https://review.lineageos.org/c/LineageOS/android_vendor_lineage/+/337159",
+      "parentUuid": "3ace070b_61a90d6e",
+      "revId": "1b384529db7144581e29212c77099110be454d8b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
