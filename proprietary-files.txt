@@ -212,19 +212,19 @@ vendor/lib64/vendor.display.color@1.5.so|f1c12eb133698917385d48913358eaffd9a1087
 vendor/lib64/vendor.display.postproc@1.0.so|e56b66d744dd77bd87afbb30cab558acf15709fb
 
 # DPM
-product/bin/dpmd:system_ext/bin/dpmd
-product/etc/dpm/dpm.conf:system_ext/etc/dpm/dpm.conf
-product/etc/init/dpmd.rc:system_ext/etc/init/dpmd.rc
-product/etc/permissions/com.qti.dpmframework.xml:system_ext/etc/permissions/com.qti.dpmframework.xml
-product/etc/permissions/dpmapi.xml:system_ext/etc/permissions/dpmapi.xml
-product/framework/com.qti.dpmframework.jar:system_ext/framework/com.qti.dpmframework.jar
-product/framework/dpmapi.jar:system_ext/framework/dpmapi.jar
+#product/bin/dpmd:system_ext/bin/dpmd
+#product/etc/dpm/dpm.conf:system_ext/etc/dpm/dpm.conf
+#product/etc/init/dpmd.rc:system_ext/etc/init/dpmd.rc
+#product/etc/permissions/com.qti.dpmframework.xml:system_ext/etc/permissions/com.qti.dpmframework.xml
+#product/etc/permissions/dpmapi.xml:system_ext/etc/permissions/dpmapi.xml
+#product/framework/com.qti.dpmframework.jar:system_ext/framework/com.qti.dpmframework.jar
+#product/framework/dpmapi.jar:system_ext/framework/dpmapi.jar
 product/lib64/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
 product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so
 product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so
 product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
+#-product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
