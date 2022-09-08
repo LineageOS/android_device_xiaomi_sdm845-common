@@ -1,6 +1,11 @@
 # Audio devices
 /dev/elliptic(.*)?                            u:object_r:sound_device:s0
 
+# Block devices
+/dev/block/platform/soc/1d84000\.ufshc/by-name/cust      u:object_r:system_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/system    u:object_r:system_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/vendor    u:object_r:system_block_device:s0
+
 # Camera
 /(vendor|system/vendor)/bin/remosaic_daemon   u:object_r:remosaic_daemon_exec:s0
 
