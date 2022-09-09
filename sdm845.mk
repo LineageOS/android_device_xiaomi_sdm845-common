@@ -302,10 +302,6 @@ PRODUCT_PACKAGES += \
     libjson \
     librmnetctl
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_xiaomi
-
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
