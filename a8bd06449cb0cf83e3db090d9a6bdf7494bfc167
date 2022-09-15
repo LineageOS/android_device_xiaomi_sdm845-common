@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15b6a2cb_0f9fc57a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-15T14:35:45Z",
+      "side": 1,
+      "message": "Interestingly, this breaks BT on mi845, but not on gts4lv...",
+      "revId": "a8bd06449cb0cf83e3db090d9a6bdf7494bfc167",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
