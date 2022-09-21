@@ -32,7 +32,7 @@ function blob_fixup() {
             sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
             ;;
         system_ext/lib64/lib-imsvideocodec.so)
-            ${PATCHELF} --add-needed "lib-imsvtshim.so" "${2}"
+            ${PATCHELF} --add-needed "libgui_shim.so" "${2}"
             ;;
         vendor/lib/camera/components/com.qti.node.watermark.so)
             ${PATCHELF} --add-needed "libpiex-v29.so" "${2}"
