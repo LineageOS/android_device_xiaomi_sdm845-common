@@ -47,9 +47,6 @@ TARGET_BOARD_PLATFORM := sdm845
 # Audio
 TARGET_PROVIDES_AUDIO_EXTNS := true
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
