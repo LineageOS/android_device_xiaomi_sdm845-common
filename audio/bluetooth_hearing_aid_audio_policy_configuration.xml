@@ -18,7 +18,7 @@
 -->
 
 <!-- Bluetooth Audio HAL Audio Policy Configuration file -->
-<module name="bluetooth_qti" halVersion="2.0">
+<module name="bluetooth" halVersion="2.0">
     <mixPorts>
         <!-- Hearing AIDs Audio Ports -->
         <mixPort name="hearing aid output" role="source">
