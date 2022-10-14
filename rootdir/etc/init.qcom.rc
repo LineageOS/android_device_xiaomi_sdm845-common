@@ -164,7 +164,8 @@ on boot
     chmod 2770 /dev/socket/qmux_radio
 
     mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /mnt/vendor/persist/alarm 0770 system system
+    mkdir /mnt/vendor/persist/alarm 0777 system system
+    chmod 0666 /mnt/vendor/persist/alarm/data
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
     mkdir /mnt/vendor/persist/iar_db 0770 system system
