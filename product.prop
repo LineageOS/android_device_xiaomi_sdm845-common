@@ -1,3 +1,6 @@
+# IMS
+ro.telephony.block_binder_thread_on_incoming_calls=false
+
 # LMKD
 ro.lmk.low=1001
 ro.lmk.medium=800
