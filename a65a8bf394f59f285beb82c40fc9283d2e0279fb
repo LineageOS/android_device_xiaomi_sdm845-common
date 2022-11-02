@@ -16,6 +16,24 @@
       "message": "Nice, I guess that you have validated this change yourself?",
       "revId": "a65a8bf394f59f285beb82c40fc9283d2e0279fb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11649eb9_f0ce906e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31334
+      },
+      "writtenOn": "2022-11-02T14:39:09Z",
+      "side": 1,
+      "message": "Tested on dipper and incoming call works fine currently.",
+      "parentUuid": "96bcc5d8_0e0e983b",
+      "revId": "a65a8bf394f59f285beb82c40fc9283d2e0279fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
