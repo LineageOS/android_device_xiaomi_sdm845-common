@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "379415e1_bff1b609",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31334
+      },
+      "writtenOn": "2022-11-02T09:42:16Z",
+      "side": 1,
+      "message": "See https://review.lineageos.org/c/LineageOS/android_frameworks_opt_telephony/+/342314",
+      "revId": "d4d3da24be6befa76585ef40f07eac1d0742b106",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
