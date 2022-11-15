@@ -16,6 +16,23 @@
       "message": "Clueless as to why I only need this now...",
       "revId": "7a908663e13853d804b494e88f969b444d7066bf",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edb72eb0_5f903d56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-11-15T16:34:42Z",
+      "side": 1,
+      "message": "The error only comes up when building perseus (which inherits from product_launched_with_p.mk), that\u0027s why I didn\u0027t spot this before.",
+      "revId": "7a908663e13853d804b494e88f969b444d7066bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
