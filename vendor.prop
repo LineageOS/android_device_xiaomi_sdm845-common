@@ -140,6 +140,7 @@ persist.sys.fuse.passthrough.enable=true
 debug.egl.hw=0
 debug.hwui.skia_atrace_enabled=false
 debug.sf.hw=0
+debug.sf.auto_latch_unsignaled=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
