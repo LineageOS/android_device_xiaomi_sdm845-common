@@ -3,3 +3,6 @@ system_public_prop(settingslib_prop)
 
 # IMEI
 vendor_public_prop(deviceid_prop)
+
+# Perseus Slider
+system_public_prop(persist_slider_prop)

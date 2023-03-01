@@ -13,3 +13,6 @@ ro.miui.                       u:object_r:exported_system_prop:s0
 
 # SettingsLib
 settingsdebug.instant.packages u:object_r:settingslib_prop:s0
+
+# Perseus Slider
+persist.slider.                u:object_r:persist_slider_prop:s0

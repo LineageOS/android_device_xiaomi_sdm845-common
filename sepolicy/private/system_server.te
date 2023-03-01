@@ -1,0 +1,1 @@
+allow system_server persist_slider_prop:file { getattr map open read };
