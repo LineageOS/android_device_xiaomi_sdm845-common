@@ -16,6 +16,24 @@
       "message": "btw android.hardware.sensors@1.0-impl-xiaomi:64 should work",
       "revId": "ba92cdb25df71bc74445982fa4fa914fd8407f18",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b820105_1a11d1db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-04-14T09:25:31Z",
+      "side": 1,
+      "message": "I know, this was just for testing.",
+      "parentUuid": "bbfb0eea_ff3f3589",
+      "revId": "ba92cdb25df71bc74445982fa4fa914fd8407f18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
