@@ -117,8 +117,18 @@ persist.vendor.cne.feature=1
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
-# Display post-processing
+# Display
 ro.vendor.display.cabl=2
+vendor.display.comp_mask=0
+vendor.display.disable_excl_rect=0
+vendor.display.disable_excl_rect_partial_fb=1
+vendor.display.disable_hw_recovery_dump=1
+vendor.display.disable_scaler=0
+vendor.display.enable_async_powermode=0
+vendor.display.enable_optimize_refresh=1
+vendor.display.enable_posted_start_dyn=1
+vendor.display.normal_noc_efficiency_factor=0.85
+vendor.display.use_smooth_motion=1
 
 # DPM
 persist.vendor.dpm.idletimer.mode=default
@@ -140,9 +150,13 @@ persist.sys.fuse.passthrough.enable=true
 debug.egl.hw=0
 debug.hwui.skia_atrace_enabled=false
 debug.sf.hw=0
+persist.sys.sf.color_mode=0
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
-ro.opengles.version=196610
+vendor.gralloc.disable_ubwc=0
+vendor.opengles.version=196610
 
 # IMS
 persist.dbg.volte_avail_ovr=1
