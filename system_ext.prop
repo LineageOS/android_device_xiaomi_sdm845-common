@@ -1,3 +1,6 @@
 # DPM
 persist.vendor.dpm.feature=11
 persist.vendor.dpm.loglevel=0
+
+# Graphics
+persist.demo.hdmirotationlock=false
