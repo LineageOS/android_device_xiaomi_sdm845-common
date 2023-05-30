@@ -34,6 +34,23 @@
       "parentUuid": "ac391d42_fe139a1a",
       "revId": "0bd6e87c92c9e1f67830d159390b3c46e53dfa84",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93e94490_177eaf9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15346
+      },
+      "writtenOn": "2023-05-30T17:55:05Z",
+      "side": 1,
+      "message": "Works fine with https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy_vndr/+/357675",
+      "revId": "0bd6e87c92c9e1f67830d159390b3c46e53dfa84",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
