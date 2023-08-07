@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f74e5d3_d99109ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27499
+      },
+      "writtenOn": "2023-08-07T13:57:56Z",
+      "side": 1,
+      "message": "Please take a look at this commit and merge if possible, i have tested it on lineage-18.1 and it fixes this issue https://gitlab.com/LineageOS/issues/android/-/issues/5221",
+      "revId": "af5c6ea783f78d303157bb1095731db30f5cd6c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
