@@ -37,10 +37,10 @@
             echo 400 > $memlat/mem_latency/ratio_ceil
         done
 
-        #Enable userspace governor for L3 cdsp nodes
+        #Enable cdspl3 governor for L3 cdsp nodes
         for l3cdsp in $device/*cdsp-cdsp-l3-lat/devfreq/*cdsp-cdsp-l3-lat
         do
-            echo "userspace" > $l3cdsp/governor
+            echo "cdspl3" > $l3cdsp/governor
         done
 
         #Enable compute governor for gold latfloor
