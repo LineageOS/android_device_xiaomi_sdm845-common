@@ -378,8 +378,8 @@ vendor/lib64/unnhal-acc-hvx.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 
 # OMX - from PNX - RKQ1.200906.002
-vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
-vendor/lib/libOmxVpp.so|7a9a96445b55f28013ea8f4ed767c7e245420c4f
+vendor/lib/libOmxVideoDSMode.so|0771a2c2f34dc484f9b0b3625dd0a40361dec060
+vendor/lib/libOmxVpp.so|4225151f1dd333888305bdfa787db4e0a06aa48c
 
 # Peripheral manager
 vendor/bin/pm-proxy
