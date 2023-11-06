@@ -674,13 +674,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
     socket thermal-send-rule stream 0660 system system
     group root
 
-service ppd /vendor/bin/mm-pp-dpps
-    class late_start
-    user system
-    group system graphics
-    socket pps stream 0660 system system
-    disabled
-
 on property:init.svc.zygote=stopped
     stop ppd
 
@@ -688,13 +681,4 @@ on property:init.svc.zygote=running
     start ppd
 
 on property:init.svc.zygote=restarting
-    stop ppd
-
-on property:init.svc.vendor.hwcomposer-2-3=stopped
-    stop ppd
-
-on property:init.svc.vendor.hwcomposer-2-3=running
-    start ppd
-
-on property:init.svc.vendor.hwcomposer-2-3=restarting
     stop ppd
