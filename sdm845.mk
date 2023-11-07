@@ -237,7 +237,8 @@ PRODUCT_COPY_FILES += \
 
 # QTI fwk-detect
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor:32
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor # Needed by CNE app
 
 # Recovery
 PRODUCT_PACKAGES += \
