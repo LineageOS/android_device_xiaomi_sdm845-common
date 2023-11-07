@@ -217,6 +217,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Net
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1 \
+    android.system.net.netd@1.1.vendor
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
@@ -242,7 +247,8 @@ PRODUCT_COPY_FILES += \
 
 # QTI fwk-detect
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor:32
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor # Needed by CNE app
 
 # Recovery
 PRODUCT_PACKAGES += \

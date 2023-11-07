@@ -37,39 +37,19 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
-        'com.qualcomm.qti.imscmservice@1.0',
-        'com.qualcomm.qti.imscmservice@2.0',
-        'com.qualcomm.qti.imscmservice@2.1',
-        'com.qualcomm.qti.imscmservice@2.2',
-        'com.qualcomm.qti.uceservice@2.0',
-        'com.qualcomm.qti.uceservice@2.1',
         'libmmosal',
-        'vendor.qti.hardware.radio.ims@1.0',
-        'vendor.qti.hardware.radio.ims@1.1',
-        'vendor.qti.hardware.radio.ims@1.2',
-        'vendor.qti.hardware.radio.ims@1.3',
-        'vendor.qti.hardware.radio.ims@1.4',
         'vendor.qti.hardware.wifidisplaysession@1.0',
-        'vendor.qti.ims.callinfo@1.0',
-        'vendor.qti.ims.rcsconfig@1.0',
-        'vendor.qti.imsrtpservice@2.0',
-        'vendor.qti.imsrtpservice@2.1',
+        'vendor.qti.imsrtpservice@3.0',
     ): lib_fixup_vendor_suffix,
 }
 
 blob_fixups: blob_fixups_user_type = {
     'system_ext/bin/wfdservice': blob_fixup()
         .add_needed('libwfdservice_shim.so'),
-    'system_ext/etc/permissions/qcrilhook.xml': blob_fixup()
-        .regex_replace('/product/framework/', '/system_ext/framework/'),
-    'system_ext/etc/permissions/qti_libpermissions.xml': blob_fixup()
-        .regex_replace('name="android.hidl.manager-V1.0-java', 'name="android.hidl.manager@1.0-java'),
     'system_ext/lib/libwfdmmsrc_system.so': blob_fixup()
         .add_needed('libgui_shim.so'),
     'system_ext/lib/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
-    'system_ext/lib64/lib-imsvideocodec.so': blob_fixup()
-        .add_needed('libgui_shim.so'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libbinder_shim.so')
         .add_needed('libinput_shim.so'),
