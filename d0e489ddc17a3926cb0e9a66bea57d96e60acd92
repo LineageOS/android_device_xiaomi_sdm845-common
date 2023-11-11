@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08236d6d_28038cfc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-11-11T18:39:37Z",
+      "side": 1,
+      "message": "The idea was to workaround the fastboot flash issue due to /cust mounted as system_ext, but fastboot flashall still fails.",
+      "revId": "d0e489ddc17a3926cb0e9a66bea57d96e60acd92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
