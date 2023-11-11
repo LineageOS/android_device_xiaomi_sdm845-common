@@ -1,3 +1,5 @@
+typeattribute system_block_device super_block_device_type;
+
 type fingerprint_device, dev_type;
 
 type gps_device, dev_type;
