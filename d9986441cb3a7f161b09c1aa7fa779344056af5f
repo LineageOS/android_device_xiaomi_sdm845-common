@@ -16,6 +16,24 @@
       "message": "Why you didn\u0027t pick my sdm710 one?",
       "revId": "d9986441cb3a7f161b09c1aa7fa779344056af5f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7f3c848_a531e729",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-11-11T16:22:23Z",
+      "side": 1,
+      "message": "Neither the two are straight picks, the one from Arian was just a fresh one. That\u0027s all.\n\nDo you happen to know why `fastboot flashall` fails here?\n\n\u003e  Warning: skip copying boot image avb footer (boot partition size: 0, boot image size: 67092480).\n\u003e  Sending \u0027boot\u0027 (65520 KB)                          FAILED (Write to device failed (No such device))\n\u003e  fastboot: error: Command failed\n\nWhereas if I just `fastboot flash boot` it goes well.",
+      "parentUuid": "60935036_9e9d6bd7",
+      "revId": "d9986441cb3a7f161b09c1aa7fa779344056af5f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
