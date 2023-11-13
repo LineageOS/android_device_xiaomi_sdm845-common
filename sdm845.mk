@@ -114,10 +114,6 @@ PRODUCT_PACKAGES += \
     libpiex_shim \
     vendor.qti.hardware.camera.device@1.0.vendor
 
-# Charger
-PRODUCT_PACKAGES += \
-    libsuspend
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
@@ -184,9 +180,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl:64 \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health-service.qti \
+    android.hardware.health-service.qti_recovery
 
 # HIDL
 PRODUCT_PACKAGES += \
