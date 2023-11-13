@@ -1,5 +1,4 @@
-recovery_only(`
-userdebug_or_eng(`
-permissive fastbootd;
-')
-')
+allow fastbootd {
+    dtbo_block_device
+    vbmeta_block_device
+}:blk_file { w_file_perms getattr ioctl };
