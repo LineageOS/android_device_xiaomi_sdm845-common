@@ -52,6 +52,24 @@
       "parentUuid": "e7f3c848_a531e729",
       "revId": "d9986441cb3a7f161b09c1aa7fa779344056af5f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d514a83_e31b7bdd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-11-13T14:05:39Z",
+      "side": 1,
+      "message": "Fix was https://review.lineageos.org/c/LineageOS/android_system_core/+/374023",
+      "parentUuid": "4c791085_14a8a783",
+      "revId": "d9986441cb3a7f161b09c1aa7fa779344056af5f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
