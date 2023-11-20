@@ -24,8 +24,6 @@ source "${HELPER}"
 function blob_fixup() {
     case "${1}" in
         system_ext/etc/permissions/qcrilhook.xml)
-            ;&
-        system_ext/etc/permissions/telephonyservice.xml)
             sed -i "s/\/product\/framework\//\/system_ext\/framework\//g" "${2}"
             ;;
         system_ext/etc/permissions/qti_libpermissions.xml)
