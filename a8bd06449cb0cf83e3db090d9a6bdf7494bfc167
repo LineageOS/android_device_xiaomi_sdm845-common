@@ -33,6 +33,24 @@
       "message": "Apparently it breaks BT when using HW offload.",
       "revId": "a8bd06449cb0cf83e3db090d9a6bdf7494bfc167",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2bd22c1_d4119ef9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-11-24T11:57:16Z",
+      "side": 1,
+      "message": "All the time I was testing this with Sony WH-1000XM3, which always default to using LDAC codec. This fixes it: https://review.lineageos.org/c/LineageOS/android_hardware_interfaces/+/374981",
+      "parentUuid": "adae79f1_315e2e92",
+      "revId": "a8bd06449cb0cf83e3db090d9a6bdf7494bfc167",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
