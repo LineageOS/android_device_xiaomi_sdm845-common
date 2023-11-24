@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bce17640_fb46fab5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-11-24T10:31:23Z",
+      "side": 1,
+      "message": "Funny, no other sdm845 device seem to have this issue.\n\n01-18 16:16:10.316  1208  1208 F DEBUG   : Cmdline: /vendor/bin/pm-service\n01-18 16:16:10.316  1208  1208 F DEBUG   : pid: 1185, tid: 1185, name: pm-service  \u003e\u003e\u003e /vendor/bin/pm-service \u003c\u003c\u003c\n01-18 16:16:10.316  1208  1208 F DEBUG   : uid: 1000\n01-18 16:16:10.316  1208  1208 F DEBUG   : signal 6 (SIGABRT), code -1 (SI_QUEUE), fault addr --------\n01-18 16:16:10.316  1208  1208 F DEBUG   : Abort message: \u0027RefBase used with stack pointer argument\u0027\n01-18 16:16:10.316  1208  1208 F DEBUG   :     x0  0000000000000000  x1  00000000000004a1  x2  0000000000000006  x3  0000007fd0b3f450\n01-18 16:16:10.316  1208  1208 F DEBUG   :     x4  1f7164736d686e6f  x5  1f7164736d686e6f  x6  1f7164736d686e6f  x7  7f7f7f7f7f7f7f7f\n01-18 16:16:10.316  1208  1208 F DEBUG   :     x8  00000000000000f0  x9  0000007baee83090  x10 0000000000000001  x11 0000007baeec9058\n01-18 16:16:10.316  1208  1208 F DEBUG   :     x12 0000007fd0b3f410  x13 0000000000000029  x14 0000007fd0b3f5e0  x15 0000000000000558\n01-18 16:16:10.316  1208  1208 F DEBUG   :     x16 0000007baef2dd08  x17 0000007baef0ae90  x18 0000007bb1102000  x19 00000000000004a1\n01-18 16:16:10.316  1208  1208 F DEBUG   :     x20 00000000000004a1  x21 00000000ffffffff  x22 00000000000001f4  x23 00000079ea6cebe0\n01-18 16:16:10.317  1208  1208 F DEBUG   :     x24 0000000000000001  x25 0000007fd0b3fad0  x26 00000057b62c80c0  x27 0000000000000000\n01-18 16:16:10.317  1208  1208 F DEBUG   :     x28 0000007fd0b3fa88  x29 0000007fd0b3f4d0\n01-18 16:16:10.317  1208  1208 F DEBUG   :     lr  0000007baeeba9b8  sp  0000007fd0b3f430  pc  0000007baeeba9e4  pst 0000000000000000\n01-18 16:16:10.317  1208  1208 F DEBUG   : 6 total frames\n01-18 16:16:10.317  1208  1208 F DEBUG   : backtrace:\n01-18 16:16:10.317  1208  1208 F DEBUG   :       #00 pc 00000000000599e4  /apex/com.android.runtime/lib64/bionic/libc.so (abort+164) (BuildId: c74277f481a383c87215b672f6465e24)\n01-18 16:16:10.317  1208  1208 F DEBUG   :       #01 pc 0000000000006328  /system/lib64/liblog.so (__android_log_default_aborter+12) (BuildId: 90b44bf68efec2e986bed55ffd264fce)\n01-18 16:16:10.317  1208  1208 F DEBUG   :       #02 pc 0000000000006ec8  /system/lib64/liblog.so (__android_log_assert+308) (BuildId: 90b44bf68efec2e986bed55ffd264fce)\n01-18 16:16:10.317  1208  1208 F DEBUG   :       #03 pc 000000000000ff48  /apex/com.android.vndk.v34/lib64/libutils.so (android::RefBase::incStrong(void const*) const+136) (BuildId: 12a9ac175217f5f5f235be8ae1f30634)\n01-18 16:16:10.317  1208  1208 F DEBUG   :       #04 pc 00000000000078fc  /vendor/bin/pm-service (main+752) (BuildId: b8d8a49e6daa6f6e2a701821b2d16e3b)\n01-18 16:16:10.317  1208  1208 F DEBUG   :       #05 pc 0000000000052610  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+104) (BuildId: c74277f481a383c87215b672f6465e24)\n01-18 16:16:10.330     0     0 I init    : Service \u0027vendor.per_mgr\u0027 (pid 1185) received signal 6\n01-18 16:16:10.330     0     0 I init    : Sending signal 9 to service \u0027vendor.per_mgr\u0027 (pid 1185) process group...",
+      "revId": "dd73fc66bfbc2511189e3d72ff3b62b5e7e9dd11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
