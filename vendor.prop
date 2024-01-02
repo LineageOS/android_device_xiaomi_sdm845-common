@@ -115,7 +115,9 @@ ro.soc.model=SDM845
 persist.vendor.cne.feature=1
 
 # Crypto
+ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.volume.metadata.method=dm-default-key
 
 # Display
 ro.vendor.display.cabl=2
