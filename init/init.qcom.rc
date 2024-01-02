@@ -61,7 +61,7 @@ on init
 on fs
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
-    mount_all /vendor/etc/fstab.qcom
+    mount_all /vendor/etc/fstab.qcom --early
     mkdir /mnt/vendor/persist 0771 root system
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
@@ -78,6 +78,9 @@ on post-fs
     setrlimit 8 67108864 67108864
 
     write /dev/ipa 1
+
+on late-fs
+    mount_all /vendor/etc/fstab.qcom --late
 
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
