@@ -27,10 +27,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-    for device in /sys/devices/platform/soc
+    for device in /sys/class/devfreq*
     do
         #Enable mem_latency governor for L3, LLCC, and DDR scaling
-        for memlat in $device/*cpu*-lat/devfreq/*cpu*-lat
+        for memlat in $device/*cpu*-lat
         do
             echo "mem_latency" > $memlat/governor
             echo 10 > $memlat/polling_interval
@@ -38,21 +38,21 @@
         done
 
         #Enable cdspl3 governor for L3 cdsp nodes
-        for l3cdsp in $device/*cdsp-cdsp-l3-lat/devfreq/*cdsp-cdsp-l3-lat
+        for l3cdsp in $device/*cdsp-cdsp-l3-lat
         do
             echo "userspace" > $l3cdsp/governor
             echo "cdspl3" > $l3cdsp/governor
         done
 
         #Enable compute governor for gold latfloor
-        for latfloor in $device/*cpu-ddr-latfloor*/devfreq/*cpu-ddr-latfloor*
+        for latfloor in $device/*cpu-ddr-latfloor*
         do
             echo "compute" > $latfloor/governor
             echo 10 > $latfloor/polling_interval
         done
 
         #Gold L3 ratio ceil
-        for l3gold in $device/*cpu4-cpu-l3-lat/devfreq/*cpu4-cpu-l3-lat
+        for l3gold in $device/*cpu4-cpu-l3-lat
         do
             echo 4000 > $l3gold/mem_latency/ratio_ceil
         done
