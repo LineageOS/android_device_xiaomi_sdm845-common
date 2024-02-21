@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3520c627_a41cccee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27247
+      },
+      "writtenOn": "2024-02-21T10:25:01Z",
+      "side": 1,
+      "message": "Can you please explain why vp9 is not being dropped from the media_codecs_performance.xml file?\n\nhttps://github.com/log1cs/android_device_nokia_NLA/commit/8c9ac32a205ae8ebcdfd834dc999253ca4e1e46d",
+      "revId": "efcd962c21e8f68c7d1e7f15dd98211f52edb5e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
