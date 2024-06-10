@@ -138,6 +138,7 @@ persist.sys.fuse.passthrough.enable=true
 
 # Graphics
 debug.egl.hw=0
+debug.hwui.skia_atrace_enabled=false
 debug.sf.hw=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
