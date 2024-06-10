@@ -182,6 +182,7 @@ ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
 persist.vendor.radio.enableadvancedscan=false
+persist.vendor.radio.mt_sms_ack=30
 
 # USB
 sys.usb.mtp.batchcancel=1
