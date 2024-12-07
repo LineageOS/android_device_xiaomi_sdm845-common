@@ -387,7 +387,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    android.media.audio.common.types-V2-cpp \
+    android.media.audio.common.types-V4-cpp \
     libgui_shim \
     libinput_shim \
     libnl \
