@@ -16,6 +16,24 @@
       "message": "Thanks, but what do we gain with it at this point?",
       "revId": "0449d981f45eb2d72c8811e46196090e3e7e2061",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d0c9fe7_d902e95d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34562
+      },
+      "writtenOn": "2024-12-24T16:02:49Z",
+      "side": 1,
+      "message": "Save some disk place and improve (a little) io performance",
+      "parentUuid": "7f2df776_045b9ebc",
+      "revId": "0449d981f45eb2d72c8811e46196090e3e7e2061",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
