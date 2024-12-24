@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78f028ce_c009d1fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34562
+      },
+      "writtenOn": "2024-12-24T17:02:54Z",
+      "side": 1,
+      "message": "Sorry I forgot that Gapps need to write system, _ext and product",
+      "revId": "0fce86fb40ca637a8563bef6192afaea1658c881",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
