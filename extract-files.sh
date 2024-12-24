@@ -73,14 +73,6 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
             ;;
-        system_ext/lib/libwfdmmsrc_system.so)
-            [ "$2" = "" ] && return 0
-            grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
-            ;;
-        system_ext/lib64/libwfdnative.so)
-            [ "$2" = "" ] && return 0
-            grep -q "libinput_shim.so" "${2}" || "${PATCHELF}" --add-needed "libinput_shim.so" "${2}"
-            ;;
         system_ext/lib64/lib-imsvideocodec.so)
             [ "$2" = "" ] && return 0
             grep -q "libgui_shim.so" "${2}" || ${PATCHELF} --add-needed "libgui_shim.so" "${2}"
