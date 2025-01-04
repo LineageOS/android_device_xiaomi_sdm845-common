@@ -457,29 +457,8 @@ vendor/lib64/unnhal-acc-hvx.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 
 # OMX - from PNX - RKQ1.200906.002
-vendor/lib/libOmxAacDec.so|3d90cded7de2423503025d115e2788e0eff7390f
-vendor/lib/libOmxAlacDec.so|0f0e8be4b1558fb7ab87c3b8dfa7f7a2cf33fe75
-vendor/lib/libOmxAmrDec.so|942bb36c76ff125849b947acd1dbb8edcfee8b16
-vendor/lib/libOmxAmrwbplusDec.so|6869d09e4499824a476d3b036e025b5d70a83c70
-vendor/lib/libOmxApeDec.so|8de514dddfbd5a09f740cecbaf73bfb8c290ca9a
-vendor/lib/libOmxDsdDec.so|5a58c8b54578c6c7520666df4040a422fea67df9
-vendor/lib/libOmxEvrcDec.so|58d55a09798ae13c90829c7ced2e7fee1c61d8b1
-vendor/lib/libOmxG711Dec.so|254245293c12e4d32217b0704bff5f676f4bb5de
-vendor/lib/libOmxQcelp13Dec.so|6c55114663ba69f2c2a7e6c69989fc79d67977b3
 vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
 vendor/lib/libOmxVpp.so|7a9a96445b55f28013ea8f4ed767c7e245420c4f
-vendor/lib/libOmxWmaDec.so|eab25fd58910bbeb57812c75fd3c5511c60fa592
-vendor/lib/libdsd2pcm.so|427be2997fcd72e94c33d08b2cf1fde5bf969fd4
-vendor/lib64/libOmxAacDec.so|98b894101c87beb61f0f1e5a9e3c6ea430441bdd
-vendor/lib64/libOmxAlacDec.so|3298ac6565f5362e7ed5c4196cfacc1c8811fa72
-vendor/lib64/libOmxAmrDec.so|f5302be684af636aa4b3101f268856fc7706a2a0
-vendor/lib64/libOmxAmrwbplusDec.so|a98845715e128e6c2649289988e4ff4de1ef9f8b
-vendor/lib64/libOmxApeDec.so|61416c5ed237a741e524b36c2b5c58a067896e9b
-vendor/lib64/libOmxEvrcDec.so|e4d98d61ad8588956b7f4f937dd720164d584f7e
-vendor/lib64/libOmxG711Dec.so|53675a26d5386c868127304c6dfe9dd130f106f8
-vendor/lib64/libOmxQcelp13Dec.so|65952f3680f9865ea601de764037637d6ee8c990
-vendor/lib64/libOmxVpp.so|a87440c7838b6f03726d97a4a52b695bb4c6e8f8
-vendor/lib64/libOmxWmaDec.so|7b2a714a74fea03a403a7d0edef61db2f70d7d4e
 
 # Peripheral manager
 vendor/bin/pm-proxy
