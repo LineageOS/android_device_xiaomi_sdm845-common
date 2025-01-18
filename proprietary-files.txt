@@ -738,7 +738,7 @@ vendor/bin/cnss-daemon
 vendor/bin/nv_mac
 
 # WiFi Display (system) - from salami - AP3A.240617.008
-system/framework/WfdCommon.jar|7f5fa507edca51663be2d243a3bc72799c1a31e2
+system/framework/WfdCommon.jar;BOOT_JAR|7f5fa507edca51663be2d243a3bc72799c1a31e2
 system_ext/bin/wfdservice|b7b774b649b601f5a64baf79aa5e1c530278a9bc
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
 system_ext/etc/seccomp_policy/wfdservice.policy|5b3592c965f16b2d55ac89d56d8d3c49a6b5800b
