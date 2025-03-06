@@ -118,6 +118,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.rc \
+    usb_compositions.conf \
     init.qcom.usb.sh \
     init.qti.dcvs.sh \
     ueventd.qcom.rc
@@ -276,7 +277,8 @@ PRODUCT_BOOT_JARS += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.qti
+    android.hardware.usb-service.qti \
+    android.hardware.usb.gadget-service.qti
 
 # Vibrator
 PRODUCT_PACKAGES += \
