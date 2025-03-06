@@ -132,7 +132,6 @@ on property:init.svc.vendor.charger=running
     mount tmpfs tmpfs /data
     start vendor.thermal-engine
     setprop vendor.usb.controller a600000.dwc3
-    setprop sys.usb.configfs 1
 
 on enable-low-power
     # Set the default IRQ affinity to the silver cluster.
