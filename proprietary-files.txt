@@ -398,14 +398,18 @@ vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
 vendor/lib64/libmlipay.so
 vendor/lib64/libmlipay@1.1.so
 
-# Neural networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
+# Neural networks - from munch OS1.0.9.0.ULMMIXM
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti|a8ba8fa9e28ccfb1506c3b849eafbc296d280ca3
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc|4b7f2c5f914f3eef38f19936c0a06efc09b5b28c
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti-hta.xml|57e182a296097870a4c4ed1579c67da20c2b69de
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml|ac07e83ba7c2a87a2f216f04ec84df4539ea8507
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
-vendor/lib64/libhexagon_nn_stub.so
-vendor/lib64/unnhal-acc-adreno.so
-vendor/lib64/unnhal-acc-common.so
-vendor/lib64/unnhal-acc-hvx.so
+vendor/lib64/libhexagon_nn_stub.so|dabb2252d52bfde40d7c1e41487b2912f6d013f3
+vendor/lib64/libhta_hexagon_runtime.so|9763187af956bcc02e00540ebdfd16b6bd0e44c7
+vendor/lib64/unnhal-acc-adreno.so|9c5d8c601bad1c6ddf8e26ba9c7d9dc5511ac931
+vendor/lib64/unnhal-acc-common.so|0b1e861dc50ddaa2d9e9fc9e031bda50799d9c0a
+vendor/lib64/unnhal-acc-hta.so|4fecd9f66e1bc743ca0ca7077fc1b7a1a35d0636
+vendor/lib64/unnhal-acc-hvx.so|6a6b14ad086de426691ff5ef1ba903d631feea0a
 
 # OMX - from PNX - RKQ1.200906.002
 vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
