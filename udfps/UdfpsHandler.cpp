@@ -9,6 +9,8 @@
 #include "UdfpsHandler.h"
 
 #include <android-base/logging.h>
+#include <android-base/unique_fd.h>
+
 #include <fcntl.h>
 #include <poll.h>
 #include <thread>
@@ -45,14 +47,14 @@ class XiaomiUdfpsHandler : public UdfpsHandler {
         mDevice = device;
 
         std::thread([this]() {
-            int fd = open(FOD_UI_PATH, O_RDONLY);
+            android::base::unique_fd fd(open(FOD_UI_PATH, O_RDONLY));
             if (fd < 0) {
-                LOG(ERROR) << "failed to open fd, err: " << fd;
+                LOG(ERROR) << "failed to open " << FOD_UI_PATH << " , err: " << fd;
                 return;
             }
 
             struct pollfd fodUiPoll = {
-                    .fd = fd,
+                    .fd = fd.get(),
                     .events = POLLERR | POLLPRI,
                     .revents = 0,
             };
@@ -60,12 +62,12 @@ class XiaomiUdfpsHandler : public UdfpsHandler {
             while (true) {
                 int rc = poll(&fodUiPoll, 1, -1);
                 if (rc < 0) {
-                    LOG(ERROR) << "failed to poll fd, err: " << rc;
+                    LOG(ERROR) << "failed to poll " << FOD_UI_PATH << ", err: " << rc;
                     continue;
                 }
 
                 mDevice->extCmd(mDevice, COMMAND_NIT,
-                                readBool(fd) ? PARAM_NIT_FOD : PARAM_NIT_NONE);
+                                readBool(fd.get()) ? PARAM_NIT_FOD : PARAM_NIT_NONE);
             }
         }).detach();
     }
