@@ -1,11 +1,13 @@
 cc_library_static {
     name: "libperfmgr-ext-xiaomi",
+    defaults: [
+        "android.hardware.power-ndk_shared",
+    ],
     vendor: true,
     srcs: [
         "power-mode.cpp",
     ],
     shared_libs: [
-        "android.hardware.power-V5-ndk",
         "libbase",
     ],
 }
