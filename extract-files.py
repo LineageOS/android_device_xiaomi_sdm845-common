@@ -62,6 +62,9 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/product/framework/', '/system_ext/framework/'),
     'system_ext/etc/permissions/qti_libpermissions.xml': blob_fixup()
         .regex_replace('name="android.hidl.manager-V1.0-java', 'name="android.hidl.manager@1.0-java'),
+    'system_ext/etc/seccomp_policy/wfdservice.policy': blob_fixup()
+        .add_line_if_missing('memfd_create: 1')
+        .add_line_if_missing('rt_tgsigqueueinfo: 1'),
     'system_ext/lib64/lib-imsvideocodec.so': blob_fixup()
         .add_needed('libgui_shim.so'),
     'system_ext/lib/libwfdservice.so': blob_fixup()
