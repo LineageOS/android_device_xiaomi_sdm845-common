@@ -33,6 +33,24 @@
       "message": "I\u0027ve tested cycles count on my device only (dipper). The number displayed looks legit. It shows 803 now for the 5 years old device. And it was 708 a week ago.\nI\u0027m submitting the patch to sdm845-common as suggested in #lineageos-dev in order for the maintainer to decide whether it is good or not to push to common instead of dipper specific repo.",
       "revId": "b9f3073b85b7a2dd43414bc77e837de69602a531",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5c1da60_68e87062",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-01T17:13:19Z",
+      "side": 1,
+      "message": "It went from 708 to 803 in a week?",
+      "parentUuid": "145d796e_ba2cc54a",
+      "revId": "b9f3073b85b7a2dd43414bc77e837de69602a531",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
