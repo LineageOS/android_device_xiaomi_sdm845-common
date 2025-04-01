@@ -67,8 +67,11 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('rt_tgsigqueueinfo: 1'),
     'system_ext/lib64/lib-imsvideocodec.so': blob_fixup()
         .add_needed('libgui_shim.so'),
+    'system_ext/lib/libwfdaudiofoundation.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V3-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
     'system_ext/lib/libwfdservice.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
+        .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so')
+        .replace_needed('libaudiofoundation.so', 'libwfdaudiofoundation.so'),
     'vendor/bin/pm-service': blob_fixup()
         .add_needed('libutils-v33.so'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
