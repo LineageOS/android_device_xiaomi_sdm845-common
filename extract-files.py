@@ -58,6 +58,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'system_ext/bin/wfdservice': blob_fixup()
+        .add_needed('libwfdservice_shim.so'),
     'system_ext/etc/permissions/qcrilhook.xml': blob_fixup()
         .regex_replace('/product/framework/', '/system_ext/framework/'),
     'system_ext/etc/permissions/qti_libpermissions.xml': blob_fixup()

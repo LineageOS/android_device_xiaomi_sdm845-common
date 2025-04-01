@@ -613,7 +613,7 @@ vendor/bin/nv_mac
 
 # WiFi Display (system) - from lemonadep - UKQ1.230924.001
 system/framework/WfdCommon.jar;BOOT_JAR|a661c494d064b79a3f71579592411fada1ea232f
-system_ext/bin/wfdservice|400d123df78c1ed2e9643ff3ddf5ee5748f954fe
+system_ext/bin/wfdservice|400d123df78c1ed2e9643ff3ddf5ee5748f954fe|8a0be1b9478adf4b44a1ba34f045b1871f64ac5c
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
 system_ext/etc/seccomp_policy/wfdservice.policy|5b3592c965f16b2d55ac89d56d8d3c49a6b5800b
 system_ext/etc/wfdconfigsink.xml|cb78df66948314a75080a4161321fb3111a0785a
