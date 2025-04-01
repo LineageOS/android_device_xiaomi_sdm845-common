@@ -62,6 +62,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/product/framework/', '/system_ext/framework/'),
     'system_ext/etc/permissions/qti_libpermissions.xml': blob_fixup()
         .regex_replace('name="android.hidl.manager-V1.0-java', 'name="android.hidl.manager@1.0-java'),
+    'system_ext/bin/wfdservice': blob_fixup()
+        .add_needed('libwfdservice_shim_v1.so'),
     'system_ext/lib64/lib-imsvideocodec.so': blob_fixup()
         .add_needed('libgui_shim.so'),
     'system_ext/lib/libwfdmmsrc_system.so': blob_fixup()
