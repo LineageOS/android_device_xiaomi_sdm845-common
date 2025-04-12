@@ -51,6 +51,24 @@
       "parentUuid": "145d796e_ba2cc54a",
       "revId": "b9f3073b85b7a2dd43414bc77e837de69602a531",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "076ea2a9_c9211f92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34800
+      },
+      "writtenOn": "2025-04-12T18:32:16Z",
+      "side": 1,
+      "message": "Weird. I probably wrote a wrong numbers here. No, it doesn\u0027t increase that fast. I actually monitored several single charges and found the counter does not increase at all when only partial charge applied (like from 30% to 90%). So definitely it can\u0027t went from 708 to 803 in a week.\nLet me check the current number to proof counter looks good...\nPOWER_SUPPLY_CYCLE_COUNT\u003d831\nSo it increased from 803 in January to 831 in April.",
+      "parentUuid": "f5c1da60_68e87062",
+      "revId": "b9f3073b85b7a2dd43414bc77e837de69602a531",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
