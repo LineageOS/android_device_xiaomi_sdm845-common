@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
-                   2017-2021 The LineageOS Project
+                   2017-2021,2025 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -75,16 +75,23 @@
             android:label="@string/thermal_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.battery" />
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_settings_thermal" />
+            <meta-data
+                android:name="com.android.settings.icon_tintable"
+                android:value="true" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-255" />
             <meta-data
                 android:name="com.android.settings.summary"
                 android:resource="@string/thermal_summary" />
-            <meta-data
-                android:name="com.android.settings.order"
-                android:value="1" />
         </activity>
 
         <service
