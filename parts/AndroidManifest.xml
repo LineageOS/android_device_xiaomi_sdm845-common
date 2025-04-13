@@ -84,7 +84,7 @@
                 android:resource="@string/thermal_summary" />
             <meta-data
                 android:name="com.android.settings.order"
-                android:value="1" />
+                android:value="100" />
         </activity>
 
         <service
