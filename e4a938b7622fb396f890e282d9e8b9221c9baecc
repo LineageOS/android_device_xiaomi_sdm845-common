@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbbc395c_c0539e5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T20:29:06Z",
+      "side": 1,
+      "message": "To be honest, I\u0027d rather add dedicated icon for it and add it to Settings / System.",
+      "revId": "e4a938b7622fb396f890e282d9e8b9221c9baecc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
