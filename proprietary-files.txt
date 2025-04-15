@@ -707,7 +707,6 @@ vendor/lib/libFileMux_proprietary.so|e59edd4604a7c73147118161cab5b7ac6bb16c82
 vendor/lib/libmmosal.so;MODULE_SUFFIX=_vendor|57185feced72009af2df1b09117702c9fae7182b
 vendor/lib/libmmrtpdecoder_proprietary.so|9232f505ea8f0c1e9f81a049c583fba32a450d73
 vendor/lib/libmmrtpencoder_proprietary.so|d8386b78c976d94867455c67dd10d63e8a343363
-vendor/lib/libwfdcodecv4l2_proprietary.so|70a2900804160bc53bb19c11e81278ffde0c5fee
 vendor/lib/libwfdcommonutils_proprietary.so|12990e068e9ecb8d435bbb1370083ee6ca2fe63d
 vendor/lib/libwfdconfigutils_proprietary.so|1844d3b80f3a86605d566597bda285448be360c7
 vendor/lib/libwfddisplayconfig_proprietary.so|fd73dda05415d2316eb46fb97635939a03107815
@@ -729,6 +728,9 @@ vendor/lib/libwfduibcsrcinterface_proprietary.so|91837ba6b6692e1d553ece3aa4469dd
 vendor/lib/libwfdutils_proprietary.so|cae4c266704da4ce15b59c13f57ccf8f1391b699
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor|fdba1b3c11ace4b0415be4e5944cdb288cd35f58
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|044c6cfd4bc603e4aa372ab1a3d287a8d8e5fc48
+
+# WiFi Display (vendor) - from guacamole - GM1911_11_H.38
+vendor/lib/libwfdcodecv4l2_proprietary.so|2dcd875133040d048e48ed92e4dae3b38f2aca1a
 
 # WiFi Display (vendor) - from lemonadep - TP1A.220624.003
 vendor/etc/wfdconfig.xml|4f863ac9a71bafff8afc14e8fab26af979bbb1d6
