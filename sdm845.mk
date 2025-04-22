@@ -108,6 +108,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
+    init.mi.btmac.sh \
     init.qcom.rc \
     init.qcom.recovery.rc \
     init.qcom.power.rc \
