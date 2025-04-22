@@ -1,6 +1,9 @@
 # Audio devices
 /dev/elliptic(.*)?                            u:object_r:sound_device:s0
 
+# Bluetooth
+/vendor/bin/init\.mi\.btmac\.sh                          u:object_r:vendor_qti_init_shell_exec:s0
+
 # Block devices
 /dev/block/platform/soc/1d84000\.ufshc/by-name/cust      u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/dtbo      u:object_r:dtbo_block_device:s0
