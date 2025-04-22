@@ -530,6 +530,16 @@ service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
 on property:sys.shutdown.requested=*
     stop vendor.cnss-daemon
 
+on property:init.svc.vendor.nv_mac=stopped
+    start vendor.btmac-sh
+
+service vendor.btmac-sh /vendor/bin/init.mi.btmac.sh
+    class late_start
+    user system
+    group system bluetooth wifi
+    oneshot
+    disabled
+
 service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
     user system
