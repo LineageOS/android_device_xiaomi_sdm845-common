@@ -65,3 +65,7 @@
 # Sockets
 /dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
 /dev/socket/gps                               u:object_r:gps_socket:s0
+
+# Label read_ahead_kb and nr_requests in /data partition
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb u:object_r:vendor_sysfs_scsi_host:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/nr_requests u:object_r:vendor_sysfs_scsi_host:s0
