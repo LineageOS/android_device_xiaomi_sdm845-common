@@ -1,2 +1,4 @@
 # For setting read_ahead_kb
 allow vold vendor_sysfs_mmc_host:file w_file_perms;
+allow vold vendor_sysfs_scsi_host:file w_file_perms;
+
