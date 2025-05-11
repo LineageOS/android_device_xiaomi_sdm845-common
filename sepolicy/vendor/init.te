@@ -2,3 +2,6 @@ allow init socket_device:sock_file { unlink setattr create };
 allow init proc:file { write };
 
 set_prop(init, vendor_fingerprint_prop)
+
+# Allow init to set read_ahead_kb on /data partition
+allow init vendor_sysfs_scsi_host:file w_file_perms;
