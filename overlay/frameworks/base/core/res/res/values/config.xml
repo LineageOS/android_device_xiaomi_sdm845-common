@@ -268,4 +268,7 @@
     manually by the user. Off by default, since the expected haptic feedback may not be
     available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
+
+    <!-- Whether the new Auto Selection Network UI should be shown -->
+    <bool name="config_enableNewAutoSelectNetworkUI">true</bool>
 </resources>
