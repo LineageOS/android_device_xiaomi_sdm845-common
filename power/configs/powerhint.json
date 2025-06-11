@@ -193,7 +193,7 @@
     },
     {
       "Name": "L3LittleClusterMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq",
+      "Path": "/sys/class/devfreq/17d41000.qcom,devfreq-l3:qcom,cpu0-cpu-l3-lat/min_freq",
       "Values": [
         "1478400000",
         "300000000"
@@ -202,7 +202,7 @@
     },
     {
       "Name": "L3BigClusterMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq",
+      "Path": "/sys/class/devfreq/17d41000.qcom,devfreq-l3:qcom,cpu4-cpu-l3-lat/min_freq",
       "Values": [
         "1478400000",
         "300000000"
