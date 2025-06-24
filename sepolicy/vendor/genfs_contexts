@@ -32,3 +32,6 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/wakeup              
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                                                                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a88000.i2c/i2c-0/0-000c/a88000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel/wakeup31    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a88000.i2c/i2c-0/0-000c/a88000.i2c:qcom,smb1355@c:qcom,smb1355-charger@1000/power_supply/parallel/wakeup32    u:object_r:sysfs_wakeup:s0
+
+# RTC
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm8998@0:qcom,pm8998_rtc/rtc/rtc0/alarmtimer.0.auto/wakeup/wakeup31  u:object_r:sysfs_rtc:s0
