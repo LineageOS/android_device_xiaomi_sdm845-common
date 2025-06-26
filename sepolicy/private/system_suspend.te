@@ -17,3 +17,7 @@ dontaudit system_suspend sysfs:file { open read };
 # Access to /sys/power/{ wake_lock, wake_unlock } suspend blocker interface.
 allow system_suspend self:global_capability2_class_set block_suspend;
 allow system_suspend sysfs_wake_lock:file rw_file_perms;
+
+# RTC
+allow system_suspend sysfs_rtc:dir r_dir_perms;
+allow system_suspend sysfs_rtc:file rw_file_perms;
