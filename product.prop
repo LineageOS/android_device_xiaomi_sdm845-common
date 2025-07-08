@@ -1,3 +1,6 @@
+# eBPF
+ro.bpf.kver_override=5.10.239
+
 # IMS
 ro.telephony.block_binder_thread_on_incoming_calls=false
 
