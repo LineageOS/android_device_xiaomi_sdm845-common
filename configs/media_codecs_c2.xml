@@ -274,33 +274,6 @@
             <Feature name="intra-refresh" />
             <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
-        <MediaCodec name="c2.qti.hevc.encoder.cq" type="video/hevc">
-            <Limit name="size" min="96x96" max="512x512" />
-            <Limit name="alignment" value="2x2" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="24" max="2073600" />
-            <Limit name="bitrate" range="1-160000000" />
-            <Limit name="frame-rate" range="1-480" />
-            <Limit name="concurrent-instances" max="16" />
-            <Limit name="quality" range="0-100" default="80" />
-            <Limit name="performance-point-512x512" value="480" />
-            <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
-        </MediaCodec>
-        <MediaCodec name="c2.qti.heic.encoder" type="image/vnd.android.heic">
-            <Limit name="size" min="96x96" max="8192x8192" />
-            <Limit name="block-count" range="1024-138240" /> <!--max-spatial: 8192x4320 -->
-            <Limit name="blocks-per-second" min="24" max="2073600" />
-            <Limit name="frame-rate" range="1-480" />
-            <Limit name="concurrent-instances" max="6" />
-            <Limit name="quality" range="0-100" default="80" />
-            <Limit name="performance-point-8192x4320" value="3" />
-            <Limit name="performance-point-4096x2304" value="12" />
-            <Limit name="performance-point-1920x1080" value="40" />
-            <Limit name="performance-point-1920x1080" value="30" />
-            <Limit name="performance-point-1280x720" value="80" />
-            <Limit name="performance-point-1280x720" value="60" />
-            <Feature name="bitrate-modes" value="CQ" />
-        </MediaCodec>
         <MediaCodec name="c2.qti.vp8.encoder" type="video/x-vnd.on2.vp8">
             <Alias name="OMX.qcom.video.encoder.vp8" />
             <Limit name="size" min="96x96" max="4096x4096" />
