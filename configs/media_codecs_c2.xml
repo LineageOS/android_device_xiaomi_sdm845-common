@@ -218,7 +218,6 @@
             <Limit name="performance-point-3840x2160" value="60" />
             <Limit name="performance-point-1920x1088" value="240" />
             <Limit name="performance-point-1280x720" value="480" />
-            <Feature name="intra-refresh" />
             <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.qti.hevc.encoder" type="video/hevc">
@@ -237,7 +236,6 @@
             <Limit name="performance-point-1920x1088" value="240" />
             <Limit name="performance-point-1280x720" value="480" />
             <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
-            <Feature name="intra-refresh" />
             <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
         <MediaCodec name="c2.qti.vp8.encoder" type="video/x-vnd.on2.vp8">
@@ -254,7 +252,6 @@
             <Limit name="performance-point-3840x2160" value="30" />
             <Limit name="performance-point-1920x1088" value="120" />
             <Limit name="performance-point-1280x720" value="240" />
-            <Feature name="intra-refresh" />
             <Feature name="can-swap-width-height" value="1" />
         </MediaCodec>
     </Encoders>
