@@ -418,10 +418,6 @@ vendor/lib64/unnhal-acc-common.so|0b1e861dc50ddaa2d9e9fc9e031bda50799d9c0a
 vendor/lib64/unnhal-acc-hta.so|4fecd9f66e1bc743ca0ca7077fc1b7a1a35d0636
 vendor/lib64/unnhal-acc-hvx.so|6a6b14ad086de426691ff5ef1ba903d631feea0a
 
-# OMX - from PNX - RKQ1.200906.002
-vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
-vendor/lib/libOmxVpp.so|7a9a96445b55f28013ea8f4ed767c7e245420c4f
-
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
