@@ -1,2 +1,5 @@
+# Media
+ro.odm.build.media_performance_class=30
+
 # QC framework value-adds
 ro.vendor.qti.va_odm.support=1
