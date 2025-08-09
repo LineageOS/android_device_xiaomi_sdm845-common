@@ -408,7 +408,6 @@ vendor/bin/hw/vendor.qti.media.c2@1.0-service|711fc86b6a7768ba844155b61debdda4e2
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc|11209316ba8aae64b689217bc13b0804f6620678
 vendor/etc/seccomp_policy/codec2.vendor.base.policy|18b92b02c7906f72c28219dafc37a6fab87f06af
 vendor/etc/seccomp_policy/codec2.vendor.ext.policy|6a9a9eb3261048f02805261568097410e1a23b2d
-vendor/etc/media_codecs_c2.xml|7b7525653c6f4cb072c49af087e24a0a3b7f85d6
 vendor/lib/libqcodec2.so|25be46d8bc16ba2b88310dea1ea6e4ab25cbe1fa
 
 # Neural networks
