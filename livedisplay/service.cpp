@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "lineage.livedisplay@2.0-service.xiaomi_sdm845"
+#define LOG_TAG "vendor.lineage.livedisplay@2.0-service.xiaomi_sdm845"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
@@ -46,7 +46,7 @@ int main() {
 
     if (!sunlightEnhancement->isSupported()) {
         LOG(ERROR) << "SunlightEnhancement Iface is not supported, gracefully bailing out.";
-        return 1;
+        return EXIT_SUCCESS;
     }
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
@@ -65,5 +65,5 @@ int main() {
 shutdown:
     // In normal operation, we don't expect the thread pool to shutdown
     LOG(ERROR) << "LiveDisplay HAL custom service is shutting down.";
-    return 1;
+    return EXIT_FAILURE;  // Should not reach
 }
