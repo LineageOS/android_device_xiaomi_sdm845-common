@@ -6,6 +6,7 @@
 cc_binary {
     name: "vendor.lineage.livedisplay-service.xiaomi_sdm845",
     init_rc: ["vendor.lineage.livedisplay-service.xiaomi_sdm845.rc"],
+    vintf_fragments: ["vendor.lineage.livedisplay-service.xiaomi_sdm845.xml"],
     relative_install_path: "hw",
     srcs: [
         "SunlightEnhancement.cpp",
