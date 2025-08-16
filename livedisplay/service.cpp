@@ -1,65 +1,49 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-FileCopyrightText: 2019-2025 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "vendor.lineage.livedisplay@2.0-service.xiaomi_sdm845"
+#define LOG_TAG "vendor.lineage.livedisplay-service.xiaomi_sdm845"
 
 #include <android-base/logging.h>
+#include <android/binder_manager.h>
+#include <android/binder_process.h>
 #include <binder/ProcessState.h>
-#include <hidl/HidlTransportSupport.h>
 
 #include "SunlightEnhancement.h"
 
-using android::OK;
-using android::sp;
-using android::status_t;
-using android::hardware::configureRpcThreadpool;
-using android::hardware::joinRpcThreadpool;
-
-using ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement;
-using ::vendor::lineage::livedisplay::V2_0::implementation::SunlightEnhancement;
+using ::aidl::vendor::lineage::livedisplay::SunlightEnhancement;
 
 int main() {
-    sp<SunlightEnhancement> sunlightEnhancement;
-    status_t status;
+    std::shared_ptr<SunlightEnhancement> se = ndk::SharedRefBase::make<SunlightEnhancement>();
+    std::string instance = std::string() + SunlightEnhancement::descriptor + "/default";
+    binder_status_t status;
+
+    android::ProcessState::self()->setThreadPoolMaxThreadCount(1);
+    android::ProcessState::self()->startThreadPool();
 
     LOG(INFO) << "LiveDisplay HAL custom service is starting.";
 
-    sunlightEnhancement = new SunlightEnhancement();
-    if (sunlightEnhancement == nullptr) {
+    if (se == nullptr) {
         LOG(ERROR) << "Can not create an instance of LiveDisplay HAL SunlightEnhancement Iface,"
                    << "exiting.";
         goto shutdown;
     }
 
-    if (!sunlightEnhancement->isSupported()) {
+    if (!se->isSupported()) {
         LOG(ERROR) << "SunlightEnhancement Iface is not supported, gracefully bailing out.";
         return EXIT_SUCCESS;
     }
 
-    configureRpcThreadpool(1, true /*callerWillJoin*/);
-
-    status = sunlightEnhancement->registerAsService();
-    if (status != OK) {
+    status = AServiceManager_addService(se->asBinder().get(), instance.c_str());
+    if (status != STATUS_OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
                    << status << ")";
         goto shutdown;
     }
 
     LOG(INFO) << "LiveDisplay HAL custom service is ready.";
-    joinRpcThreadpool();
+    ABinderProcess_joinThreadPool();
     // Should not pass this line
 
 shutdown:
