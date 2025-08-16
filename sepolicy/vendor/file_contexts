@@ -51,7 +51,7 @@
 # HALs
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi                               u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti                                       u:object_r:hal_neuralnetworks_default_exec:s0
-/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi_sdm845                                 u:object_r:hal_lineage_livedisplay_qti_exec:s0
+/vendor/bin/hw/vendor\.lineage\.livedisplay-service\.xiaomi_sdm845                                      u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Persist files
 /mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
