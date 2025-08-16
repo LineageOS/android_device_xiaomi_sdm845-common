@@ -1,17 +1,6 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-FileCopyrightText: 2019-2025 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 #define LOG_TAG "SunlightEnhancementService"
@@ -25,11 +14,7 @@
 
 #include "SunlightEnhancement.h"
 
-namespace vendor {
-namespace lineage {
-namespace livedisplay {
-namespace V2_0 {
-namespace implementation {
+namespace {
 
 static constexpr const char* kDispParamPath =
         "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param";
@@ -52,6 +37,13 @@ bool hasFingerprintOnDisplay() {
     return device == "equuleus" || device == "ursa";
 }
 
+}  // anonymous namespace
+
+namespace aidl {
+namespace vendor {
+namespace lineage {
+namespace livedisplay {
+
 bool SunlightEnhancement::isSupported() {
     if (hasAmoledPanel()) {
         std::ofstream disp_param_file(kDispParamPath);
@@ -69,14 +61,15 @@ bool SunlightEnhancement::isSupported() {
     return false;
 }
 
-Return<bool> SunlightEnhancement::isEnabled() {
+ndk::ScopedAStatus SunlightEnhancement::getEnabled(bool* _aidl_return) {
     std::ifstream hbm_status_file(kHbmStatusPath);
     int result = -1;
     hbm_status_file >> result;
-    return !hbm_status_file.fail() && result > 0;
+    *_aidl_return = !hbm_status_file.fail() && result > 0;
+    return ndk::ScopedAStatus::ok();
 }
 
-Return<bool> SunlightEnhancement::setEnabled(bool enabled) {
+ndk::ScopedAStatus SunlightEnhancement::setEnabled(bool enabled) {
     std::ofstream disp_param_file(kDispParamPath);
     if (hasFingerprintOnDisplay()) {
         disp_param_file << (enabled ? kDispParamHbmFodOn : kDispParamHbmFodOff);
@@ -84,11 +77,10 @@ Return<bool> SunlightEnhancement::setEnabled(bool enabled) {
         disp_param_file << (enabled ? kDispParamHbmOn : kDispParamHbmOff);
     }
     LOG(DEBUG) << "setEnabled fail " << disp_param_file.fail();
-    return !disp_param_file.fail();
+    return ndk::ScopedAStatus::ok();
 }
 
-}  // namespace implementation
-}  // namespace V2_0
 }  // namespace livedisplay
 }  // namespace lineage
 }  // namespace vendor
+}  // namespace aidl
