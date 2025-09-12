@@ -51,6 +51,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v33.so'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('gettid: 1'),
+    ('vendor/lib/hw/audio.primary.sdm845.so', 'vendor/lib/hw/sound_trigger.primary.sdm845.so', 'vendor/lib/libaudioroute_ext.so'): blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
 }  # fmt: skip
