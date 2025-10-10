@@ -140,6 +140,7 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-service
 
 # DebugFS
+PRODUCT_ENABLE_UFFD_GC := true
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Device-specific settings
