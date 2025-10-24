@@ -156,6 +156,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service \
     gralloc.qcom
 
+$(call soong_config_set,qtidisplay,target_no_camera_custom_format,true)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
