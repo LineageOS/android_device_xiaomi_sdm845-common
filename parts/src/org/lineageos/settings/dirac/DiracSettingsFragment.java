@@ -20,13 +20,13 @@ import android.os.Bundle;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import org.lineageos.settings.R;
 
-public class DiracSettingsFragment extends PreferenceFragmentCompat implements
+public class DiracSettingsFragment extends SettingsBasePreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "dirac_enable";
