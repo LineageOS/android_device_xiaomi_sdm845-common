@@ -17,7 +17,6 @@
 package org.lineageos.settings.dirac;
 
 import android.os.Bundle;
-import android.widget.CompoundButton;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -28,13 +27,11 @@ import com.android.settingslib.widget.MainSwitchPreference;
 import org.lineageos.settings.R;
 
 public class DiracSettingsFragment extends PreferenceFragmentCompat implements
-        Preference.OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
+        Preference.OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "dirac_enable";
     private static final String PREF_HEADSET = "dirac_headset_pref";
     private static final String PREF_PRESET = "dirac_preset_pref";
-
-    private MainSwitchPreference mSwitchBar;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -43,9 +40,9 @@ public class DiracSettingsFragment extends PreferenceFragmentCompat implements
         DiracUtils.initialize();
         boolean enhancerEnabled = DiracUtils.isDiracEnabled(getActivity());
 
-        mSwitchBar = (MainSwitchPreference) findPreference(PREF_ENABLE);
-        mSwitchBar.addOnSwitchChangeListener(this);
-        mSwitchBar.setChecked(enhancerEnabled);
+        MainSwitchPreference switchBar = findPreference(PREF_ENABLE);
+        switchBar.setOnPreferenceChangeListener(this);
+        switchBar.setChecked(enhancerEnabled);
 
         ListPreference headsetTypePreference = findPreference(PREF_HEADSET);
         headsetTypePreference.setOnPreferenceChangeListener(this);
@@ -59,6 +56,9 @@ public class DiracSettingsFragment extends PreferenceFragmentCompat implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         switch (preference.getKey()) {
+            case PREF_ENABLE:
+                DiracUtils.setMusic((Boolean) newValue);
+                return true;
             case PREF_HEADSET:
                 DiracUtils.setHeadsetType(Integer.parseInt(newValue.toString()));
                 return true;
@@ -68,12 +68,5 @@ public class DiracSettingsFragment extends PreferenceFragmentCompat implements
             default:
                 return false;
         }
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        mSwitchBar.setChecked(isChecked);
-
-        DiracUtils.setMusic(isChecked);
     }
 }
