@@ -1,2 +1,2 @@
-hal_client_domain(vendor_vppservice, hal_capabilityconfigstore_qti)
+hal_client_domain(vendor_vppservice, vendor_hal_capabilityconfigstore_qti)
 allow vendor_vppservice vendor_hal_capabilityconfigstore_qti_hwservice:hwservice_manager find;
