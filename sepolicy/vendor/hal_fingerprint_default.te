@@ -7,12 +7,21 @@ allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_default input_device:dir r_dir_perms;
 allow hal_fingerprint_default input_device:chr_file rw_file_perms;
+allow hal_fingerprint_default sysfs_msm_subsys:dir search;
+allow hal_fingerprint_default sysfs_msm_subsys:file r_file_perms;
+allow hal_fingerprint_default vendor_sysfs_spss:dir search;
+allow hal_fingerprint_default vendor_sysfs_spss:dir r_file_perms;
+allow hal_fingerprint_default vendor_sysfs_spss:file rw_file_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file rw_file_perms;
 
 allow hal_fingerprint_default sysfs_graphics:dir search;
 allow hal_fingerprint_default sysfs_graphics:file rw_file_perms;
 
-set_prop(hal_fingerprint_default, vendor_fp_prop)
-hal_client_domain(hal_fingerprint_default, hal_perf)
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+hal_client_domain(hal_fingerprint_default, vendor_hal_perf)
+
+# Allow access to RTC
+r_dir_file(hal_fingerprint_default, sysfs_rtc)
 
 # Ignore all logging requests
 dontaudit hal_fingerprint storage_file:dir search;
