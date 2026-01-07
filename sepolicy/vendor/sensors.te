@@ -1,1 +1,5 @@
-allow sensors proc_tp:file r_file_perms;
+allow vendor_sensors proc_tp:file r_file_perms;
+allow vendor_sensors_qti vendor_sensors_vendor_data_file:dir create_dir_perms;
+allow vendor_sensors_qti vendor_sensors_vendor_data_file:file create_file_perms;
+
+get_prop(vendor_sensors_qti, vendor_sensors_prop)
