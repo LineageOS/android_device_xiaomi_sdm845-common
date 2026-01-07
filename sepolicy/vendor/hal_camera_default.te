@@ -8,6 +8,7 @@ allow hal_camera_default sysfs_kgsl:file r_file_perms;
 allow hal_camera_default sysfs_leds:dir r_dir_perms;
 allow hal_camera_default sysfs_leds:file rw_file_perms;
 allow hal_camera_default sysfs_leds:lnk_file read;
+allow hal_camera_default vendor_thermal_engine_prop:file { open };
 
 allow hal_camera_default sysfs_thermal:file w_file_perms;
 
@@ -17,5 +18,5 @@ get_prop(hal_camera_default, camera_ro_prop)
 
 userdebug_or_eng(`
   get_prop(hal_camera_default, camera_dbg_prop)
-  get_prop(hal_camera_default, sensors_dbg_prop)
+  get_prop(hal_camera_default, vendor_sensors_dbg_prop)
 ')

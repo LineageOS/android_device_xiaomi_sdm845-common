@@ -1,10 +1,10 @@
-allow thermal-engine thermal_data_file:dir rw_dir_perms;
-allow thermal-engine thermal_data_file:file create_file_perms;
+allow vendor_thermal-engine vendor_thermal_data_file:dir rw_dir_perms;
+allow vendor_thermal-engine vendor_thermal_data_file:file create_file_perms;
 
-allow thermal-engine self:capability { chown fowner };
-allow thermal-engine sysfs_devfreq:dir r_dir_perms;
+allow vendor_thermal-engine self:capability { chown fowner };
+allow vendor_thermal-engine vendor_sysfs_devfreq:dir r_dir_perms;
 
-set_prop(thermal-engine, thermal_engine_prop)
+set_prop(vendor_thermal-engine, vendor_thermal_engine_prop)
 
-dontaudit thermal-engine sysfs:dir read;
-dontaudit thermal-engine self:capability dac_override;
+dontaudit vendor_thermal-engine sysfs:dir read;
+dontaudit vendor_thermal-engine self:capability dac_override;

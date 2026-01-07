@@ -1,0 +1,1 @@
+allow servicemanager usbd:binder call;
