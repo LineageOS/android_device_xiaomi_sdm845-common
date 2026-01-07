@@ -1,1 +1,1 @@
-binder_call(hal_imsrtp, radio)
+binder_call(vendor_hal_imsrtp, radio)

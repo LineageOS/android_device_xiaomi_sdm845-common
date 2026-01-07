@@ -1,9 +1,12 @@
+# Audio
+ro.audio.soundtrigger       u:object_r:audio_config_prop:s0
+ro.audio.soundtrigger.lowpower       u:object_r:audio_config_prop:s0
+
 # Camera
-camera.                     u:object_r:camera_prop:s0
-persist.camera.             u:object_r:camera_prop:s0
+camera.                     u:object_r:vendor_camera_prop:s0
+persist.camera.             u:object_r:vendor_camera_prop:s0
 persist.debug.sf.showfps    u:object_r:camera_dbg_prop:s0
-persist.vendor.camera.      u:object_r:camera_prop:s0
-vidhance.                   u:object_r:camera_prop:s0
+vidhance.                   u:object_r:vendor_camera_prop:s0
 
 # Display post processing
 init.svc.ppd                             u:object_r:vendor_dpps_prop:s0
@@ -13,12 +16,13 @@ ro.vendor.display.ad.hdr_calib_data      u:object_r:vendor_dpps_prop:s0
 ro.vendor.display.sensortype             u:object_r:vendor_dpps_prop:s0
 
 # Fingerprint
-fpc_kpi                    u:object_r:vendor_fp_prop:s0
-gf.debug.                  u:object_r:vendor_fp_prop:s0
-persist.sys.fp.goodix.     u:object_r:vendor_fp_prop:s0
-persist.vendor.sys.fp.     u:object_r:vendor_fp_prop:s0
-ro.hardware.fp             u:object_r:vendor_fp_prop:s0
-vendor.fps_hal.            u:object_r:vendor_fp_prop:s0
+fpc_kpi                      u:object_r:vendor_fingerprint_prop:s0
+gf.debug.                    u:object_r:vendor_fingerprint_prop:s0
+persist.sys.fp.goodix.       u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.sys.fp.       u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.fingerprint.  u:object_r:vendor_fingerprint_prop:s0
+ro.hardware.fp               u:object_r:vendor_fingerprint_prop:s0
+vendor.fps_hal.              u:object_r:vendor_fingerprint_prop:s0
 
 # Google camera hal read only props
 ro.camera.res.fmq.size                   u:object_r:camera_ro_prop:s0
@@ -41,9 +45,12 @@ ro.ril.miui.imei               u:object_r:vendor_deviceid_prop:s0
 ro.ril.oem.imei                u:object_r:vendor_deviceid_prop:s0
 ro.ril.oem.meid                u:object_r:vendor_deviceid_prop:s0
 
+# CNE
+persist.vendor.cne                              u:object_r:vendor_cnd_prop:s0
+
 # Sensors
-persist.sensor.sardisable  u:object_r:sensors_prop:s0
+persist.sensor.sardisable  u:object_r:vendor_sensors_prop:s0
 
 # Thermal
-persist.sys.thermal.       u:object_r:thermal_engine_prop:s0
-sys.thermal.               u:object_r:thermal_engine_prop:s0
+persist.sys.thermal.       u:object_r:vendor_thermal_engine_prop:s0
+sys.thermal.               u:object_r:vendor_thermal_engine_prop:s0
