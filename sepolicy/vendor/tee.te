@@ -1,2 +1,3 @@
 allow tee fingerprint_data_file:dir create_dir_perms;
 allow tee fingerprint_data_file:file create_file_perms;
+allow tee tmpfs:dir r_dir_perms;
