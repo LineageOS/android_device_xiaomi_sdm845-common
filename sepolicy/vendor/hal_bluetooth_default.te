@@ -1,0 +1,2 @@
+r_dir_file(hal_bluetooth_default, vendor_convergence_data_file)
+r_dir_file(hal_bluetooth_default, vendor_data_file)

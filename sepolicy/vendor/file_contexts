@@ -12,19 +12,19 @@
 /(vendor|system/vendor)/bin/remosaic_daemon   u:object_r:remosaic_daemon_exec:s0
 
 # Data files
-/data/vendor/fpc(/.*)?                        u:object_r:fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?                     u:object_r:fingerprint_data_file:s0
-/data/vendor/gps(/.*)?                        u:object_r:gps_data_file:s0
+/data/vendor/fpc(/.*)?                        u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                     u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/gps(/.*)?                        u:object_r:vendor_gps_data_file:s0
 /data/vendor/mac_addr(/.*)?                   u:object_r:vendor_convergence_data_file:s0
-/data/vendor/syna(/.*)?                       u:object_r:fingerprint_data_file:s0
-/data/vendor/thermal(/.*)?                    u:object_r:thermal_data_file:s0
+/data/vendor/syna(/.*)?                       u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/thermal(/.*)?                    u:object_r:vendor_thermal_data_file:s0
 
 # Executables
 /vendor/bin/glgps                             u:object_r:glgps_exec:s0
 /vendor/bin/ignss_2_0                         u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/lhd                               u:object_r:lhd_exec:s0
 /vendor/bin/mlipayd@1\.1                      u:object_r:hal_mlipay_default_exec:s0
-/vendor/bin/nv_mac                            u:object_r:wcnss_service_exec:s0
+/vendor/bin/nv_mac                            u:object_r:vendor_wcnss_service_exec:s0
 
 # Fingerprint devices
 /dev/goodix_fp                                u:object_r:fingerprint_device:s0
@@ -40,25 +40,24 @@
 /sys/devices/platform/soc/[0-9]+\.spi/spi_master/spi[0-9]+/spi[0-9]+\.0/nstandby   u:object_r:sysfs_gps:s0
 
 # Graphics nodes
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:sysfs_graphics:s0
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status        u:object_r:sysfs_graphics:s0
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:sysfs_graphics:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui                                           u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status        u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui                                           u:object_r:vendor_sysfs_graphics:s0
 
 # Leds nodes
 /sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/leds/ir(/.*)?                         u:object_r:sysfs_leds:s0
 
 # HALs
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi                               u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti                                       u:object_r:hal_neuralnetworks_default_exec:s0
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti                                       u:object_r:vendor_hal_neuralnetworks_default_exec:s0
 /vendor/bin/hw/vendor\.lineage\.livedisplay-service\.xiaomi_sdm845                                      u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Persist files
-/mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
-/mnt/vendor/persist/camera(/.*)?              u:object_r:persist_camera_file:s0
+/mnt/vendor/persist/camera(/.*)?              u:object_r:vendor_persist_camera_file:s0
 
 # Sensors nodes
-/sys/devices/virtual/touch/tp_dev/fp_state                                                              u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/touch/tp_dev/fp_state                                                              u:object_r:vendor_sysfs_sensors:s0
 
 # Sockets
 /dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0

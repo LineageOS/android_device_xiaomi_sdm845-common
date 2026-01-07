@@ -1,2 +1,0 @@
-# For setting read_ahead_kb
-allow vold sysfs_mmc_host:file w_file_perms;
