@@ -16,6 +16,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/dirac_title">
 
     <com.android.settingslib.widget.MainSwitchPreference
@@ -29,7 +30,7 @@
         android:entryValues="@array/dirac_headset_pref_values"
         android:defaultValue="0"
         android:title="@string/dirac_headset_title"
-        android:summary="%s" />
+        app:useSimpleSummaryProvider="true" />
 
     <ListPreference
         android:key="dirac_preset_pref"
@@ -37,6 +38,6 @@
         android:entryValues="@array/dirac_preset_pref_values"
         android:defaultValue="0,0,0,0,0,0,0"
         android:title="@string/dirac_preset_title"
-        android:summary="%s" />
+        app:useSimpleSummaryProvider="true" />
 
 </PreferenceScreen>
