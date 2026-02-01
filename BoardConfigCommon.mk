@@ -39,7 +39,10 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_NO_GCC := true
-TARGET_KERNEL_CONFIG := vendor/xiaomi/mi845_defconfig
+TARGET_KERNEL_CONFIG := \
+    vendor/sdm845-perf_defconfig \
+    vendor/xiaomi/sdm845-common.config
+
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm845
 
 # Platform
