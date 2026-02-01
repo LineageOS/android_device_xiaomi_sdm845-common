@@ -618,6 +618,14 @@ service chre /vendor/bin/chre
     socket chre seqpacket 0660 root system
     shutdown critical
 
+# Set GPU OpenGL ES version
+on property:vendor.opengles.version=*
+    setprop ro.opengles.version ${vendor.opengles.version}
+
+# Set gpu available frequencies property
+on property:vendor.gpu.available_frequencies=*
+    setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
+
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
