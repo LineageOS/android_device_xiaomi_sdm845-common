@@ -16,6 +16,24 @@
       "message": "There\u0027s no need for this, considering that only beryllium has FM radio support.",
       "revId": "1437b14ffde3401292e296aab2afe58fb167bb87",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df8dd2b8_8d2231d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35755
+      },
+      "writtenOn": "2026-02-03T20:26:06Z",
+      "side": 1,
+      "message": "vendor.qti.hardware.fm@1.0-impl depends on android.hardware.bluetooth@1.0-impl-qti, bluetooth blobs are now common so having it in beryllium vendor caused elf check, instead of disabling elf check, i picked this change.",
+      "parentUuid": "1f9df5f2_b605f7f8",
+      "revId": "1437b14ffde3401292e296aab2afe58fb167bb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
