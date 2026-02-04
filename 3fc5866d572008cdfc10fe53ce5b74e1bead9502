@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1103db7d_fcdc491e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16779
+      },
+      "writtenOn": "2026-02-04T21:46:42Z",
+      "side": 1,
+      "message": "You should pick I3c581f3120b6258b3b45020c5ba12f6bf5b0ee27 instead and set it to 5.10.239",
+      "revId": "3fc5866d572008cdfc10fe53ce5b74e1bead9502",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
