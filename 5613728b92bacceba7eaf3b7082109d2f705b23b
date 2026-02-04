@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38839723_7116ac20",
+        "filename": "sdm845.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-04T19:54:59Z",
+      "side": 1,
+      "message": "Is this still needed?",
+      "revId": "5613728b92bacceba7eaf3b7082109d2f705b23b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
