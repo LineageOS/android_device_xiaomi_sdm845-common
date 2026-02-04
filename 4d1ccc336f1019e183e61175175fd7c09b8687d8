@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73ccfcd0_de0a483f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16779
+      },
+      "writtenOn": "2026-02-04T23:27:14Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be needed if you have this change: https://github.com/EdwinMoq/android_kernel_oneplus_sdm845/commit/f02e91f10cb73353d5f9052c20db0889eaa2e976\n\nThe correct node is already labeled on the common sepolicy",
+      "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
