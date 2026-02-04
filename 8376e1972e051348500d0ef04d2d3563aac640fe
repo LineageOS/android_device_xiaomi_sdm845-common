@@ -46,6 +46,30 @@
       },
       "revId": "8376e1972e051348500d0ef04d2d3563aac640fe",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a10984c8_8ed2db31",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 35755
+      },
+      "writtenOn": "2026-02-04T17:45:18Z",
+      "side": 1,
+      "message": "sorry, it is still used.",
+      "parentUuid": "b07d61ee_41c40f54",
+      "range": {
+        "startLine": 725,
+        "startChar": 0,
+        "endLine": 725,
+        "endChar": 91
+      },
+      "revId": "8376e1972e051348500d0ef04d2d3563aac640fe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
