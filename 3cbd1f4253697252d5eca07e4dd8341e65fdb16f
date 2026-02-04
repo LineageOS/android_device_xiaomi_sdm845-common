@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52f12009_ac6f57e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16779
+      },
+      "writtenOn": "2026-02-04T12:52:33Z",
+      "side": 1,
+      "message": "This can be skipped if you\u0027re going to update the whole stack from sweet",
+      "revId": "3cbd1f4253697252d5eca07e4dd8341e65fdb16f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
