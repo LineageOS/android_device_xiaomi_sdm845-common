@@ -70,6 +70,24 @@
       "parentUuid": "08799d10_9e266eba",
       "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "412079e9_c9d3bc7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35755
+      },
+      "writtenOn": "2026-02-05T09:40:37Z",
+      "side": 1,
+      "message": "i already did so this can be dropped, sorry for the confusion.\nhttps://github.com/duckyduckG/android_kernel_qcom_sdm845_419/commit/8a7eaa6c663c523f2c6a1096f243b4f5a4ab1cf4",
+      "parentUuid": "2f31e3e2_b77bd3bc",
+      "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
