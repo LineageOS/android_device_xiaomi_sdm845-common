@@ -34,6 +34,24 @@
       "parentUuid": "73ccfcd0_de0a483f",
       "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08799d10_9e266eba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35755
+      },
+      "writtenOn": "2026-02-05T07:30:58Z",
+      "side": 1,
+      "message": "my bad, i did it pick it, this can be dropped as,\n\n\n\n\n\n\n\ndrwxr-xr-x 4 root root u:object_r:vendor_sysfs_graphics:s0     0 1970-06-04 00:41 c44000 0.qcom,spmi:qcom,pmi8998@3:\nqcom,leds@d000",
+      "parentUuid": "09e30b1e_f76bce2b",
+      "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
