@@ -21,7 +21,6 @@ import android.widget.CompoundButton;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -37,9 +36,6 @@ public class DiracSettingsFragment extends PreferenceFragmentCompat implements
 
     private MainSwitchPreference mSwitchBar;
 
-    private ListPreference mHeadsetType;
-    private ListPreference mPreset;
-
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.dirac_settings, rootKey);
@@ -51,13 +47,13 @@ public class DiracSettingsFragment extends PreferenceFragmentCompat implements
         mSwitchBar.addOnSwitchChangeListener(this);
         mSwitchBar.setChecked(enhancerEnabled);
 
-        mHeadsetType = (ListPreference) findPreference(PREF_HEADSET);
-        mHeadsetType.setOnPreferenceChangeListener(this);
-        mHeadsetType.setEnabled(enhancerEnabled);
+        ListPreference headsetTypePreference = findPreference(PREF_HEADSET);
+        headsetTypePreference.setOnPreferenceChangeListener(this);
+        headsetTypePreference.setEnabled(enhancerEnabled);
 
-        mPreset = (ListPreference) findPreference(PREF_PRESET);
-        mPreset.setOnPreferenceChangeListener(this);
-        mPreset.setEnabled(enhancerEnabled);
+        ListPreference presetPreference = findPreference(PREF_PRESET);
+        presetPreference.setOnPreferenceChangeListener(this);
+        presetPreference.setEnabled(enhancerEnabled);
     }
 
     @Override
@@ -79,8 +75,5 @@ public class DiracSettingsFragment extends PreferenceFragmentCompat implements
         mSwitchBar.setChecked(isChecked);
 
         DiracUtils.setMusic(isChecked);
-
-        mHeadsetType.setEnabled(isChecked);
-        mPreset.setEnabled(isChecked);
     }
 }
