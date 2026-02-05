@@ -52,6 +52,24 @@
       "parentUuid": "09e30b1e_f76bce2b",
       "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f31e3e2_b77bd3bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-05T08:56:48Z",
+      "side": 1,
+      "message": "Can you update xiaomi kernel then?",
+      "parentUuid": "08799d10_9e266eba",
+      "revId": "4d1ccc336f1019e183e61175175fd7c09b8687d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
