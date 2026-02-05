@@ -25,6 +25,7 @@
         android:title="@string/dirac_enable" />
 
     <ListPreference
+        android:dependency="dirac_enable"
         android:key="dirac_headset_pref"
         android:entries="@array/dirac_headset_pref_entries"
         android:entryValues="@array/dirac_headset_pref_values"
@@ -33,6 +34,7 @@
         app:useSimpleSummaryProvider="true" />
 
     <ListPreference
+        android:dependency="dirac_enable"
         android:key="dirac_preset_pref"
         android:entries="@array/dirac_preset_pref_entries"
         android:entryValues="@array/dirac_preset_pref_values"
