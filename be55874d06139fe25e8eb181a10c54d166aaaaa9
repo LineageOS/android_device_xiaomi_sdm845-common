@@ -33,6 +33,24 @@
       "message": "Can\u0027t you just unconditionally include the fm blobs that are linked in the bt stack? That\u0027s what every other device does",
       "revId": "be55874d06139fe25e8eb181a10c54d166aaaaa9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3868384f_c017fabf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-06T19:21:49Z",
+      "side": 1,
+      "message": "Very likely and we only need to add FM interface to manifest in the device tree instead of adding a flag.",
+      "parentUuid": "c802140c_16772c97",
+      "revId": "be55874d06139fe25e8eb181a10c54d166aaaaa9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
