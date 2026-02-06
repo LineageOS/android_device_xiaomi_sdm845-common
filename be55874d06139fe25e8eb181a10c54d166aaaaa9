@@ -51,6 +51,24 @@
       "parentUuid": "c802140c_16772c97",
       "revId": "be55874d06139fe25e8eb181a10c54d166aaaaa9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a8daf4f_5159006e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35755
+      },
+      "writtenOn": "2026-02-06T21:44:34Z",
+      "side": 1,
+      "message": "yes it can be, my mistake, it is \u0027vendor.qti.hardware.fm@1.0.so\u0027, xiaomi sm8150 is doing the same for fm blobs, my bad.\n\n08-21 01:52:17.271  2574  2574 F linker  : CANNOT LINK EXECUTABLE \"/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti\": library \"vendor.qti.hardware.fm@1.0.so\" not found: needed by main executable",
+      "parentUuid": "3868384f_c017fabf",
+      "revId": "be55874d06139fe25e8eb181a10c54d166aaaaa9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
