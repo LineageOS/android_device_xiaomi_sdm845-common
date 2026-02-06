@@ -16,6 +16,23 @@
       "message": "Why? We can just drop this like we discussed.",
       "revId": "ebcbd37912487bb7772007730895866591912f65",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc681f95_49194903",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-06T22:51:37Z",
+      "side": 1,
+      "message": "Also, don\u0027t just edit. Update the rest of the chain, otherwise it\u0027s broken.",
+      "revId": "ebcbd37912487bb7772007730895866591912f65",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
