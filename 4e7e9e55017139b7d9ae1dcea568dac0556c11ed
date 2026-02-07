@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d63da1ee_3c7b97fb",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-07T14:25:09Z",
+      "side": 1,
+      "message": "why were a few left out unpinned?",
+      "revId": "4e7e9e55017139b7d9ae1dcea568dac0556c11ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
