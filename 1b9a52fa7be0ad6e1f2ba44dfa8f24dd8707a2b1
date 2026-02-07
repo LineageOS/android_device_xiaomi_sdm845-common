@@ -16,6 +16,24 @@
       "message": "Btw, maybe will be fine to make common XiaomiParts in hardware/xiaomi? Just a idea.",
       "revId": "1b9a52fa7be0ad6e1f2ba44dfa8f24dd8707a2b1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e75895f_2a3680e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-07T17:07:57Z",
+      "side": 1,
+      "message": "New devices no longer have doze.",
+      "parentUuid": "a4b98780_1b4f6627",
+      "revId": "1b9a52fa7be0ad6e1f2ba44dfa8f24dd8707a2b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
