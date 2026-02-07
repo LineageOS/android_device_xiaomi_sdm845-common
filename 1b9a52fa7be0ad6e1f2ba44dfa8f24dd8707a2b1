@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4b98780_1b4f6627",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-02-07T17:03:51Z",
+      "side": 1,
+      "message": "Btw, maybe will be fine to make common XiaomiParts in hardware/xiaomi? Just a idea.",
+      "revId": "1b9a52fa7be0ad6e1f2ba44dfa8f24dd8707a2b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
