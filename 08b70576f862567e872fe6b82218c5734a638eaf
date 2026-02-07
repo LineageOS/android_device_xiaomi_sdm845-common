@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec56f691_ae800e33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-07T17:54:38Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed. ANT+ support is tied to BT stack and I don\u0027t see any dependencies in the kanged stack from sony.",
+      "revId": "08b70576f862567e872fe6b82218c5734a638eaf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
