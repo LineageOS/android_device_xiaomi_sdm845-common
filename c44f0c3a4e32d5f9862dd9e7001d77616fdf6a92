@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23cdd700_a0de4a59",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-02-08T10:40:28Z",
+      "side": 1,
+      "message": "You should either drop this or move it to common sepolicy",
+      "revId": "c44f0c3a4e32d5f9862dd9e7001d77616fdf6a92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
