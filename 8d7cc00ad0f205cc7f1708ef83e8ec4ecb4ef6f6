@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a75d3b6a_33a34751",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-08T23:18:47Z",
+      "side": 1,
+      "message": "Did vendor/bin/nv_mac stop working?",
+      "revId": "8d7cc00ad0f205cc7f1708ef83e8ec4ecb4ef6f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
