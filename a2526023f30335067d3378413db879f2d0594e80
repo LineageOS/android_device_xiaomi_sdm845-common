@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f47bb42b_f2eb5378",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-08T16:38:52Z",
+      "side": 1,
+      "message": "qva/vendor/common/hal_usb.te:r_dir_file(vendor_hal_usb_qti, vendor_sysfs_usb_controller);",
+      "revId": "a2526023f30335067d3378413db879f2d0594e80",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
