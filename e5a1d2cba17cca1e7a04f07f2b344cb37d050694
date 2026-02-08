@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0284b37_3eb1d5f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16779
+      },
+      "writtenOn": "2026-02-08T15:12:31Z",
+      "side": 1,
+      "message": "You should pick this instead: https://review.lineageos.org/c/LineageOS/android_device_oneplus_sdm845-common/+/473316",
+      "revId": "e5a1d2cba17cca1e7a04f07f2b344cb37d050694",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
