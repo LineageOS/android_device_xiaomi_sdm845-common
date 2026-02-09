@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f8777a4_2a12930e",
+        "filename": "sepolicy/vendor/hal_power_default.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-09T00:15:37Z",
+      "side": 1,
+      "message": "Note to self: need to revisit this as well!",
+      "revId": "6b73fd4152b79791c6172a7ccf5444f1386ff25d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -70,6 +70,30 @@
       },
       "revId": "7cf2e2b1e7f8bc2522b3640cab5955a05a8ddf46",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "498c3970_8a3d423e",
+        "filename": "sepolicy/vendor/hal_power_default.te",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-09T00:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bffda45_db2bf1ff",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 50
+      },
+      "revId": "7cf2e2b1e7f8bc2522b3640cab5955a05a8ddf46",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
