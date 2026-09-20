@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bd5af82_8bd5369b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37013
+      },
+      "writtenOn": "2026-09-20T12:37:08Z",
+      "side": 1,
+      "message": "Need to move pocketmode_app.te to private sepolicy, since its labelled as isPrivApp",
+      "revId": "7394a5a306357fbc6721e27c6cbebad7d0647229",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
